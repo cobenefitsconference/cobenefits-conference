@@ -1,0 +1,2164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1st Blue Carbon & Wetlands Co-benefits Conference | Pré-COP31 | Bragança 2026</title>
+  <style>
+    :root {
+      --green-deep: #1a1f24;
+      --green-mid: #2e4057;
+      --green-light: #2eb8a6;
+      --green-pale: #e0f5f3;
+      --gold: #d4a017;
+      --gold-light: #f0cc60;
+      --ocean: #1e5f8e;
+      --ocean-light: #5ba3d1;
+      --earth: #5d4037;
+      --cream: #f0f4f8;
+      --white: #ffffff;
+      --text-dark: #1a1a1a;
+      --text-mid: #444;
+      --text-light: #777;
+      --shadow: rgba(0,0,0,0.15);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      scroll-behavior: smooth;
+    }
+
+    /* ── TOP BAR ── */
+    .topbar {
+      background: var(--green-deep);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 40px;
+      font-family: 'Arial', sans-serif;
+      font-size: 12px;
+      color: rgba(255,255,255,0.75);
+    }
+    .topbar-logos { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+    .topbar-logos span { font-weight: 600; color: rgba(255,255,255,0.9); }
+    .lang-toggle { display: flex; gap: 4px; }
+    .lang-btn {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.4);
+      color: rgba(255,255,255,0.7);
+      padding: 3px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 11px;
+      transition: all 0.2s;
+    }
+    .lang-btn.active, .lang-btn:hover {
+      background: var(--green-light);
+      border-color: var(--green-light);
+      color: white;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      background: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 40px;
+      box-shadow: 0 2px 12px var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 0;
+      text-decoration: none;
+    }
+    .nav-brand-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--green-mid);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+    .nav-brand-text { line-height: 1.2; }
+    .nav-brand-text strong {
+      display: block;
+      font-size: 14px;
+      color: var(--green-deep);
+      font-family: 'Arial', sans-serif;
+    }
+    .nav-brand-text span {
+      font-size: 11px;
+      color: var(--text-light);
+      font-family: 'Arial', sans-serif;
+    }
+    .nav-links { display: flex; gap: 4px; align-items: center; }
+    .nav-link {
+      padding: 8px 16px;
+      text-decoration: none;
+      color: var(--text-mid);
+      font-family: 'Arial', sans-serif;
+      font-size: 13px;
+      border-radius: 4px;
+      transition: all 0.2s;
+      border-bottom: 2px solid transparent;
+    }
+    .nav-link:hover { color: var(--green-mid); }
+    .nav-link.active {
+      color: var(--green-mid);
+      border-bottom-color: var(--green-light);
+      font-weight: 600;
+    }
+    .nav-cta {
+      background: var(--green-mid);
+      color: white !important;
+      border-radius: 6px;
+      padding: 8px 20px !important;
+      font-weight: 600 !important;
+      border-bottom: none !important;
+      margin-left: 8px;
+    }
+    .nav-cta:hover { background: var(--green-deep) !important; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--green-deep);
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(160deg, rgba(10,15,20,0.78) 0%, rgba(30,65,87,0.60) 100%),
+        url("https://images.unsplash.com/photo-1520681019112-66f09062a077?w=1600&q=80") center/cover no-repeat;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 80px 60px;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: white;
+      font-family: 'Arial', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 3px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: clamp(28px, 4vw, 52px);
+      color: white;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+    .hero h1 em {
+      display: block;
+      font-style: normal;
+      color: var(--green-light);
+      font-size: 0.65em;
+      font-weight: 400;
+      margin-top: 6px;
+    }
+    .hero-subtitle {
+      font-size: 18px;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 32px;
+      font-style: italic;
+      line-height: 1.5;
+    }
+    .hero-meta {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .hero-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .hero-meta-item .label {
+      font-family: 'Arial', sans-serif;
+      font-size: 10px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--green-light);
+    }
+    .hero-meta-item .value {
+      font-size: 16px;
+      color: white;
+      font-weight: 600;
+      font-family: 'Arial', sans-serif;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 6px;
+      font-family: 'Arial', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--green-light);
+      color: var(--green-deep);
+    }
+    .btn-primary:hover { background: #26a090; transform: translateY(-1px); }
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid rgba(255,255,255,0.5);
+    }
+    .btn-secondary:hover { border-color: white; background: rgba(255,255,255,0.1); }
+    .btn-gold {
+      background: var(--gold);
+      color: white;
+    }
+    .btn-gold:hover { background: #9a7222; transform: translateY(-1px); }
+
+    /* ── SECTION WRAPPER ── */
+    section { padding: 80px 40px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-family: 'Arial', sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--green-mid);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-size: clamp(22px, 3vw, 36px);
+      color: var(--green-deep);
+      margin-bottom: 16px;
+      line-height: 1.25;
+    }
+    .section-subtitle {
+      font-size: 17px;
+      color: var(--text-mid);
+      line-height: 1.7;
+      max-width: 720px;
+      margin-bottom: 48px;
+    }
+    .divider {
+      width: 56px;
+      height: 3px;
+      background: var(--green-light);
+      margin: 16px 0 32px;
+      border-radius: 2px;
+    }
+
+    /* ── ABOUT ── */
+    .about { background: white; }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .about-text p {
+      color: var(--text-mid);
+      line-height: 1.85;
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+    .axes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .axis-card {
+      background: var(--cream);
+      border-left: 3px solid var(--green-light);
+      padding: 16px;
+      border-radius: 0 8px 8px 0;
+    }
+    .axis-num {
+      font-family: 'Arial', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--green-mid);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .axis-card p {
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.5;
+    }
+
+    /* ── SPEAKERS ── */
+    .speakers { background: white; }
+    .speakers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-bottom: 20px;
+    }
+    .speaker-card {
+      background: var(--cream);
+      border-radius: 12px;
+      padding: 28px 22px;
+      box-shadow: 0 2px 12px var(--shadow);
+      text-align: center;
+      border-top: 4px solid var(--green-light);
+      transition: transform 0.2s;
+    }
+    .speaker-card:hover { transform: translateY(-3px); }
+    .speaker-card.ocean-sp { border-top-color: var(--ocean); }
+    .speaker-card.gold-sp { border-top-color: var(--gold); }
+    .speaker-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--green-pale);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      margin: 0 auto 16px;
+      border: 3px solid var(--green-light);
+    }
+    .speaker-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--green-deep);
+      margin-bottom: 5px;
+    }
+    .speaker-inst {
+      font-family: 'Arial', sans-serif;
+      font-size: 11px;
+      color: var(--text-light);
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+    .speaker-topic {
+      font-size: 12px;
+      color: var(--text-mid);
+      font-style: italic;
+      line-height: 1.5;
+      padding: 8px 12px;
+      background: white;
+      border-radius: 6px;
+      border-left: 2px solid var(--green-light);
+      text-align: left;
+    }
+    .speaker-card.ocean-sp .speaker-avatar { background: #e3eef8; border-color: var(--ocean-light); }
+    .speaker-card.gold-sp .speaker-avatar { background: #fef9ec; border-color: var(--gold); }
+    .speaker-card.ocean-sp .speaker-topic { border-left-color: var(--ocean-light); }
+    .speaker-card.gold-sp .speaker-topic { border-left-color: var(--gold); }
+
+    /* ── PROGRAM ── */
+    .program { background: var(--cream); }
+    .program-days {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .program-day {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 16px var(--shadow);
+    }
+    .program-day-header {
+      background: var(--green-mid);
+      padding: 20px 22px;
+      color: white;
+    }
+    .program-day-header.day2 { background: var(--ocean); }
+    .program-day-header.day3 { background: var(--green-deep); }
+    .program-day-num {
+      font-family: 'Arial', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.8;
+      margin-bottom: 4px;
+    }
+    .program-day-date {
+      font-size: 20px;
+      font-weight: 700;
+      font-family: 'Arial', sans-serif;
+      margin-bottom: 4px;
+    }
+    .program-day-theme {
+      font-size: 12px;
+      opacity: 0.85;
+      font-family: 'Arial', sans-serif;
+      line-height: 1.4;
+    }
+    .program-sessions {
+      padding: 18px 22px;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .program-session {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      padding: 10px 0;
+      border-bottom: 1px solid #f2f2f2;
+    }
+    .program-session:last-child { border-bottom: none; }
+    .session-type {
+      font-family: 'Arial', sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--green-mid);
+    }
+    .session-type.plenary { color: var(--ocean); }
+    .session-type.special { color: var(--gold); }
+    .session-title { font-size: 13px; color: var(--text-dark); line-height: 1.4; }
+    .program-note {
+      background: var(--green-pale);
+      border-left: 3px solid var(--green-light);
+      padding: 10px 14px;
+      margin: 0 22px 18px;
+      border-radius: 0 6px 6px 0;
+      font-size: 12px;
+      color: var(--green-deep);
+      font-family: 'Arial', sans-serif;
+      line-height: 1.5;
+    }
+    .program-note.gold-note {
+      background: #fef9ec;
+      border-left-color: var(--gold);
+      color: var(--earth);
+    }
+
+    /* ── PROJECTS ── */
+    .projects { background: var(--cream); }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .project-card {
+      background: white;
+      border-radius: 10px;
+      padding: 28px;
+      box-shadow: 0 2px 12px var(--shadow);
+      border-top: 4px solid var(--green-mid);
+    }
+    .project-card.ocean { border-top-color: var(--ocean); }
+    .project-card.gold { border-top-color: var(--gold); }
+    .project-icon { font-size: 28px; margin-bottom: 14px; }
+    .project-card h3 {
+      font-size: 16px;
+      color: var(--green-deep);
+      margin-bottom: 10px;
+    }
+    .project-card p { font-size: 13px; color: var(--text-mid); line-height: 1.6; }
+
+    /* ── DOCUMENTARY ── */
+    .documentary {
+      background: linear-gradient(135deg, var(--ocean) 0%, var(--green-deep) 100%);
+      color: white;
+    }
+    .doc-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .doc-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      color: var(--gold-light);
+      font-family: 'Arial', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      padding: 5px 14px;
+      border-radius: 3px;
+      margin-bottom: 18px;
+    }
+    .documentary .section-title { color: white; }
+    .documentary p { color: rgba(255,255,255,0.8); line-height: 1.75; font-size: 15px; margin-bottom: 16px; }
+    .doc-visual {
+      aspect-ratio: 16/9;
+      background: rgba(255,255,255,0.08);
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      color: rgba(255,255,255,0.6);
+      font-family: 'Arial', sans-serif;
+      font-size: 14px;
+    }
+    .doc-visual-icon { font-size: 48px; }
+    .doc-visual-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--gold-light);
+      text-align: center;
+      padding: 0 20px;
+      font-style: italic;
+      line-height: 1.4;
+    }
+
+    /* ── TABS ── */
+    .tabs-section { background: var(--green-pale); }
+    .tabs-nav {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 40px;
+      background: rgba(255,255,255,0.6);
+      padding: 6px;
+      border-radius: 10px;
+      width: fit-content;
+    }
+    .tab-btn {
+      padding: 12px 28px;
+      border: none;
+      background: transparent;
+      border-radius: 7px;
+      font-family: 'Arial', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--text-mid);
+      transition: all 0.2s;
+    }
+    .tab-btn.active {
+      background: var(--green-mid);
+      color: white;
+      box-shadow: 0 2px 8px rgba(30,64,87,0.35);
+    }
+    .tab-btn:not(.active):hover { background: rgba(255,255,255,0.8); color: var(--green-deep); }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* ── REGISTRATION ── */
+    .reg-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    .reg-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 16px var(--shadow);
+      transition: transform 0.2s;
+    }
+    .reg-card:hover { transform: translateY(-4px); }
+    .reg-card-header {
+      background: var(--green-mid);
+      padding: 24px;
+      color: white;
+      text-align: center;
+    }
+    .reg-card-header.grad { background: var(--ocean); }
+    .reg-card-header.prof { background: var(--green-deep); }
+    .reg-card-header h3 { font-size: 18px; margin-bottom: 6px; }
+    .reg-card-header .cat {
+      font-family: 'Arial', sans-serif;
+      font-size: 11px;
+      opacity: 0.8;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .reg-price {
+      padding: 20px 24px;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+    }
+    .reg-price .amount {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--green-deep);
+      font-family: 'Arial', sans-serif;
+    }
+    .reg-price .tbd {
+      font-size: 14px;
+      color: var(--text-light);
+      font-family: 'Arial', sans-serif;
+      background: #f5f5f5;
+      padding: 6px 14px;
+      border-radius: 20px;
+      display: inline-block;
+    }
+    .reg-features {
+      padding: 20px 24px;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .reg-features li {
+      display: flex;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--text-mid);
+      align-items: flex-start;
+    }
+    .reg-features li::before {
+      content: "✓";
+      color: var(--green-light);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .reg-card-footer { padding: 16px 24px 24px; }
+    .reg-card-footer .btn { width: 100%; justify-content: center; }
+
+    /* ── FORM ── */
+    .form-wrapper {
+      background: white;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 2px 16px var(--shadow);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .form-title {
+      font-size: 22px;
+      color: var(--green-deep);
+      margin-bottom: 8px;
+    }
+    .form-subtitle {
+      font-size: 14px;
+      color: var(--text-light);
+      font-family: 'Arial', sans-serif;
+      margin-bottom: 28px;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+    .form-group label {
+      font-family: 'Arial', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-mid);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      border: 1.5px solid #ddd;
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-family: 'Arial', sans-serif;
+      font-size: 14px;
+      color: var(--text-dark);
+      transition: border 0.2s;
+      background: white;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--green-light);
+    }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-note {
+      font-family: 'Arial', sans-serif;
+      font-size: 12px;
+      color: var(--text-light);
+      margin-top: 4px;
+    }
+    .required { color: #e74c3c; }
+
+    /* ── SUBMISSION ── */
+    .sub-info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+    .sub-info-card {
+      background: white;
+      border-radius: 10px;
+      padding: 24px;
+      box-shadow: 0 2px 12px var(--shadow);
+    }
+    .sub-info-card h4 {
+      font-size: 15px;
+      color: var(--green-deep);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .sub-info-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .sub-info-card ul li {
+      font-size: 13px;
+      color: var(--text-mid);
+      padding-left: 16px;
+      position: relative;
+      line-height: 1.5;
+    }
+    .sub-info-card ul li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--green-light);
+    }
+    .deadline-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--cream);
+      border: 1px solid var(--gold);
+      border-radius: 6px;
+      padding: 8px 16px;
+      font-family: 'Arial', sans-serif;
+      font-size: 13px;
+      color: var(--earth);
+      margin-bottom: 32px;
+    }
+
+    /* ── SUPPORT ── */
+    .support { background: white; }
+    .support-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+    .support-group h4 {
+      font-family: 'Arial', sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-light);
+      font-weight: 700;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #eee;
+    }
+    .logo-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+    /* Logo image items */
+    .logo-item {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 8px 14px;
+      transition: box-shadow 0.2s;
+    }
+    .logo-item:hover { box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    .logo-item.dark-bg { background: #1a1f24; border-color: #1a1f24; }
+    .logo-item.fiocruz-bg { background: #009846; border-color: #009846; }
+    .logo-item img { height: 36px; width: auto; object-fit: contain; display: block; max-width: 130px; }
+    /* Text fallback pills */
+    .logo-pill {
+      background: var(--cream);
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 8px 16px;
+      font-family: 'Arial', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-mid);
+    }
+    .logo-pill.green { border-color: var(--green-light); color: var(--green-deep); background: var(--green-pale); }
+    .logo-pill.blue { border-color: var(--ocean-light); color: var(--ocean); background: #e3eef8; }
+    .logo-pill.gold { border-color: var(--gold); color: var(--earth); background: #fef9ec; }
+
+    /* ── OBJETIVOS ── */
+    .objectives-section { background: var(--green-deep); padding: 80px 40px; color: white; }
+    .objectives-section .section-label { color: var(--gold-light); }
+    .objectives-section .section-title { color: white; }
+    .objectives-section .divider { background: var(--green-light); }
+    .obj-list { list-style: none; display: flex; flex-direction: column; gap: 22px; margin-top: 40px; max-width: 900px; margin-left: auto; margin-right: auto; }
+    .obj-item { display: flex; gap: 22px; align-items: flex-start; }
+    .obj-num {
+      flex-shrink: 0;
+      width: 46px; height: 46px;
+      background: var(--green-light);
+      color: var(--green-deep);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Georgia', serif;
+      font-size: 18px; font-weight: 700;
+    }
+    .obj-text { flex: 1; font-family: 'Arial', sans-serif; font-size: 15px; line-height: 1.75; color: rgba(255,255,255,0.88); padding-top: 10px; }
+
+    /* ── ORGANIZERS ── */
+    .organizers { background: var(--cream); }
+    .org-card.speaker { border-left-color: var(--gold); }
+    .org-role.speaker { color: var(--gold); }
+    .org-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .org-card {
+      background: white;
+      border-radius: 10px;
+      padding: 22px 24px;
+      box-shadow: 0 1px 8px var(--shadow);
+      border-left: 4px solid var(--green-light);
+    }
+    .org-card.coord { border-left-color: var(--ocean); }
+    .org-role {
+      font-family: 'Arial', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--green-mid);
+      margin-bottom: 6px;
+    }
+    .org-role.coord { color: var(--ocean); }
+    .org-card h4 { font-size: 15px; color: var(--green-deep); margin-bottom: 4px; }
+    .org-card .inst {
+      font-family: 'Arial', sans-serif;
+      font-size: 12px;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+    .org-card .email {
+      display: inline-block;
+      margin-top: 8px;
+      font-family: 'Arial', sans-serif;
+      font-size: 11px;
+      color: var(--green-mid);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--green-deep);
+      color: rgba(255,255,255,0.75);
+      padding: 50px 40px 30px;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-brand h3 {
+      font-size: 18px;
+      color: white;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .footer-brand p {
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    .footer-col h4 {
+      font-family: 'Arial', sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--green-light);
+      margin-bottom: 14px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul li a {
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      font-size: 13px;
+      font-family: 'Arial', sans-serif;
+      transition: color 0.2s;
+    }
+    .footer-col ul li a:hover { color: var(--green-light); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Arial', sans-serif;
+      font-size: 12px;
+    }
+    .cop-badge {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 4px;
+      padding: 4px 12px;
+      font-size: 11px;
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+
+    /* ── UTILITIES ── */
+    .text-center { text-align: center; }
+    .mt-8 { margin-top: 8px; }
+    .mt-16 { margin-top: 16px; }
+    .mt-24 { margin-top: 24px; }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--green-pale);
+      color: var(--green-deep);
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-family: 'Arial', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    /* ── LANG CONTENT ── */
+    [data-lang="en"] { display: none; }
+    body.lang-en [data-lang="en"] { display: unset; }
+    body.lang-en [data-lang="pt"] { display: none; }
+    .lang-block[data-lang="en"] { display: none; }
+    body.lang-en .lang-block[data-lang="en"] { display: block; }
+    body.lang-en .lang-block[data-lang="pt"] { display: none; }
+    .lang-flex[data-lang="en"] { display: none; }
+    body.lang-en .lang-flex[data-lang="en"] { display: flex; }
+    body.lang-en .lang-flex[data-lang="pt"] { display: none; }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero-content { padding: 60px 24px; }
+      section { padding: 60px 20px; }
+      .about-grid, .doc-inner, .sub-info { grid-template-columns: 1fr; }
+      .reg-grid, .projects-grid, .org-grid { grid-template-columns: 1fr; }
+      .speakers-grid, .program-days { grid-template-columns: 1fr; }
+      .support-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; }
+      .axes-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .topbar { padding: 8px 20px; font-size: 11px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="topbar-logos">
+      <span>🌊 Blue Carbon & Wetlands Co-benefits Conference</span>
+      <span>·</span>
+      <span>Unicamp</span>
+      <span>·</span>
+      <span>UFPA</span>
+      <span>·</span>
+      <span>UCSC</span>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('pt')">PT</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="#" class="nav-brand">
+      <div class="nav-brand-icon">🌊</div>
+      <div class="nav-brand-text">
+        <strong><span data-lang="pt">1ª Conferência de Co-benefícios do Carbono Azul e Zonas Úmidas</span><span data-lang="en">1st Blue Carbon &amp; Wetlands Co-benefits Conference</span></strong>
+        <span>Evento Científico Internacional Pré-COP31</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#sobre" class="nav-link active">
+        <span data-lang="pt">Sobre</span>
+        <span data-lang="en">About</span>
+      </a>
+      <a href="#programa" class="nav-link">
+        <span data-lang="pt">Programa</span>
+        <span data-lang="en">Program</span>
+      </a>
+      <a href="#local" class="nav-link">
+        <span data-lang="pt">Local</span>
+        <span data-lang="en">Venue</span>
+      </a>
+      <a href="#projetos" class="nav-link">
+        <span data-lang="pt">Projetos</span>
+        <span data-lang="en">Projects</span>
+      </a>
+      <a href="#participar" class="nav-link">
+        <span data-lang="pt">Organizadores</span>
+        <span data-lang="en">Organizers</span>
+      </a>
+      <a href="#inscricoes" class="nav-link nav-cta">
+        <span data-lang="pt">Inscrições / Submissão</span>
+        <span data-lang="en">Register / Submit</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span data-lang="pt">Evento Científico Internacional · Pré-COP31</span>
+        <span data-lang="en">International Scientific Event · Pre-COP31</span>
+      </div>
+      <h1>
+        <span data-lang="pt">Soluções Baseadas na Natureza em Zonas Úmidas e Carbono Azul</span>
+        <span data-lang="en">Nature-Based Solutions in Wetlands and Blue Carbon</span>
+        <em>
+          <span data-lang="pt">Para a Natureza e para as Pessoas</span>
+          <span data-lang="en">For Nature and for People</span>
+        </em>
+      </h1>
+      <p class="hero-subtitle">
+        <span data-lang="pt">Bragança, Pará — nos manguezais que guardam o mundo</span>
+        <span data-lang="en">Bragança, Pará — in the mangroves that hold the world</span>
+      </p>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <span class="label">
+            <span data-lang="pt">Data</span>
+            <span data-lang="en">Date</span>
+          </span>
+          <span class="value">6, 7 e 8 Nov 2026</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="label">
+            <span data-lang="pt">Local</span>
+            <span data-lang="en">Location</span>
+          </span>
+          <span class="value">Bragança, Pará, Brasil</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="label">
+            <span data-lang="pt">Modalidade</span>
+            <span data-lang="en">Format</span>
+          </span>
+          <span class="value">
+            <span data-lang="pt">Presencial</span>
+            <span data-lang="en">In-person</span>
+          </span>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <a href="#inscricoes" class="btn btn-primary">
+          <span>🎓</span>
+          <span data-lang="pt">Inscreva-se</span>
+          <span data-lang="en">Register</span>
+        </a>
+        <a href="#inscricoes" class="btn btn-gold" onclick="document.querySelector('.tab-btn[data-tab=submissao]').click(); return false;">
+          <span>📄</span>
+          <span data-lang="pt">Submeter Trabalho</span>
+          <span data-lang="en">Submit Work</span>
+        </a>
+        <a href="#sobre" class="btn btn-secondary">
+          <span data-lang="pt">Saiba mais</span>
+          <span data-lang="en">Learn more</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="about" id="sobre">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="section-label">
+            <span data-lang="pt">O Evento</span>
+            <span data-lang="en">The Event</span>
+          </p>
+          <h2 class="section-title">
+            <span data-lang="pt">Um fórum científico inédito, às vésperas da COP31</span>
+            <span data-lang="en">An unprecedented scientific forum, on the eve of COP31</span>
+          </h2>
+          <div class="divider"></div>
+          <p data-lang="pt">
+            Nos dias 6, 7 e 8 de novembro de 2026, às vésperas da 31ª Conferência das Partes em Antália, Turquia, Bragança receberá pesquisadores, comunidades costeiras, povos indígenas e representantes de agências internacionais — reunidos em uma das maiores concentrações de manguezais do planeta.
+          </p>
+          <p data-lang="en">
+            On November 6–8, 2026, on the eve of the 31st Conference of the Parties in Antalya, Turkey, Bragança will welcome researchers, coastal communities, indigenous peoples, and representatives of international agencies — gathered in one of the largest mangrove concentrations on Earth.
+          </p>
+          <p data-lang="pt">
+            O evento propõe debate interdisciplinar sobre o papel das zonas úmidas nas estratégias de mitigação e adaptação climática, articulando avanços das ciências da Terra e das ciências sociais aplicadas, com escuta ativa das comunidades das quatro Reservas Extrativistas Marinhas do litoral do Pará: Resex de Caeté-Taperaçu (Bragança/Ajuruteua), Tracuateua, Araí-Peroba (Augusto Corrêa) e Gurupi-Piriá (Viseu) — 131 mil hectares e o maior território contínuo de manguezais protegidos do mundo.
+          </p>
+          <p data-lang="en">
+            The event fosters interdisciplinary dialogue on the role of wetlands in climate mitigation and adaptation strategies, integrating advances from Earth sciences and applied social sciences, with active listening from communities across four Marine Extractivist Reserves along the Pará coastline: Caeté-Taperaçu (Bragança/Ajuruteua), Tracuateua, Araí-Peroba (Augusto Corrêa), and Gurupi-Piriá (Viseu) — 131,000 hectares and the world's largest continuous protected mangrove territory.
+          </p>
+        </div>
+        <div>
+          <p class="section-label">
+            <span data-lang="pt">Eixos Temáticos</span>
+            <span data-lang="en">Thematic Axes</span>
+          </p>
+          <p style="font-size:13px;color:var(--text-light);margin-bottom:18px;font-family:Arial,sans-serif;">
+            <span data-lang="pt">Fundados nos 13 co-benefícios do <em>Wetlands Co-benefits Framework</em></span>
+            <span data-lang="en">Grounded in the 13 co-benefits of the <em>Wetlands Co-benefits Framework</em></span>
+          </p>
+          <div class="axes-grid">
+            <div class="axis-card">
+              <div class="axis-num">Eixo 1</div>
+              <p>
+                <span data-lang="pt">Dinâmica do carbono — sequestro, emissões e estoques em zonas úmidas</span>
+                <span data-lang="en">Carbon dynamics — sequestration, emissions, and stocks in wetlands</span>
+              </p>
+            </div>
+            <div class="axis-card">
+              <div class="axis-num">Eixo 2</div>
+              <p>
+                <span data-lang="pt">Serviços ecossistêmicos e decisões de gestão</span>
+                <span data-lang="en">Ecosystem services and management decisions</span>
+              </p>
+            </div>
+            <div class="axis-card">
+              <div class="axis-num">Eixo 3</div>
+              <p>
+                <span data-lang="pt">Percepções humanas, governança e comunidades</span>
+                <span data-lang="en">Human perceptions, governance, and communities</span>
+              </p>
+            </div>
+            <div class="axis-card">
+              <div class="axis-num">Eixo 4</div>
+              <p>
+                <span data-lang="pt">Impactos climáticos e balanço de carbono futuro</span>
+                <span data-lang="en">Climate impacts and future carbon balance</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OBJETIVOS CIENTÍFICOS -->
+  <section class="objectives-section" id="objetivos">
+    <div class="section-inner" style="max-width:1080px;">
+      <p class="section-label" style="text-align:left;">
+        <span data-lang="pt">Propósito</span>
+        <span data-lang="en">Purpose</span>
+      </p>
+      <h2 class="section-title" style="text-align:left;">
+        <span data-lang="pt">Objetivos Científicos</span>
+        <span data-lang="en">Scientific Objectives</span>
+      </h2>
+      <div class="divider" style="margin:20px 0 32px;"></div>
+
+      <div style="max-width:800px;">
+
+        <!-- Texto -->
+        <div>
+          <p style="color:rgba(255,255,255,0.85);font-family:'Georgia',serif;font-size:16px;line-height:1.8;margin-bottom:28px;">
+            <span data-lang="pt">Esta conferência reúne pesquisadores de ciências naturais e sociais para consolidar o conhecimento sobre carbono azul, apresentar resultados inéditos do Wetlands Co-benefits Framework e propor caminhos concretos para as negociações climáticas da COP31.</span>
+            <span data-lang="en">This conference brings together researchers from natural and social sciences to consolidate knowledge on blue carbon, present new findings from the Wetlands Co-benefits Framework, and propose concrete pathways for COP31 climate negotiations.</span>
+          </p>
+
+          <div style="display:flex;flex-direction:column;gap:18px;">
+
+            <div style="display:flex;gap:16px;align-items:flex-start;">
+              <span style="flex-shrink:0;width:26px;height:26px;background:var(--green-mid);color:white;font-family:Arial,sans-serif;font-size:12px;font-weight:700;border-radius:50%;display:flex;align-items:center;justify-content:center;">1</span>
+              <p style="color:rgba(255,255,255,0.78);font-family:Arial,sans-serif;font-size:13.5px;line-height:1.7;margin:0;">
+                <span data-lang="pt">Consolidar o estado da arte sobre ciclos de carbono em zonas úmidas costeiras tropicais e subtropicais — sequestro, emissões, estoques e incertezas de mensuração.</span>
+                <span data-lang="en">Consolidate the state of the art on carbon cycles in tropical and subtropical coastal wetlands — sequestration, emissions, stocks, and measurement uncertainties.</span>
+              </p>
+            </div>
+
+            <div style="display:flex;gap:16px;align-items:flex-start;">
+              <span style="flex-shrink:0;width:26px;height:26px;background:var(--green-mid);color:white;font-family:Arial,sans-serif;font-size:12px;font-weight:700;border-radius:50%;display:flex;align-items:center;justify-content:center;">2</span>
+              <p style="color:rgba(255,255,255,0.78);font-family:Arial,sans-serif;font-size:13.5px;line-height:1.7;margin:0;">
+                <span data-lang="pt">Apresentar o Wetlands Co-benefits Framework (13 co-benefícios, 4 domínios) e os primeiros resultados de aplicação em sítios piloto em 6 países.</span>
+                <span data-lang="en">Present the Wetlands Co-benefits Framework (13 co-benefits, 4 domains) and first application results across pilot sites in 6 countries.</span>
+              </p>
+            </div>
+
+            <div style="display:flex;gap:16px;align-items:flex-start;">
+              <span style="flex-shrink:0;width:26px;height:26px;background:var(--green-mid);color:white;font-family:Arial,sans-serif;font-size:12px;font-weight:700;border-radius:50%;display:flex;align-items:center;justify-content:center;">3</span>
+              <p style="color:rgba(255,255,255,0.78);font-family:Arial,sans-serif;font-size:13.5px;line-height:1.7;margin:0;">
+                <span data-lang="pt">Discutir a governança dos mercados de carbono azul — integridade, inclusão de comunidades locais e alinhamento com as NDCs e o Artigo 6 do Acordo de Paris.</span>
+                <span data-lang="en">Discuss blue carbon market governance — integrity, inclusion of local communities, and alignment with NDCs and Article 6 of the Paris Agreement.</span>
+              </p>
+            </div>
+
+            <div style="display:flex;gap:16px;align-items:flex-start;">
+              <span style="flex-shrink:0;width:26px;height:26px;background:var(--green-mid);color:white;font-family:Arial,sans-serif;font-size:12px;font-weight:700;border-radius:50%;display:flex;align-items:center;justify-content:center;">4</span>
+              <p style="color:rgba(255,255,255,0.78);font-family:Arial,sans-serif;font-size:13.5px;line-height:1.7;margin:0;">
+                <span data-lang="pt">Integrar ciências naturais e sociais para explorar como o diálogo interdisciplinar transforma a pesquisa em Soluções Baseadas na Natureza.</span>
+                <span data-lang="en">Integrate natural and social sciences to explore how interdisciplinary dialogue transforms research on Nature-Based Solutions.</span>
+              </p>
+            </div>
+
+            <div style="display:flex;gap:16px;align-items:flex-start;">
+              <span style="flex-shrink:0;width:26px;height:26px;background:var(--green-mid);color:white;font-family:Arial,sans-serif;font-size:12px;font-weight:700;border-radius:50%;display:flex;align-items:center;justify-content:center;">5</span>
+              <p style="color:rgba(255,255,255,0.78);font-family:Arial,sans-serif;font-size:13.5px;line-height:1.7;margin:0;">
+                <span data-lang="pt">Fortalecer a colaboração científica Sul-Norte produzindo policy briefs para a COP31 e o IPCC.</span>
+                <span data-lang="en">Strengthen South-North scientific collaboration by producing policy briefs for COP31 and the IPCC.</span>
+              </p>
+            </div>
+
+            <div style="display:flex;gap:16px;align-items:flex-start;">
+              <span style="flex-shrink:0;width:26px;height:26px;background:var(--green-mid);color:white;font-family:Arial,sans-serif;font-size:12px;font-weight:700;border-radius:50%;display:flex;align-items:center;justify-content:center;">6</span>
+              <p style="color:rgba(255,255,255,0.78);font-family:Arial,sans-serif;font-size:13.5px;line-height:1.7;margin:0;">
+                <span data-lang="pt">Ampliar a comunicação científica sobre as comunidades costeiras do litoral do Pará e os desafios e soluções que emergem da convivência com os manguezais.</span>
+                <span data-lang="en">Expand science communication about Pará coastal communities and the challenges and solutions emerging from their relationship with mangroves.</span>
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMA -->
+  <section class="program" id="programa">
+    <div class="section-inner">
+      <p class="section-label">
+        <span data-lang="pt">Programação</span>
+        <span data-lang="en">Program</span>
+      </p>
+      <h2 class="section-title">
+        <span data-lang="pt">Três dias de ciência, território e política</span>
+        <span data-lang="en">Three days of science, territory, and policy</span>
+      </h2>
+      <div class="divider"></div>
+      <div class="program-days">
+
+        <!-- DIA 1 -->
+        <div class="program-day">
+          <div class="program-day-header">
+            <div class="program-day-num"><span data-lang="pt">Dia 1</span><span data-lang="en">Day 1</span></div>
+            <div class="program-day-date">6 Nov 2026</div>
+            <div class="program-day-theme">
+              <span data-lang="pt">Ciências da Terra</span>
+              <span data-lang="en">Earth Sciences</span>
+            </div>
+          </div>
+          <ul class="program-sessions">
+            <li class="program-session">
+              <span class="session-type plenary"><span data-lang="pt">Mesa de Abertura</span><span data-lang="en">Opening Panel</span></span>
+              <span class="session-title"><span data-lang="pt">SbN em zonas úmidas: carbono, economia e sociedade — com representantes das Resex, Comissão Europeia e ONU</span><span data-lang="en">NbS in wetlands: carbon, economy and society — with Resex, EU Commission and UN representatives</span></span>
+            </li>
+            <li class="program-session">
+              <span class="session-type"><span data-lang="pt">Eixo 1 — Dinâmica do carbono</span><span data-lang="en">Axis 1 — Carbon dynamics</span></span>
+              <span class="session-title"><span data-lang="pt">Sequestro, emissões, Deep Storage e exportação lateral ao oceano (34% do carbono inorgânico dissolvido global)</span><span data-lang="en">Sequestration, emissions, Deep Storage and lateral export to the ocean (34% of global dissolved inorganic carbon)</span></span>
+            </li>
+            <li class="program-session">
+              <span class="session-type"><span data-lang="pt">Eixo 2 — Serviços ecossistêmicos</span><span data-lang="en">Axis 2 — Ecosystem services</span></span>
+              <span class="session-title"><span data-lang="pt">Quantificação econômica dos co-benefícios; &gt;700 bilhões de juvenis de peixes por ano; proteção costeira 37–71% de atenuação de ondas</span><span data-lang="en">Economic quantification of co-benefits; &gt;700 billion juvenile fish/year; coastal protection 37–71% wave attenuation</span></span>
+            </li>
+          </ul>
+          <div class="program-note">🎬 <span data-lang="pt">Documentário em produção ao longo de todo o evento (Paje Cultural · RJ)</span><span data-lang="en">Documentary in production throughout the event (Paje Cultural · RJ)</span></div>
+        </div>
+
+        <!-- DIA 2 -->
+        <div class="program-day">
+          <div class="program-day-header day2">
+            <div class="program-day-num"><span data-lang="pt">Dia 2</span><span data-lang="en">Day 2</span></div>
+            <div class="program-day-date">7 Nov 2026</div>
+            <div class="program-day-theme">
+              <span data-lang="pt">Ciências Sociais &amp; Comunidades</span>
+              <span data-lang="en">Social Sciences &amp; Communities</span>
+            </div>
+          </div>
+          <ul class="program-sessions">
+            <li class="program-session">
+              <span class="session-type plenary"><span data-lang="pt">Mesa Interdisciplinar</span><span data-lang="en">Interdisciplinary Panel</span></span>
+              <span class="session-title"><span data-lang="pt">Ciência, território e ação pública em zonas úmidas</span><span data-lang="en">Science, territory, and public action in wetlands</span></span>
+            </li>
+            <li class="program-session">
+              <span class="session-type"><span data-lang="pt">Eixo 3 — Governança e comunidades</span><span data-lang="en">Axis 3 — Governance and communities</span></span>
+              <span class="session-title"><span data-lang="pt">Pescadores, marisqueiras, povos indígenas: co-benefícios sociais como indicadores de justiça climática. Multiplicador de emprego 2,79×</span><span data-lang="en">Fishers, shellfish gatherers, indigenous peoples: social co-benefits as climate justice indicators. Employment multiplier 2.79×</span></span>
+            </li>
+            <li class="program-session">
+              <span class="session-type special"><span data-lang="pt">Dia inteiro com as 4 Resex Marinhas</span><span data-lang="en">Full day with 4 Marine Extractivist Reserves</span></span>
+              <span class="session-title"><span data-lang="pt">Caeté-Taperaçu, Tracuateua, Araí-Peroba e Gurupi-Piriá — identificação participativa de indicadores de co-benefícios</span><span data-lang="en">Caeté-Taperaçu, Tracuateua, Araí-Peroba and Gurupi-Piriá — participatory identification of co-benefit indicators</span></span>
+            </li>
+            <li class="program-session">
+              <span class="session-type"><span data-lang="pt">Tarde — Sessão aberta ao público</span><span data-lang="en">Afternoon — Public session</span></span>
+              <span class="session-title"><span data-lang="pt">Ciência apresentada às comunidades em linguagem acessível; aberta a educadores, estudantes e organizações locais</span><span data-lang="en">Science presented to communities in accessible language; open to educators, students and local organizations</span></span>
+            </li>
+          </ul>
+          <div class="program-note gold-note">🍽️ <span data-lang="pt">Almoço compartilhado com comunidades, pesquisadores e representantes da UE, ONU e ICMBio</span><span data-lang="en">Shared lunch with communities, researchers and representatives from EU, UN and ICMBio</span></div>
+        </div>
+
+        <!-- DIA 3 -->
+        <div class="program-day">
+          <div class="program-day-header day3">
+            <div class="program-day-num"><span data-lang="pt">Dia 3</span><span data-lang="en">Day 3</span></div>
+            <div class="program-day-date">8 Nov 2026</div>
+            <div class="program-day-theme">
+              <span data-lang="pt">Framework, Política &amp; Resultados</span>
+              <span data-lang="en">Framework, Policy &amp; Outcomes</span>
+            </div>
+          </div>
+          <ul class="program-sessions">
+            <li class="program-session">
+              <span class="session-type"><span data-lang="pt">Eixo 4 — Mudanças climáticas</span><span data-lang="en">Axis 4 — Climate change</span></span>
+              <span class="session-title"><span data-lang="pt">Modelos ecossistêmicos e cenários de sequestro sob diferentes estratégias de restauração</span><span data-lang="en">Ecosystem models and sequestration scenarios under different restoration strategies</span></span>
+            </li>
+            <li class="program-session">
+              <span class="session-type"><span data-lang="pt">Sessão — Wetlands Co-benefits Framework</span><span data-lang="en">Session — Wetlands Co-benefits Framework</span></span>
+              <span class="session-title"><span data-lang="pt">13 co-benefícios, 4 domínios, 6 outputs de governança — primeiros resultados comparativos dos 6 países do consórcio Beyond Carbon</span><span data-lang="en">13 co-benefits, 4 domains, 6 governance outputs — first comparative results from the 6 Beyond Carbon consortium countries</span></span>
+            </li>
+            <li class="program-session">
+              <span class="session-type"><span data-lang="pt">Sessão — Financiamento climático e NDCs</span><span data-lang="en">Session — Climate finance and NDCs</span></span>
+              <span class="session-title"><span data-lang="pt">Blue NDC Challenge: 17 países signatários (co-lançado por Brasil e França na UNOC 2025). Turquia preside a COP31 na semana seguinte</span><span data-lang="en">Blue NDC Challenge: 17 signatory countries (co-launched by Brazil and France at UNOC 2025). Turkey presides COP31 the following week</span></span>
+            </li>
+            <li class="program-session">
+              <span class="session-type plenary"><span data-lang="pt">Mesa de Encerramento</span><span data-lang="en">Closing Panel</span></span>
+              <span class="session-title"><span data-lang="pt">"Como a integração entre ciências naturais e sociais está remodelando a pesquisa em SbN?" — Stanford, UC e universidades brasileiras parceiras</span><span data-lang="en">"How is the integration of natural and social sciences reshaping NbS research?" — Stanford, UC and Brazilian partner universities</span></span>
+            </li>
+            <li class="program-session">
+              <span class="session-type special"><span data-lang="pt">Workshop — Declaração de Bragança</span><span data-lang="en">Workshop — Bragança Declaration</span></span>
+              <span class="session-title"><span data-lang="pt">Construção coletiva do documento de posicionamento entregue à presidência da COP31</span><span data-lang="en">Collective drafting of the position document to be delivered to COP31 presidency</span></span>
+            </li>
+          </ul>
+          <div class="program-note">📋 <span data-lang="pt">Resultados: Declaração de Bragança, base de dados FAIR, indicadores prontos para NDCs, toolkit para comunidades</span><span data-lang="en">Outputs: Bragança Declaration, FAIR open dataset, NDC-ready indicators, community toolkit</span></div>
+        </div>
+
+      </div>
+      <p style="font-family:Arial,sans-serif;font-size:12px;color:var(--text-light);margin-top:20px;text-align:center;">
+        <span data-lang="pt">Programação detalhada será publicada em setembro de 2026 · Previsão: 150–230 participantes nacionais e internacionais</span>
+        <span data-lang="en">Detailed schedule to be published in September 2026 · Expected attendance: 150–230 national and international participants</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- LOCAL DO EVENTO -->
+  <section style="background:var(--green-deep);padding:80px 40px;" id="local">
+    <div class="section-inner">
+      <p class="section-label" style="color:var(--green-light);">
+        <span data-lang="pt">Local do Evento</span>
+        <span data-lang="en">Event Venue</span>
+      </p>
+      <h2 class="section-title" style="color:white;margin-bottom:6px;">
+        <span data-lang="pt">Bragança, Pará, Brasil</span>
+        <span data-lang="en">Bragança, Pará, Brazil</span>
+      </h2>
+      <p style="color:rgba(255,255,255,0.6);font-family:Arial,sans-serif;font-size:13px;margin-bottom:0;">
+        <span data-lang="pt">As comunidades que guardam os manguezais</span>
+        <span data-lang="en">The communities that protect the mangroves</span>
+      </p>
+      <div class="divider" style="background:var(--gold-light);"></div>
+
+      <!-- Fotos -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:960px;margin:0 auto 48px;">
+        <div style="border-radius:12px;overflow:hidden;position:relative;">
+          <img src="https://images.unsplash.com/photo-1588837687759-11cb985d88af?w=900&q=85&auto=format&fit=crop"
+            alt="Comunidade ribeirinha da Amazônia"
+            style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;transition:transform 0.4s;"
+            onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.78));padding:28px 20px 18px;">
+            <p style="color:white;font-size:15px;font-weight:600;margin-bottom:3px;">
+              <span data-lang="pt">Comunidade ribeirinha</span><span data-lang="en">Riverside community</span>
+            </p>
+            <p style="color:rgba(255,255,255,0.7);font-size:11px;font-family:Arial,sans-serif;">
+              <span data-lang="pt">Amazônia, Brasil · Foto: Deb Dowd / Unsplash</span>
+              <span data-lang="en">Amazon, Brazil · Photo: Deb Dowd / Unsplash</span>
+            </p>
+          </div>
+        </div>
+        <div style="border-radius:12px;overflow:hidden;position:relative;">
+          <img src="https://images.unsplash.com/photo-1520681019112-66f09062a077?w=900&q=85&auto=format&fit=crop"
+            alt="Barcos de pesca tradicionais na orla paraense"
+            style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;transition:transform 0.4s;"
+            onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.78));padding:28px 20px 18px;">
+            <p style="color:white;font-size:15px;font-weight:600;margin-bottom:3px;">
+              <span data-lang="pt">Barcos de pesca tradicionais — orla da comunidade paraense</span>
+              <span data-lang="en">Traditional fishing boats — Pará coastal community</span>
+            </p>
+            <p style="color:rgba(255,255,255,0.7);font-size:11px;font-family:Arial,sans-serif;">
+              <span data-lang="pt">Pará, Brasil · Foto: Thiago Japyassu / Unsplash</span>
+              <span data-lang="en">Pará, Brazil · Photo: Thiago Japyassu / Unsplash</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mapa interativo -->
+      <div style="max-width:960px;margin:0 auto 48px;">
+        <p style="color:var(--gold-light);font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px;">
+          <span data-lang="pt">📍 Localização</span><span data-lang="en">📍 Location</span>
+        </p>
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-47.15%2C-1.15%2C-46.60%2C-0.82&layer=mapnik&marker=-0.9636%2C-46.7744"
+          style="width:100%;height:360px;border:none;border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,0.35);"
+          title="Bragança, Pará, Brasil"
+          loading="lazy">
+        </iframe>
+        <p style="color:rgba(255,255,255,0.5);font-family:Arial,sans-serif;font-size:11px;margin-top:8px;">
+          <span data-lang="pt">Bragança está a ≈ 210 km de Belém (3h de carro pela PA-136 / BR-316) e a ≈ 25 min do Aeroporto de Belém via conexão rodoviária.</span>
+          <span data-lang="en">Bragança is ≈ 210 km from Belém (3h by car via PA-136 / BR-316) and ≈ 25 min from Belém Airport via road connection.</span>
+        </p>
+      </div>
+
+      <!-- Fatos: Gastronomia + Manguezais + Hotéis -->
+      <div style="max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+        <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:24px 28px;">
+          <div style="font-size:26px;margin-bottom:10px;">🏆</div>
+          <p style="color:var(--gold-light);font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;">
+            <span data-lang="pt">Gastronomia paraense</span><span data-lang="en">Pará cuisine</span>
+          </p>
+          <p style="color:white;font-size:14px;font-weight:600;font-family:'Georgia',serif;margin-bottom:8px;line-height:1.4;">
+            <span data-lang="pt">Bragança é famosa por sua culinária de frutos do mar frescos, direto das Resex Marinhas da costa amazônica.</span>
+            <span data-lang="en">Bragança is known for its fresh seafood cuisine, straight from the Marine Resex reserves of the Amazon coast.</span>
+          </p>
+          <p style="color:rgba(255,255,255,0.6);font-size:12px;font-family:Arial,sans-serif;line-height:1.6;">
+            <span data-lang="pt">Caranguejo-uçá, camarão fresco, ostras e peixe pescado no dia são os protagonistas da mesa local. A culinária paraense também se destaca pelo uso do tucupi, jambu, açaí e cupuaçu — ingredientes únicos da Amazônia.</span>
+            <span data-lang="en">Uçá crab, fresh shrimp, oysters, and same-day-caught fish are the stars of the local table. Pará cuisine also features tucupi, jambu, açaí, and cupuaçu — unique ingredients of the Amazon.</span>
+          </p>
+        </div>
+        <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:24px 28px;">
+          <div style="font-size:26px;margin-bottom:10px;">🌊</div>
+          <p style="color:var(--gold-light);font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;">
+            <span data-lang="pt">Os maiores manguezais do mundo</span><span data-lang="en">The world's largest mangroves</span>
+          </p>
+          <p style="color:white;font-size:14px;font-weight:600;font-family:'Georgia',serif;margin-bottom:8px;line-height:1.4;">
+            <span data-lang="pt">A costa do Pará abriga 131 mil hectares de manguezais protegidos — o maior território contínuo de manguezais do planeta, armazenando até 5× mais carbono por hectare do que uma floresta tropical terrestre.</span>
+            <span data-lang="en">The Pará coast holds 131,000 hectares of protected mangroves — the world's largest continuous mangrove territory, storing up to 5× more carbon per hectare than a tropical terrestrial forest.</span>
+          </p>
+          <p style="color:rgba(255,255,255,0.6);font-size:12px;font-family:Arial,sans-serif;line-height:1.6;">
+            <span data-lang="pt">Os manguezais amazônicos armazenam até 5× mais carbono por hectare do que florestas tropicais terrestres — e seguem excluídos dos mecanismos de pagamento por resultados da UNFCCC.</span>
+            <span data-lang="en">Amazon mangroves store up to 5× more carbon per hectare than tropical land forests — and remain excluded from UNFCCC results-based payment mechanisms.</span>
+          </p>
+        </div>
+        <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:24px 28px;grid-column:1/-1;">
+          <div style="font-size:26px;margin-bottom:10px;">🏨</div>
+          <p style="color:var(--gold-light);font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px;">
+            <span data-lang="pt">Hospedagem e Restaurantes</span><span data-lang="en">Accommodation & Restaurants</span>
+          </p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div>
+              <p style="color:var(--green-light);font-family:Arial,sans-serif;font-size:12px;font-weight:700;margin-bottom:8px;">
+                <span data-lang="pt">🏨 Hotéis e Pousadas em Bragança</span><span data-lang="en">🏨 Hotels & Pousadas in Bragança</span>
+              </p>
+              <p style="color:rgba(255,255,255,0.75);font-family:Arial,sans-serif;font-size:12px;line-height:1.7;">
+                <span data-lang="pt">Hotel Beira Rio · Pousada Ajuruteua · Hotel Nacional Bragança<br>Pousadas na Praia de Ajuruteua (20 km do centro)<br><em style="color:rgba(255,255,255,0.5);">Lista completa será disponibilizada em breve.</em></span>
+                <span data-lang="en">Hotel Beira Rio · Pousada Ajuruteua · Hotel Nacional Bragança<br>Pousadas at Ajuruteua Beach (20 km from center)<br><em style="color:rgba(255,255,255,0.5);">Full list coming soon.</em></span>
+              </p>
+            </div>
+            <div>
+              <p style="color:var(--green-light);font-family:Arial,sans-serif;font-size:12px;font-weight:700;margin-bottom:8px;">
+                <span data-lang="pt">🍽️ Onde comer em Bragança</span><span data-lang="en">🍽️ Where to eat in Bragança</span>
+              </p>
+              <p style="color:rgba(255,255,255,0.75);font-family:Arial,sans-serif;font-size:12px;line-height:1.7;">
+                <span data-lang="pt">Restaurante do Peixe · Cantina do Caranguejo · Quiosques da Praia de Ajuruteua<br><em style="color:rgba(255,255,255,0.5);">Gastronomia de frutos do mar frescos direto das Resex Marinhas.</em></span>
+                <span data-lang="en">Restaurante do Peixe · Cantina do Caranguejo · Quiosques at Ajuruteua Beach<br><em style="color:rgba(255,255,255,0.5);">Fresh seafood cuisine direct from the Marine Resex reserves.</em></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJETOS -->
+  <section class="projects" id="projetos">
+    <div class="section-inner">
+      <p class="section-label">
+        <span data-lang="pt">Projetos de Pesquisa</span>
+        <span data-lang="en">Research Projects</span>
+      </p>
+      <h2 class="section-title">
+        <span data-lang="pt">Iniciativas que fundamentam o evento</span>
+        <span data-lang="en">The initiatives underpinning the event</span>
+      </h2>
+      <div class="divider"></div>
+      <div class="projects-grid" style="grid-template-columns: repeat(2,1fr);">
+        <div class="project-card coord" style="border-top-color:var(--ocean);">
+          <div class="project-icon">🌐</div>
+          <h3>Wetlands Project</h3>
+          <p>
+            <span data-lang="pt">Projeto guarda-chuva coordenado pela Dra. Adina Paytan (UCSC). Investiga a dinâmica do carbono, os serviços ecossistêmicos e a governança de zonas úmidas em escala global. Os projetos Wetlands Co-benefits e Beyond Carbon se desenvolvem no seu âmbito.</span>
+            <span data-lang="en">Umbrella project coordinated by Dr. Adina Paytan (UCSC). Investigates carbon dynamics, ecosystem services, and governance of wetlands at global scale. The Wetlands Co-benefits and Beyond Carbon projects are developed within its scope.</span>
+          </p>
+          <a href="https://wetlands.ucsc.edu/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-family:Arial,sans-serif;font-size:12px;font-weight:700;color:var(--ocean);text-decoration:none;">
+            <span data-lang="pt">Visitar site do projeto →</span>
+            <span data-lang="en">Visit project website →</span>
+          </a>
+        </div>
+        <div class="project-card">
+          <div class="project-icon">🌍</div>
+          <h3>Wetlands Co-benefits</h3>
+          <p>
+            <span data-lang="pt">Financiado pela FAPESP, coordenado pela Unicamp (Carolina Bueno) em parceria com a UCSC (Adina Paytan). Criou o <em>Wetlands Co-benefits Framework</em> com 13 co-benefícios nos domínios Biodiversidade &amp; Natureza, Economia &amp; Produção, Clima e Social — base científica deste evento.</span>
+            <span data-lang="en">Funded by FAPESP, coordinated by Unicamp (Carolina Bueno) in partnership with UCSC (Adina Paytan). Created the <em>Wetlands Co-benefits Framework</em> with 13 co-benefits across four domains: Biodiversity &amp; Nature, Economy &amp; Production, Climate, and Social — the scientific foundation of this event.</span>
+          </p>
+          <p style="font-family:Arial,sans-serif;font-size:12px;color:var(--text-light);margin-top:12px;font-style:italic;">
+            <span data-lang="pt">Site em construção — em breve disponível.</span>
+            <span data-lang="en">Website coming soon.</span>
+          </p>
+        </div>
+        <div class="project-card ocean">
+          <div class="project-icon">🤝</div>
+          <h3>Beyond Carbon · Belmont Forum</h3>
+          <p>
+            <span data-lang="pt">Consórcio internacional aprovado pelo Belmont Forum (€942.000, 2027–2030). Aplica o framework em 6 países e 6 sítios piloto: manguezais da Amazônia (Brasil), Blue Carbon Canada, prados marinhos do Mar Interior de Seto (Japão), manguezais de Taiwan, quelpo da Noruega e marismas do Delta de Göksu (Turquia).</span>
+            <span data-lang="en">International consortium approved by the Belmont Forum (€942,000, 2027–2030). Applies the framework at 6 pilot sites across 6 countries: Amazon coastal mangroves (Brazil), Blue Carbon Canada, Seto Inland Sea seagrass meadows (Japan), Taiwan mangroves, Norwegian kelp forests, and Göksu Delta salt marshes (Turkey).</span>
+          </p>
+          <a href="https://www.belmontforum.org/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-family:Arial,sans-serif;font-size:12px;font-weight:700;color:var(--ocean);text-decoration:none;">
+            <span data-lang="pt">Visitar Belmont Forum →</span>
+            <span data-lang="en">Visit Belmont Forum →</span>
+          </a>
+        </div>
+        <div class="project-card gold">
+          <div class="project-icon">🌱</div>
+          <h3>
+            <span data-lang="pt">Mangues da Amazônia</span>
+            <span data-lang="en">Amazon Mangroves</span>
+          </h3>
+          <p>
+            <span data-lang="pt">Laboratório de Ecologia de Manguezal (UFPA), liderado pelo Prof. Dr. Marcus Emanuel Barroncas Fernandes. Foco nas Resex Marinhas do litoral do Pará — um dos sistemas de manguezais mais densos em carbono da Terra, ainda excluídos dos pagamentos UNFCCC baseados em resultados.</span>
+            <span data-lang="en">Mangrove Ecology Laboratory (UFPA), led by Prof. Dr. Marcus Emanuel Barroncas Fernandes. Focused on the Marine Resex reserves along the Pará coast — one of the most carbon-dense mangrove systems on Earth, yet still excluded from UNFCCC results-based payments.</span>
+          </p>
+          <a href="https://manguesdaamazonia.org.br/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-family:Arial,sans-serif;font-size:12px;font-weight:700;color:var(--gold);text-decoration:none;">
+            <span data-lang="pt">Visitar site do projeto →</span>
+            <span data-lang="en">Visit project website →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCUMENTARIO -->
+  <section class="documentary" id="documentario">
+    <div class="section-inner">
+      <div class="doc-inner">
+        <div>
+          <div class="doc-badge">
+            <span data-lang="pt">🎬 Produção Cultural</span>
+            <span data-lang="en">🎬 Cultural Production</span>
+          </div>
+          <h2 class="section-title">
+            <span data-lang="pt">Um documentário que nasce no evento</span>
+            <span data-lang="en">A documentary born at the event</span>
+          </h2>
+          <div class="divider" style="background:var(--gold-light)"></div>
+          <p data-lang="pt">
+            Durante o evento, a <strong>Paje Cultural (RJ)</strong> produzirá o documentário <em>"Além do carbono: o que os manguezais guardam para o mundo"</em> — com filmagens no evento e nas comunidades das Reservas Extrativistas Marinhas do litoral do Pará.
+          </p>
+          <p data-lang="en">
+            During the event, <strong>Paje Cultural (RJ)</strong> will produce the documentary <em>"Beyond Carbon: What Mangroves Hold for the World"</em> — filmed at the event and in the communities of the Marine Extractivist Reserves along the Pará coast.
+          </p>
+          <p data-lang="pt">
+            Em parceria com a UFPA e o Laboratório de Ecologia de Manguezal. O documentário será submetido a festivais de cinema internacionais.
+          </p>
+          <p data-lang="en">
+            In partnership with UFPA and the Mangrove Ecology Laboratory. The documentary will be submitted to international film festivals.
+          </p>
+          <div class="chip mt-16" style="background:rgba(255,255,255,0.1);color:var(--gold-light);border:1px solid rgba(255,255,255,0.2);">
+            <span data-lang="pt">🏆 Previsto para festivais internacionais de cinema</span>
+            <span data-lang="en">🏆 Targeting international film festivals</span>
+          </div>
+        </div>
+        <div class="doc-visual">
+          <div class="doc-visual-icon">🎥</div>
+          <div class="doc-visual-title">
+            <span data-lang="pt">"Além do carbono:<br>o que os manguezais<br>guardam para o mundo"</span>
+            <span data-lang="en">"Beyond Carbon:<br>What Mangroves Hold<br>for the World"</span>
+          </div>
+          <span style="font-size:12px;opacity:0.6;">Paje Cultural · RJ</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSCRIÇÕES / SUBMISSÃO -->
+  <section class="tabs-section" id="inscricoes">
+    <div class="section-inner">
+      <p class="section-label">
+        <span data-lang="pt">Participação</span>
+        <span data-lang="en">Participation</span>
+      </p>
+      <h2 class="section-title">
+        <span data-lang="pt">Inscrições e Submissão de Trabalhos</span>
+        <span data-lang="en">Registration and Work Submission</span>
+      </h2>
+      <div class="divider"></div>
+
+      <div class="tabs-nav">
+        <button class="tab-btn active" data-tab="inscricoes" onclick="switchTab('inscricoes')">
+          <span>🎓</span>
+          <span data-lang="pt"> Inscrições</span>
+          <span data-lang="en"> Registration</span>
+        </button>
+        <button class="tab-btn" data-tab="submissao" onclick="switchTab('submissao')">
+          <span>📄</span>
+          <span data-lang="pt"> Submissão de Trabalhos</span>
+          <span data-lang="en"> Work Submission</span>
+        </button>
+      </div>
+
+      <!-- TAB: INSCRIÇÕES -->
+      <div class="tab-content active" id="tab-inscricoes">
+        <div class="form-wrapper">
+          <h3 class="form-title">
+            <span data-lang="pt">Formulário de Inscrição</span>
+            <span data-lang="en">Registration Form</span>
+          </h3>
+          <p class="form-subtitle">
+            <span data-lang="pt">Preencha os dados abaixo. Você receberá uma confirmação por e-mail. Para submeter um trabalho, use a aba ao lado.</span>
+            <span data-lang="en">Fill in the details below. You will receive a confirmation by email. To submit a paper, use the next tab.</span>
+          </p>
+          <div class="form-row">
+            <div class="form-group">
+              <label>
+                <span data-lang="pt">Nome completo <span class="required">*</span></span>
+                <span data-lang="en">Full name <span class="required">*</span></span>
+              </label>
+              <input type="text" placeholder="Ex: Carolina Bueno" />
+            </div>
+            <div class="form-group">
+              <label>
+                <span data-lang="pt">E-mail <span class="required">*</span></span>
+                <span data-lang="en">Email <span class="required">*</span></span>
+              </label>
+              <input type="email" placeholder="email@instituicao.br" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>
+                <span data-lang="pt">Categoria <span class="required">*</span></span>
+                <span data-lang="en">Category <span class="required">*</span></span>
+              </label>
+              <select id="cat-select">
+                <option value="">Selecione sua categoria...</option>
+                <option value="graduacao">Estudante de Graduação / Undergraduate Student</option>
+                <option value="posgraduacao">Estudante de Pós-Graduação / Graduate Student</option>
+                <option value="profissional">Pesquisador / Profissional</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>
+                <span data-lang="pt">Instituição <span class="required">*</span></span>
+                <span data-lang="en">Institution <span class="required">*</span></span>
+              </label>
+              <input type="text" placeholder="Unicamp / UFPA / UCSC..." />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>
+                <span data-lang="pt">País <span class="required">*</span></span>
+                <span data-lang="en">Country <span class="required">*</span></span>
+              </label>
+              <input type="text" placeholder="Brasil" />
+            </div>
+            <div class="form-group">
+              <label>
+                <span data-lang="pt">Área de atuação</span>
+                <span data-lang="en">Field of expertise</span>
+              </label>
+              <input type="text" placeholder="Ecologia / Economia / Ciências Sociais..." />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>
+              <span data-lang="pt">Necessidades especiais ou observações</span>
+              <span data-lang="en">Special needs or notes</span>
+            </label>
+            <textarea placeholder="..."></textarea>
+          </div>
+          <button class="btn btn-primary mt-8" style="font-size:15px;padding:14px 32px;">
+            <span>✓</span>
+            <span data-lang="pt">Enviar inscrição</span>
+            <span data-lang="en">Submit registration</span>
+          </button>
+          <p class="form-note mt-8">
+            <span data-lang="pt">Os dados serão tratados de acordo com a LGPD.</span>
+            <span data-lang="en">Data will be handled in accordance with Brazilian data protection law (LGPD).</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- TAB: SUBMISSÃO -->
+      <div class="tab-content" id="tab-submissao">
+        <div class="sub-info">
+          <div class="sub-info-card">
+            <h4>
+              <span>📋</span>
+              <span data-lang="pt">Formatos aceitos</span>
+              <span data-lang="en">Accepted formats</span>
+            </h4>
+            <ul>
+              <li><span data-lang="pt">Pôster científico (formato A0)</span><span data-lang="en">Scientific poster (A0 format)</span></li>
+              <li><span data-lang="pt">Apresentação oral (15 min + 5 min Q&amp;A)</span><span data-lang="en">Oral presentation (15 min + 5 min Q&amp;A)</span></li>
+            </ul>
+          </div>
+          <div class="sub-info-card">
+            <h4>
+              <span>🗂️</span>
+              <span data-lang="pt">Eixos temáticos para submissão</span>
+              <span data-lang="en">Thematic axes for submission</span>
+            </h4>
+            <ul>
+              <li><span data-lang="pt">Dinâmica do carbono em zonas úmidas</span><span data-lang="en">Carbon dynamics in wetlands</span></li>
+              <li><span data-lang="pt">Serviços ecossistêmicos e gestão</span><span data-lang="en">Ecosystem services and management</span></li>
+              <li><span data-lang="pt">Governança, comunidades e percepções</span><span data-lang="en">Governance, communities, and perceptions</span></li>
+              <li><span data-lang="pt">Mudanças climáticas e balanço de carbono</span><span data-lang="en">Climate change and carbon balance</span></li>
+            </ul>
+          </div>
+          <div class="sub-info-card">
+            <h4>
+              <span>🌐</span>
+              <span data-lang="pt">Idiomas aceitos</span>
+              <span data-lang="en">Accepted languages</span>
+            </h4>
+            <ul>
+              <li><span data-lang="pt">Português</span><span data-lang="en">Portuguese</span></li>
+              <li><span data-lang="pt">Inglês</span><span data-lang="en">English</span></li>
+            </ul>
+            <p style="font-size:12px;color:var(--text-light);margin-top:8px;font-style:italic;">
+              <span data-lang="pt">O arquivo do trabalho pode ser enviado em inglês ou português.</span>
+              <span data-lang="en">Work files may be submitted in English or Portuguese.</span>
+            </p>
+          </div>
+          <div class="sub-info-card">
+            <h4>
+              <span>📅</span>
+              <span data-lang="pt">Prazos</span>
+              <span data-lang="en">Deadlines</span>
+            </h4>
+            <ul>
+              <li><span data-lang="pt">Submissão de trabalhos: <strong>8 de setembro de 2026</strong></span><span data-lang="en">Work submission: <strong>September 8, 2026</strong></span></li>
+              <li><span data-lang="pt">Notificação de aceite: <strong>20 de setembro de 2026</strong></span><span data-lang="en">Acceptance notification: <strong>September 20, 2026</strong></span></li>
+              <li><span data-lang="pt">Versão final: <strong>a definir</strong></span><span data-lang="en">Final version: <strong>TBD</strong></span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="form-wrapper">
+          <h3 class="form-title">
+            <span data-lang="pt">Formulário de Submissão</span>
+            <span data-lang="en">Submission Form</span>
+          </h3>
+          <p class="form-subtitle">
+            <span data-lang="pt">Submeta seu trabalho para avaliação. Você receberá confirmação por e-mail.</span>
+            <span data-lang="en">Submit your work for review. You will receive a confirmation by email.</span>
+          </p>
+          <div class="form-row">
+            <div class="form-group">
+              <label><span data-lang="pt">Autor principal <span class="required">*</span></span><span data-lang="en">Lead author <span class="required">*</span></span></label>
+              <input type="text" placeholder="Nome completo" />
+            </div>
+            <div class="form-group">
+              <label><span data-lang="pt">E-mail <span class="required">*</span></span><span data-lang="en">Email <span class="required">*</span></span></label>
+              <input type="email" placeholder="email@instituicao.br" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label><span data-lang="pt">Coautores</span><span data-lang="en">Co-authors</span></label>
+            <input type="text" placeholder="Nome 1 (Instituição); Nome 2 (Instituição)..." />
+          </div>
+          <div class="form-group">
+            <label><span data-lang="pt">Título do trabalho <span class="required">*</span></span><span data-lang="en">Work title <span class="required">*</span></span></label>
+            <input type="text" />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label><span data-lang="pt">Eixo temático <span class="required">*</span></span><span data-lang="en">Thematic axis <span class="required">*</span></span></label>
+              <select>
+                <option value="" data-pt="Selecione..." data-en="Select...">Selecione...</option>
+                <option data-pt="Eixo 1 — Dinâmica do carbono" data-en="Axis 1 — Carbon dynamics">Eixo 1 — Dinâmica do carbono</option>
+                <option data-pt="Eixo 2 — Serviços ecossistêmicos" data-en="Axis 2 — Ecosystem services">Eixo 2 — Serviços ecossistêmicos</option>
+                <option data-pt="Eixo 3 — Governança e comunidades" data-en="Axis 3 — Governance and communities">Eixo 3 — Governança e comunidades</option>
+                <option data-pt="Eixo 4 — Mudanças climáticas" data-en="Axis 4 — Climate change">Eixo 4 — Mudanças climáticas</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label><span data-lang="pt">Formato <span class="required">*</span></span><span data-lang="en">Format <span class="required">*</span></span></label>
+              <select>
+                <option value="" data-pt="Selecione..." data-en="Select...">Selecione...</option>
+                <option data-pt="Pôster científico (formato A0)" data-en="Scientific poster (A0 format)">Pôster científico (formato A0)</option>
+                <option data-pt="Apresentação oral (15 min + 5 min Q&A)" data-en="Oral presentation (15 min + 5 min Q&A)">Apresentação oral (15 min + 5 min Q&A)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label><span data-lang="pt">Arquivo do trabalho <span class="required">*</span></span><span data-lang="en">Work file <span class="required">*</span></span></label>
+            <input type="file" style="padding:8px;" accept=".pdf,.docx" />
+            <p class="form-note"><span data-lang="pt">PDF ou DOCX, máx. 10 MB. O arquivo pode ser enviado em inglês ou português.</span><span data-lang="en">PDF or DOCX, max. 10 MB. File may be in English or Portuguese.</span></p>
+          </div>
+          <button class="btn btn-gold mt-8" style="font-size:15px;padding:14px 32px;">
+            <span>📤</span>
+            <span data-lang="pt">Enviar submissão</span>
+            <span data-lang="en">Submit</span>
+          </button>
+          <p class="form-note mt-8">
+            <span data-lang="pt">Todas as submissões passam por revisão por pares antes da notificação de aceite.</span>
+            <span data-lang="en">All submissions go through peer review before acceptance notification.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMITÊ ORGANIZADOR -->
+  <section class="organizers" id="participar">
+    <div class="section-inner">
+      <p class="section-label">
+        <span data-lang="pt">Comitê Organizador</span>
+        <span data-lang="en">Organizing Committee</span>
+      </p>
+      <h2 class="section-title">
+        <span data-lang="pt">Equipe de Coordenação</span>
+        <span data-lang="en">Coordination Team</span>
+      </h2>
+      <div class="divider"></div>
+
+      <!-- Direção Científica -->
+      <p style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--green-mid);margin-bottom:16px;">
+        <span data-lang="pt">Direção Científica</span>
+        <span data-lang="en">Scientific Direction</span>
+      </p>
+      <div class="org-grid" style="margin-bottom:32px;">
+        <div class="org-card">
+          <div class="org-role">
+            <span data-lang="pt">Pesquisadora Responsável — Wetlands Co-benefits</span>
+            <span data-lang="en">Lead Researcher — Wetlands Co-benefits</span>
+          </div>
+          <h4>Carolina Bueno</h4>
+          <div class="inst">Instituto de Economia, Unicamp<br>Earth and Planetary Sciences / Ocean Sciences, UCSC</div>
+        </div>
+        <div class="org-card coord">
+          <div class="org-role coord">
+            <span data-lang="pt">Coordenadora — Wetlands Project</span>
+            <span data-lang="en">Coordinator — Wetlands Project</span>
+          </div>
+          <h4>Adina Paytan</h4>
+          <div class="inst">Earth and Planetary Sciences / Ocean Sciences<br>University of California Santa Cruz (UCSC)</div>
+        </div>
+        <div class="org-card">
+          <div class="org-role">
+            <span data-lang="pt">Laboratório de Ecologia de Manguezal — UFPA</span>
+            <span data-lang="en">Mangrove Ecology Lab — UFPA</span>
+          </div>
+          <h4>Prof. Dr. Marcus Emanuel Barroncas Fernandes</h4>
+          <div class="inst">
+            <span data-lang="pt">Universidade Federal do Pará · Projeto Mangues da Amazônia</span>
+            <span data-lang="en">Federal University of Pará · Amazon Mangroves Project</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coordenação Geral Científica -->
+      <p style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--green-mid);margin-bottom:16px;">
+        <span data-lang="pt">Coordenação Geral Científica</span>
+        <span data-lang="en">General Scientific Coordination</span>
+      </p>
+      <div class="org-grid" style="margin-bottom:32px;">
+        <div class="org-card">
+          <div class="org-role">
+            <span data-lang="pt">Coordenação Científica</span>
+            <span data-lang="en">Scientific Coordination</span>
+          </div>
+          <h4>Clarice Araujo</h4>
+          <div class="inst">Universidade Federal do Rio de Janeiro / Fiocruz</div>
+        </div>
+        <div class="org-card">
+          <div class="org-role">
+            <span data-lang="pt">Coordenação Científica</span>
+            <span data-lang="en">Scientific Coordination</span>
+          </div>
+          <h4>Dra. Anelize Bahniuk Rumbelsperger</h4>
+          <div class="inst">
+            <span data-lang="pt">Departamento de Geologia, Universidade Federal do Paraná (UFPR)<br>
+            <span style="font-size:12px;color:var(--text-light);">Geoquímica de rochas carbonáticas · Geomicrobiologia · Ambientes deposicionais<br>PhD — ETH Zurique, Suíça</span></span>
+            <span data-lang="en">Department of Geology, Federal University of Paraná (UFPR)<br>
+            <span style="font-size:12px;color:var(--text-light);">Carbonate geochemistry · Geomicrobiology · Depositional environments<br>PhD — ETH Zurich, Switzerland</span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Direção de Comunicação -->
+      <p style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--green-mid);margin-bottom:16px;">
+        <span data-lang="pt">Direção de Comunicação e Organização Geral</span>
+        <span data-lang="en">Communications &amp; General Organization</span>
+      </p>
+      <div class="org-grid">
+        <div class="org-card">
+          <div class="org-role">
+            <span data-lang="pt">Direção de Comunicação e Organização Geral da Conferência</span>
+            <span data-lang="en">Conference Communications &amp; General Organization Director</span>
+          </div>
+          <h4>Gabriella Luz</h4>
+          <div class="inst">
+            PMP · California, USA<br>
+            <span style="font-size:12px;color:var(--text-light);">
+              <span data-lang="pt">Gestão de Projetos · Comunicação · Eventos</span>
+              <span data-lang="en">Project Management · Communications · Events</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:32px;padding:16px 22px;background:var(--green-pale);border-radius:10px;">
+        <p style="font-family:Arial,sans-serif;font-size:13px;color:var(--green-deep);margin:0;">
+          <span data-lang="pt">📧 Contato: <a href="mailto:info@cobenefitsconference.com" style="color:var(--green-mid);font-weight:700;">info@cobenefitsconference.com</a></span>
+          <span data-lang="en">📧 Contact: <a href="mailto:info@cobenefitsconference.com" style="color:var(--green-mid);font-weight:700;">info@cobenefitsconference.com</a></span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- APOIO E REALIZAÇÃO -->
+  <section class="support" id="apoio">
+    <div class="section-inner">
+      <div class="support-grid">
+
+        <!-- Coluna esquerda: Realização + Produção Cultural -->
+        <div style="display:flex;flex-direction:column;gap:36px;">
+
+        <!-- Realização -->
+        <div class="support-group">
+          <h4><span data-lang="pt">Realização</span><span data-lang="en">Organized by</span></h4>
+          <div class="logo-row">
+            <div class="logo-item">
+              <img src="https://www.unicamp.br/wp-content/themes/bx-unicamp-multisite/assets/img/logo-unicamp.svg"
+                   alt="Unicamp" onerror="this.parentElement.outerHTML='<div class=\'logo-pill green\'>Unicamp</div>'">
+            </div>
+            <div class="logo-item">
+              <img src="https://ufpa.br/wp-content/uploads/2023/12/Brasao-UFPA-colorido.png"
+                   alt="UFPA" onerror="this.parentElement.outerHTML='<div class=\'logo-pill green\'>UFPA</div>'">
+            </div>
+            <div class="logo-item">
+              <img src="https://communications.ucsc.edu/wp-content/uploads/2021/04/2021-Logo-variation1.jpg"
+                   alt="UC Santa Cruz" onerror="this.parentElement.outerHTML='<div class=\'logo-pill blue\'>UC Santa Cruz</div>'">
+            </div>
+          </div>
+        </div>
+
+        <!-- Produção Cultural -->
+        <div class="support-group">
+          <h4><span data-lang="pt">Produção Cultural</span><span data-lang="en">Cultural Production</span></h4>
+          <div class="logo-row">
+            <div class="logo-item">
+              <img src="https://static.wixstatic.com/media/7ec11f_27dcae712c25493f9c9aef6169849b2e~mv2.png"
+                   alt="Pajé Cultural"
+                   onerror="this.parentElement.outerHTML='<div class=\'logo-pill gold\'>Pajé Cultural · RJ</div>'"
+                   style="max-height:60px;width:auto;">
+            </div>
+          </div>
+        </div>
+
+        </div><!-- /coluna esquerda -->
+
+        <!-- Apoio -->
+        <div class="support-group">
+          <h4><span data-lang="pt">Apoio</span><span data-lang="en">Support</span></h4>
+          <div class="logo-row">
+            <div class="logo-item">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/FAPESP.svg/330px-FAPESP.svg.png"
+                   alt="FAPESP" onerror="this.parentElement.outerHTML='<div class=\'logo-pill green\'>FAPESP</div>'">
+            </div>
+            <div class="logo-item">
+              <img src="https://www.gov.br/cnpq/pt-br/doc-pdf/marca-cnpq.png"
+                   alt="CNPq" onerror="this.parentElement.outerHTML='<div class=\'logo-pill green\'>CNPq</div>'">
+            </div>
+            <div class="logo-item fiocruz-bg">
+              <img src="https://fiocruz.br/sites/fiocruz.br/files/marca_fiocruz_horizontal_tagline-branca_0.png"
+                   alt="Fiocruz" onerror="this.parentElement.outerHTML='<div class=\'logo-pill green\'>Fiocruz</div>'">
+            </div>
+            <div class="logo-item">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/IBGE-Brazil.svg/330px-IBGE-Brazil.svg.png"
+                   alt="IBGE" onerror="this.parentElement.outerHTML='<div class=\'logo-pill blue\'>IBGE</div>'">
+            </div>
+            <div class="logo-item">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Flag_of_the_United_Nations.svg"
+                   alt="ONU / United Nations" onerror="this.parentElement.outerHTML='<div class=\'logo-pill blue\'>ONU</div>'"
+                   style="height:30px;">
+            </div>
+            <div class="logo-item">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/United_Nations_Environment_Programme_Logo.svg/250px-United_Nations_Environment_Programme_Logo.svg.png"
+                   alt="PNUMA / UNEP" onerror="this.parentElement.outerHTML='<div class=\'logo-pill blue\'>PNUMA / UNEP</div>'"
+                   style="height:48px;width:auto;">
+            </div>
+            <!-- Comissão Europeia — inline SVG (no external dependency) -->
+            <div class="logo-item" style="padding:8px 14px;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168 50" style="height:50px;width:auto;display:block;" role="img" aria-label="Comissão Europeia">
+                <rect width="50" height="50" fill="#003399"/>
+                <!-- 12 gold stars: center(25,25) r=15 -->
+                <text x="25"   y="10"   text-anchor="middle" dominant-baseline="central" font-size="7" fill="#FFCC00" font-family="serif">★</text>
+                <text x="32.5" y="12"   text-anchor="middle" dominant-baseline="central" font-size="7" fill="#FFCC00" font-family="serif">★</text>
+                <text x="38"   y="17.5" text-anchor="middle" dominant-baseline="central" font-size="7" fill="#FFCC00" font-family="serif">★</text>
+                <text x="40"   y="25"   text-anchor="middle" dominant-baseline="central" font-size="7" fill="#FFCC00" font-family="serif">★</text>
+                <text x="38"   y="32.5" text-anchor="middle" dominant-baseline="central" font-size="7" fill="#FFCC00" font-family="serif">★</text>
+                <text x="32.5" y="38"   text-anchor="middle" dominant-baseline="central" font-size="7" fill="#FFCC00" font-family="serif">★</text>
+                <text x="25"   y="40"   text-anchor="middle" dominant-baseline="central" font-size="7" fill="#FFCC00" font-family="serif">★</text>
+                <text x="17.5" y="38"   text-anchor="middle" dominant-baseline="central" font-size="7" fill="#FFCC00" font-family="serif">★</text>
+                <text x="12"   y="32.5" text-anchor="middle" dominant-baseline="central" font-size="7" fill="#FFCC00" font-family="serif">★</text>
+                <text x="10"   y="25"   text-anchor="middle" dominant-baseline="central" font-size="7" fill="#FFCC00" font-family="serif">★</text>
+                <text x="12"   y="17.5" text-anchor="middle" dominant-baseline="central" font-size="7" fill="#FFCC00" font-family="serif">★</text>
+                <text x="17.5" y="12"   text-anchor="middle" dominant-baseline="central" font-size="7" fill="#FFCC00" font-family="serif">★</text>
+                <line x1="60" y1="8" x2="60" y2="42" stroke="#bbb" stroke-width="0.8"/>
+                <text x="68" y="21" font-family="Arial,sans-serif" font-size="11.5" fill="#414141">Comissão</text>
+                <text x="68" y="37" font-family="Arial,sans-serif" font-size="11.5" fill="#414141">Europeia</text>
+              </svg>
+            </div>
+            <!-- ICMBio — inline SVG -->
+            <div class="logo-item" style="padding:8px 14px;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175 50" style="height:48px;width:auto;display:block;" role="img" aria-label="ICMBio — Instituto Chico Mendes de Conservação da Biodiversidade">
+                <!-- Brazil dot pattern (approximate silhouette) -->
+                <circle cx="17" cy="7"  r="3"   fill="#2e7d32"/>
+                <circle cx="24" cy="5"  r="3"   fill="#388e3c"/>
+                <circle cx="31" cy="4"  r="3"   fill="#2e7d32"/>
+                <circle cx="38" cy="6"  r="3"   fill="#1b5e20"/>
+                <circle cx="43" cy="11" r="3"   fill="#2e7d32"/>
+                <circle cx="45" cy="18" r="3"   fill="#388e3c"/>
+                <circle cx="44" cy="25" r="3"   fill="#2e7d32"/>
+                <circle cx="40" cy="31" r="3"   fill="#1b5e20"/>
+                <circle cx="34" cy="36" r="3"   fill="#2e7d32"/>
+                <circle cx="27" cy="39" r="3"   fill="#388e3c"/>
+                <circle cx="19" cy="38" r="3"   fill="#2e7d32"/>
+                <circle cx="12" cy="34" r="3"   fill="#1b5e20"/>
+                <circle cx="9"  cy="27" r="3"   fill="#2e7d32"/>
+                <circle cx="9"  cy="19" r="3"   fill="#388e3c"/>
+                <circle cx="12" cy="12" r="3"   fill="#2e7d32"/>
+                <circle cx="21" cy="14" r="2.5" fill="#43a047"/>
+                <circle cx="29" cy="11" r="2.5" fill="#2e7d32"/>
+                <circle cx="37" cy="15" r="2.5" fill="#388e3c"/>
+                <circle cx="38" cy="23" r="2.5" fill="#1b5e20"/>
+                <circle cx="33" cy="29" r="2.5" fill="#43a047"/>
+                <circle cx="24" cy="30" r="2.5" fill="#2e7d32"/>
+                <circle cx="16" cy="26" r="2.5" fill="#388e3c"/>
+                <circle cx="15" cy="19" r="2.5" fill="#1b5e20"/>
+                <circle cx="26" cy="21" r="2.5" fill="#43a047"/>
+                <text x="57" y="24" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="17" fill="#1b5e20" letter-spacing="-0.3">ICMBio</text>
+                <text x="57" y="35" font-family="Arial,Helvetica,sans-serif" font-size="7"  fill="#2e7d32" letter-spacing="0.2">INSTITUTO CHICO MENDES</text>
+                <text x="57" y="44" font-family="Arial,Helvetica,sans-serif" font-size="7"  fill="#388e3c" letter-spacing="0.5">MMA</text>
+              </svg>
+            </div>
+            <!-- The Nature Conservancy — inline SVG -->
+            <div class="logo-item" style="padding:8px 14px;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 185 50" style="height:48px;width:auto;display:block;" role="img" aria-label="The Nature Conservancy">
+                <!-- Green globe -->
+                <circle cx="25" cy="25" r="22" fill="#4a7c27"/>
+                <!-- White stylised plant -->
+                <line x1="25" y1="9"  x2="25" y2="41" stroke="white" stroke-width="2.5"/>
+                <path d="M25,18 C12,15 8,25 15,30 C20,33 25,30 25,30"  fill="white"/>
+                <path d="M25,18 C38,15 42,25 35,30 C30,33 25,30 25,30" fill="white"/>
+                <path d="M25,14 C16,12 13,18 18,20" fill="none" stroke="white" stroke-width="1.5"/>
+                <path d="M25,14 C34,12 37,18 32,20" fill="none" stroke="white" stroke-width="1.5"/>
+                <text x="54" y="21" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="12.5" fill="#2d5c1a">The Nature</text>
+                <text x="54" y="38" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="12.5" fill="#2d5c1a">Conservancy</text>
+              </svg>
+            </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>
+            <span data-lang="pt">Carbono Azul e Co-benefícios de Zonas Úmidas</span>
+            <span data-lang="en">Blue Carbon &amp; Wetlands Co-benefits</span>
+          </h3>
+          <p data-lang="pt">Evento Científico Internacional Pré-COP31 · 6–8 Novembro 2026 · Bragança, Pará, Brasil</p>
+          <p data-lang="en">International Scientific Event Pre-COP31 · November 6–8, 2026 · Bragança, Pará, Brazil</p>
+          <div class="cop-badge mt-16">Pré-COP31 · Antália, Turquia 2026</div>
+        </div>
+        <div class="footer-col">
+          <h4><span data-lang="pt">Navegação</span><span data-lang="en">Navigation</span></h4>
+          <ul>
+            <li><a href="#sobre"><span data-lang="pt">Sobre o evento</span><span data-lang="en">About</span></a></li>
+            <li><a href="#programa"><span data-lang="pt">Programação</span><span data-lang="en">Program</span></a></li>
+            <li><a href="#projetos"><span data-lang="pt">Projetos de pesquisa</span><span data-lang="en">Research projects</span></a></li>
+            <li><a href="#local"><span data-lang="pt">Local do evento</span><span data-lang="en">Event venue</span></a></li>
+            <li><a href="#inscricoes"><span data-lang="pt">Inscrições</span><span data-lang="en">Register</span></a></li>
+            <li><a href="#inscricoes" onclick="switchTab('submissao')"><span data-lang="pt">Submissão de trabalhos</span><span data-lang="en">Work submission</span></a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4><span data-lang="pt">Contato</span><span data-lang="en">Contact</span></h4>
+          <ul>
+            <li><a href="mailto:info@cobenefitsconference.com">info@cobenefitsconference.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 1st Blue Carbon &amp; Wetlands Co-benefits Conference · Unicamp · UFPA · UCSC</span>
+        <span>Bragança, Pará, Brasil</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function setLang(lang) {
+      document.body.classList.remove('lang-pt', 'lang-en');
+      document.body.classList.add('lang-' + lang);
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.trim().toLowerCase() === lang);
+      });
+      document.querySelectorAll('option[data-pt]').forEach(opt => {
+        opt.textContent = opt.dataset[lang] || opt.dataset.pt;
+      });
+    }
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+      document.getElementById('tab-' + tabId).classList.add('active');
+      document.querySelector('.tab-btn[data-tab="' + tabId + '"]').classList.add('active');
+      document.getElementById('inscricoes').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link:not(.nav-cta)');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 100) current = s.id;
+      });
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+      });
+    });
+  </script>
+</body>
+</html>

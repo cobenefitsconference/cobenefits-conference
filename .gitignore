@@ -1,0 +1,11 @@
+# Ignore non-site files
+*.pdf
+*.xlsx
+*.docx
+*.jpg
+*.JPG
+*.png
+*.jpeg
+resume.html
+Aidan*
+node_modules/
