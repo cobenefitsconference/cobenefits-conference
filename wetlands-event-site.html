@@ -84,13 +84,11 @@
     .nav-brand-icon {
       width: 48px;
       height: 48px;
-      background: var(--green-mid);
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
+      overflow: hidden;
+      flex-shrink: 0;
     }
+    .nav-brand-icon canvas { width: 48px; height: 48px; border-radius: 50%; }
     .nav-brand-text { line-height: 1.2; }
     .nav-brand-text strong {
       display: block;
@@ -997,7 +995,7 @@
   <!-- NAVBAR -->
   <nav>
     <a href="#" class="nav-brand">
-      <div class="nav-brand-icon">🌊</div>
+      <div class="nav-brand-icon"><canvas id="nav-logo" width="48" height="48"></canvas></div>
       <div class="nav-brand-text">
         <strong><span data-lang="pt">1ª Conferência de Co-benefícios do Carbono Azul e Zonas Úmidas</span><span data-lang="en">1st Blue Carbon &amp; Wetlands Co-benefits Conference</span></strong>
         <span>Evento Científico Internacional Pré-COP31</span>
@@ -1767,67 +1765,12 @@
           </div>
         </div>
 
-        <div class="form-wrapper">
-          <h3 class="form-title">
-            <span data-lang="pt">Formulário de Submissão</span>
-            <span data-lang="en">Submission Form</span>
-          </h3>
-          <p class="form-subtitle">
-            <span data-lang="pt">Submeta seu trabalho para avaliação. Você receberá confirmação por e-mail.</span>
-            <span data-lang="en">Submit your work for review. You will receive a confirmation by email.</span>
-          </p>
-          <div class="form-row">
-            <div class="form-group">
-              <label><span data-lang="pt">Autor principal <span class="required">*</span></span><span data-lang="en">Lead author <span class="required">*</span></span></label>
-              <input type="text" placeholder="Nome completo" />
-            </div>
-            <div class="form-group">
-              <label><span data-lang="pt">E-mail <span class="required">*</span></span><span data-lang="en">Email <span class="required">*</span></span></label>
-              <input type="email" placeholder="email@instituicao.br" />
-            </div>
-          </div>
-          <div class="form-group">
-            <label><span data-lang="pt">Coautores</span><span data-lang="en">Co-authors</span></label>
-            <input type="text" placeholder="Nome 1 (Instituição); Nome 2 (Instituição)..." />
-          </div>
-          <div class="form-group">
-            <label><span data-lang="pt">Título do trabalho <span class="required">*</span></span><span data-lang="en">Work title <span class="required">*</span></span></label>
-            <input type="text" />
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label><span data-lang="pt">Eixo temático <span class="required">*</span></span><span data-lang="en">Thematic axis <span class="required">*</span></span></label>
-              <select>
-                <option value="" data-pt="Selecione..." data-en="Select...">Selecione...</option>
-                <option data-pt="Eixo 1 — Dinâmica do carbono" data-en="Axis 1 — Carbon dynamics">Eixo 1 — Dinâmica do carbono</option>
-                <option data-pt="Eixo 2 — Serviços ecossistêmicos" data-en="Axis 2 — Ecosystem services">Eixo 2 — Serviços ecossistêmicos</option>
-                <option data-pt="Eixo 3 — Governança e comunidades" data-en="Axis 3 — Governance and communities">Eixo 3 — Governança e comunidades</option>
-                <option data-pt="Eixo 4 — Mudanças climáticas" data-en="Axis 4 — Climate change">Eixo 4 — Mudanças climáticas</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label><span data-lang="pt">Formato <span class="required">*</span></span><span data-lang="en">Format <span class="required">*</span></span></label>
-              <select>
-                <option value="" data-pt="Selecione..." data-en="Select...">Selecione...</option>
-                <option data-pt="Pôster científico (formato A0)" data-en="Scientific poster (A0 format)">Pôster científico (formato A0)</option>
-                <option data-pt="Apresentação oral (15 min + 5 min Q&A)" data-en="Oral presentation (15 min + 5 min Q&A)">Apresentação oral (15 min + 5 min Q&A)</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label><span data-lang="pt">Arquivo do trabalho <span class="required">*</span></span><span data-lang="en">Work file <span class="required">*</span></span></label>
-            <input type="file" style="padding:8px;" accept=".pdf,.docx" />
-            <p class="form-note"><span data-lang="pt">PDF ou DOCX, máx. 10 MB. O arquivo pode ser enviado em inglês ou português.</span><span data-lang="en">PDF or DOCX, max. 10 MB. File may be in English or Portuguese.</span></p>
-          </div>
-          <button class="btn btn-gold mt-8" style="font-size:15px;padding:14px 32px;">
-            <span>📤</span>
-            <span data-lang="pt">Enviar submissão</span>
-            <span data-lang="en">Submit</span>
-          </button>
-          <p class="form-note mt-8">
-            <span data-lang="pt">Todas as submissões passam por revisão por pares antes da notificação de aceite.</span>
-            <span data-lang="en">All submissions go through peer review before acceptance notification.</span>
-          </p>
+        <div class="form-wrapper" style="padding:0;background:transparent;box-shadow:none;">
+          <iframe data-tally-src="https://tally.so/embed/A75zbW?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+            loading="lazy" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0"
+            title="Submissão de Trabalhos — 1ª Conferência de Co-benefícios do Carbono Azul e Zonas Úmidas"
+            style="border-radius:12px;"></iframe>
+          <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
         </div>
       </div>
     </div>
@@ -2160,5 +2103,47 @@
       });
     });
   </script>
+<script>
+(function(){
+  const cv = document.getElementById('nav-logo');
+  if(!cv) return;
+  const ctx = cv.getContext('2d');
+  const W=48,H=48,cx=24,cy=24,r=23;
+  ctx.save();
+  ctx.beginPath(); ctx.arc(cx,cy,r,0,Math.PI*2); ctx.clip();
+  ctx.fillStyle='#d4a843'; ctx.fillRect(0,0,W,H);
+  ctx.fillStyle='#c49028'; ctx.fillRect(0,0,W,18);
+  // canopy
+  [[-2,8,20,14,'#2d5a1e'],[14,4,22,15,'#3a7028'],[30,6,20,14,'#2d5a1e'],[46,9,18,13,'#3a7028'],
+   [4,18,18,10,'#3a7028'],[20,15,20,10,'#2d5a1e'],[36,16,18,10,'#3a7028']
+  ].forEach(([x,y,rx,ry,c])=>{ ctx.fillStyle=c; ctx.beginPath(); ctx.ellipse(x,y,rx,ry,0,0,Math.PI*2); ctx.fill(); });
+  // mud
+  ctx.fillStyle='#7a5430'; ctx.fillRect(0,32,W,3);
+  // water
+  ctx.fillStyle='#b87218'; ctx.fillRect(0,34,W,14);
+  ctx.strokeStyle='rgba(255,200,80,0.4)'; ctx.lineWidth=1;
+  [37,42].forEach(y=>{ ctx.beginPath(); ctx.ellipse(cx,y,18,2.5,0,0,Math.PI*2); ctx.stroke(); });
+  // trunks
+  const trunks=[8,18,26,34,42];
+  ctx.strokeStyle='#2a1406'; ctx.lineCap='round';
+  trunks.forEach((tx,i)=>{ ctx.lineWidth=i===2?4:3; ctx.beginPath(); ctx.moveTo(tx,16); ctx.lineTo(tx,34); ctx.stroke(); });
+  // prop roots
+  ctx.lineWidth=1.5;
+  trunks.forEach(tx=>{
+    [[-7,1.4],[-3,1.6],[3,1.6],[7,1.4]].forEach(([dx,lw])=>{
+      const ex=tx+dx; if(ex<1||ex>47) return;
+      ctx.strokeStyle=dx<0?'#5c3010':'#6b3c14'; ctx.lineWidth=lw;
+      ctx.beginPath(); ctx.moveTo(tx,20); ctx.bezierCurveTo(tx+dx*0.3,25,tx+dx*0.7,30,ex,34); ctx.stroke();
+    });
+  });
+  // submerged
+  ctx.globalAlpha=0.28; ctx.strokeStyle='#2a1406'; ctx.lineWidth=1.2;
+  trunks.forEach(tx=>{ [-5,0,5].forEach(dx=>{ ctx.beginPath(); ctx.moveTo(tx+dx,34); ctx.lineTo(tx+dx*1.1,48); ctx.stroke(); }); });
+  ctx.globalAlpha=1;
+  ctx.restore();
+  ctx.strokeStyle='#c49028'; ctx.lineWidth=2.5;
+  ctx.beginPath(); ctx.arc(cx,cy,r,0,Math.PI*2); ctx.stroke();
+})();
+</script>
 </body>
 </html>

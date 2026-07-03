@@ -84,13 +84,11 @@
     .nav-brand-icon {
       width: 48px;
       height: 48px;
-      background: var(--green-mid);
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
+      overflow: hidden;
+      flex-shrink: 0;
     }
+    .nav-brand-icon canvas { width: 48px; height: 48px; border-radius: 50%; }
     .nav-brand-text { line-height: 1.2; }
     .nav-brand-text strong {
       display: block;
@@ -997,7 +995,7 @@
   <!-- NAVBAR -->
   <nav>
     <a href="#" class="nav-brand">
-      <div class="nav-brand-icon">🌊</div>
+      <div class="nav-brand-icon"><canvas id="nav-logo" width="48" height="48"></canvas></div>
       <div class="nav-brand-text">
         <strong><span data-lang="pt">1ª Conferência de Co-benefícios do Carbono Azul e Zonas Úmidas</span><span data-lang="en">1st Blue Carbon &amp; Wetlands Co-benefits Conference</span></strong>
         <span>Evento Científico Internacional Pré-COP31</span>
@@ -1767,67 +1765,12 @@
           </div>
         </div>
 
-        <div class="form-wrapper">
-          <h3 class="form-title">
-            <span data-lang="pt">Formulário de Submissão</span>
-            <span data-lang="en">Submission Form</span>
-          </h3>
-          <p class="form-subtitle">
-            <span data-lang="pt">Submeta seu trabalho para avaliação. Você receberá confirmação por e-mail.</span>
-            <span data-lang="en">Submit your work for review. You will receive a confirmation by email.</span>
-          </p>
-          <div class="form-row">
-            <div class="form-group">
-              <label><span data-lang="pt">Autor principal <span class="required">*</span></span><span data-lang="en">Lead author <span class="required">*</span></span></label>
-              <input type="text" placeholder="Nome completo" />
-            </div>
-            <div class="form-group">
-              <label><span data-lang="pt">E-mail <span class="required">*</span></span><span data-lang="en">Email <span class="required">*</span></span></label>
-              <input type="email" placeholder="email@instituicao.br" />
-            </div>
-          </div>
-          <div class="form-group">
-            <label><span data-lang="pt">Coautores</span><span data-lang="en">Co-authors</span></label>
-            <input type="text" placeholder="Nome 1 (Instituição); Nome 2 (Instituição)..." />
-          </div>
-          <div class="form-group">
-            <label><span data-lang="pt">Título do trabalho <span class="required">*</span></span><span data-lang="en">Work title <span class="required">*</span></span></label>
-            <input type="text" />
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label><span data-lang="pt">Eixo temático <span class="required">*</span></span><span data-lang="en">Thematic axis <span class="required">*</span></span></label>
-              <select>
-                <option value="" data-pt="Selecione..." data-en="Select...">Selecione...</option>
-                <option data-pt="Eixo 1 — Dinâmica do carbono" data-en="Axis 1 — Carbon dynamics">Eixo 1 — Dinâmica do carbono</option>
-                <option data-pt="Eixo 2 — Serviços ecossistêmicos" data-en="Axis 2 — Ecosystem services">Eixo 2 — Serviços ecossistêmicos</option>
-                <option data-pt="Eixo 3 — Governança e comunidades" data-en="Axis 3 — Governance and communities">Eixo 3 — Governança e comunidades</option>
-                <option data-pt="Eixo 4 — Mudanças climáticas" data-en="Axis 4 — Climate change">Eixo 4 — Mudanças climáticas</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label><span data-lang="pt">Formato <span class="required">*</span></span><span data-lang="en">Format <span class="required">*</span></span></label>
-              <select>
-                <option value="" data-pt="Selecione..." data-en="Select...">Selecione...</option>
-                <option data-pt="Pôster científico (formato A0)" data-en="Scientific poster (A0 format)">Pôster científico (formato A0)</option>
-                <option data-pt="Apresentação oral (15 min + 5 min Q&A)" data-en="Oral presentation (15 min + 5 min Q&A)">Apresentação oral (15 min + 5 min Q&A)</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label><span data-lang="pt">Arquivo do trabalho <span class="required">*</span></span><span data-lang="en">Work file <span class="required">*</span></span></label>
-            <input type="file" style="padding:8px;" accept=".pdf,.docx" />
-            <p class="form-note"><span data-lang="pt">PDF ou DOCX, máx. 10 MB. O arquivo pode ser enviado em inglês ou português.</span><span data-lang="en">PDF or DOCX, max. 10 MB. File may be in English or Portuguese.</span></p>
-          </div>
-          <button class="btn btn-gold mt-8" style="font-size:15px;padding:14px 32px;">
-            <span>📤</span>
-            <span data-lang="pt">Enviar submissão</span>
-            <span data-lang="en">Submit</span>
-          </button>
-          <p class="form-note mt-8">
-            <span data-lang="pt">Todas as submissões passam por revisão por pares antes da notificação de aceite.</span>
-            <span data-lang="en">All submissions go through peer review before acceptance notification.</span>
-          </p>
+        <div class="form-wrapper" style="padding:0;background:transparent;box-shadow:none;">
+          <iframe data-tally-src="https://tally.so/embed/A75zbW?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+            loading="lazy" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0"
+            title="Submissão de Trabalhos — 1ª Conferência de Co-benefícios do Carbono Azul e Zonas Úmidas"
+            style="border-radius:12px;"></iframe>
+          <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
         </div>
       </div>
     </div>
@@ -2064,4 +2007,143 @@
                 <circle cx="15" cy="19" r="2.5" fill="#1b5e20"/>
                 <circle cx="26" cy="21" r="2.5" fill="#43a047"/>
                 <text x="57" y="24" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="17" fill="#1b5e20" letter-spacing="-0.3">ICMBio</text>
-                <text x="57" y="35" font-family="Arial,Helvetica,sans-serif" font-size="7"  fill="#2e
+                <text x="57" y="35" font-family="Arial,Helvetica,sans-serif" font-size="7"  fill="#2e7d32" letter-spacing="0.2">INSTITUTO CHICO MENDES</text>
+                <text x="57" y="44" font-family="Arial,Helvetica,sans-serif" font-size="7"  fill="#388e3c" letter-spacing="0.5">MMA</text>
+              </svg>
+            </div>
+            <!-- The Nature Conservancy — inline SVG -->
+            <div class="logo-item" style="padding:8px 14px;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 185 50" style="height:48px;width:auto;display:block;" role="img" aria-label="The Nature Conservancy">
+                <!-- Green globe -->
+                <circle cx="25" cy="25" r="22" fill="#4a7c27"/>
+                <!-- White stylised plant -->
+                <line x1="25" y1="9"  x2="25" y2="41" stroke="white" stroke-width="2.5"/>
+                <path d="M25,18 C12,15 8,25 15,30 C20,33 25,30 25,30"  fill="white"/>
+                <path d="M25,18 C38,15 42,25 35,30 C30,33 25,30 25,30" fill="white"/>
+                <path d="M25,14 C16,12 13,18 18,20" fill="none" stroke="white" stroke-width="1.5"/>
+                <path d="M25,14 C34,12 37,18 32,20" fill="none" stroke="white" stroke-width="1.5"/>
+                <text x="54" y="21" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="12.5" fill="#2d5c1a">The Nature</text>
+                <text x="54" y="38" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="12.5" fill="#2d5c1a">Conservancy</text>
+              </svg>
+            </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>
+            <span data-lang="pt">Carbono Azul e Co-benefícios de Zonas Úmidas</span>
+            <span data-lang="en">Blue Carbon &amp; Wetlands Co-benefits</span>
+          </h3>
+          <p data-lang="pt">Evento Científico Internacional Pré-COP31 · 6–8 Novembro 2026 · Bragança, Pará, Brasil</p>
+          <p data-lang="en">International Scientific Event Pre-COP31 · November 6–8, 2026 · Bragança, Pará, Brazil</p>
+          <div class="cop-badge mt-16">Pré-COP31 · Antália, Turquia 2026</div>
+        </div>
+        <div class="footer-col">
+          <h4><span data-lang="pt">Navegação</span><span data-lang="en">Navigation</span></h4>
+          <ul>
+            <li><a href="#sobre"><span data-lang="pt">Sobre o evento</span><span data-lang="en">About</span></a></li>
+            <li><a href="#programa"><span data-lang="pt">Programação</span><span data-lang="en">Program</span></a></li>
+            <li><a href="#projetos"><span data-lang="pt">Projetos de pesquisa</span><span data-lang="en">Research projects</span></a></li>
+            <li><a href="#local"><span data-lang="pt">Local do evento</span><span data-lang="en">Event venue</span></a></li>
+            <li><a href="#inscricoes"><span data-lang="pt">Inscrições</span><span data-lang="en">Register</span></a></li>
+            <li><a href="#inscricoes" onclick="switchTab('submissao')"><span data-lang="pt">Submissão de trabalhos</span><span data-lang="en">Work submission</span></a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4><span data-lang="pt">Contato</span><span data-lang="en">Contact</span></h4>
+          <ul>
+            <li><a href="mailto:info@cobenefitsconference.com">info@cobenefitsconference.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 1st Blue Carbon &amp; Wetlands Co-benefits Conference · Unicamp · UFPA · UCSC</span>
+        <span>Bragança, Pará, Brasil</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function setLang(lang) {
+      document.body.classList.remove('lang-pt', 'lang-en');
+      document.body.classList.add('lang-' + lang);
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.trim().toLowerCase() === lang);
+      });
+      document.querySelectorAll('option[data-pt]').forEach(opt => {
+        opt.textContent = opt.dataset[lang] || opt.dataset.pt;
+      });
+    }
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+      document.getElementById('tab-' + tabId).classList.add('active');
+      document.querySelector('.tab-btn[data-tab="' + tabId + '"]').classList.add('active');
+      document.getElementById('inscricoes').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link:not(.nav-cta)');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 100) current = s.id;
+      });
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+      });
+    });
+  </script>
+<script>
+(function(){
+  const cv = document.getElementById('nav-logo');
+  if(!cv) return;
+  const ctx = cv.getContext('2d');
+  const W=48,H=48,cx=24,cy=24,r=23;
+  ctx.save();
+  ctx.beginPath(); ctx.arc(cx,cy,r,0,Math.PI*2); ctx.clip();
+  ctx.fillStyle='#d4a843'; ctx.fillRect(0,0,W,H);
+  ctx.fillStyle='#c49028'; ctx.fillRect(0,0,W,18);
+  // canopy
+  [[-2,8,20,14,'#2d5a1e'],[14,4,22,15,'#3a7028'],[30,6,20,14,'#2d5a1e'],[46,9,18,13,'#3a7028'],
+   [4,18,18,10,'#3a7028'],[20,15,20,10,'#2d5a1e'],[36,16,18,10,'#3a7028']
+  ].forEach(([x,y,rx,ry,c])=>{ ctx.fillStyle=c; ctx.beginPath(); ctx.ellipse(x,y,rx,ry,0,0,Math.PI*2); ctx.fill(); });
+  // mud
+  ctx.fillStyle='#7a5430'; ctx.fillRect(0,32,W,3);
+  // water
+  ctx.fillStyle='#b87218'; ctx.fillRect(0,34,W,14);
+  ctx.strokeStyle='rgba(255,200,80,0.4)'; ctx.lineWidth=1;
+  [37,42].forEach(y=>{ ctx.beginPath(); ctx.ellipse(cx,y,18,2.5,0,0,Math.PI*2); ctx.stroke(); });
+  // trunks
+  const trunks=[8,18,26,34,42];
+  ctx.strokeStyle='#2a1406'; ctx.lineCap='round';
+  trunks.forEach((tx,i)=>{ ctx.lineWidth=i===2?4:3; ctx.beginPath(); ctx.moveTo(tx,16); ctx.lineTo(tx,34); ctx.stroke(); });
+  // prop roots
+  ctx.lineWidth=1.5;
+  trunks.forEach(tx=>{
+    [[-7,1.4],[-3,1.6],[3,1.6],[7,1.4]].forEach(([dx,lw])=>{
+      const ex=tx+dx; if(ex<1||ex>47) return;
+      ctx.strokeStyle=dx<0?'#5c3010':'#6b3c14'; ctx.lineWidth=lw;
+      ctx.beginPath(); ctx.moveTo(tx,20); ctx.bezierCurveTo(tx+dx*0.3,25,tx+dx*0.7,30,ex,34); ctx.stroke();
+    });
+  });
+  // submerged
+  ctx.globalAlpha=0.28; ctx.strokeStyle='#2a1406'; ctx.lineWidth=1.2;
+  trunks.forEach(tx=>{ [-5,0,5].forEach(dx=>{ ctx.beginPath(); ctx.moveTo(tx+dx,34); ctx.lineTo(tx+dx*1.1,48); ctx.stroke(); }); });
+  ctx.globalAlpha=1;
+  ctx.restore();
+  ctx.strokeStyle='#c49028'; ctx.lineWidth=2.5;
+  ctx.beginPath(); ctx.arc(cx,cy,r,0,Math.PI*2); ctx.stroke();
+})();
+</script>
+</body>
+</html>
