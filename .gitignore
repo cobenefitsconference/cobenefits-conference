@@ -1,5 +1,6 @@
 # Ignore non-site files
 *.pdf
+!programacao-conferencia.pdf
 *.xlsx
 *.docx
 *.jpg
