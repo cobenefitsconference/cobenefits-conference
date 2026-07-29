@@ -697,6 +697,53 @@
     }
     .required { color: #e74c3c; }
 
+    /* ── NATIVE REGISTRATION FORMS ── */
+    .reg-form { display: flex; flex-direction: column; gap: 0; }
+    .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+    .form-field { display: flex; flex-direction: column; gap: 5px; margin-bottom: 16px; }
+    .form-field label {
+      font-family: 'Arial', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-mid);
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      border: 1.5px solid #ddd;
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-family: 'Arial', sans-serif;
+      font-size: 14px;
+      color: var(--text-dark);
+      background: white;
+      transition: border 0.2s;
+    }
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus { outline: none; border-color: var(--green-light); }
+    .form-field textarea { resize: vertical; }
+    .form-submit-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--green-light);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 13px 28px;
+      font-family: 'Arial', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 8px;
+    }
+    .form-submit-btn:hover { background: var(--green-mid); }
+    @media (max-width: 600px) { .form-grid-2 { grid-template-columns: 1fr; } }
+
     /* ── SUBMISSION ── */
     .sub-info {
       display: grid;
@@ -1773,47 +1820,74 @@
             <span data-lang="en">Registration Form</span>
           </h3>
           <p class="form-subtitle">
-            <span data-lang="pt">Preencha o formulário abaixo. O pagamento (quando aplicável) é realizado via PayPal após a seleção da categoria.</span>
-            <span data-lang="en">Fill in the form below. Payment (when applicable) is processed via PayPal after category selection.</span>
+            <span data-lang="pt">Preencha os dados abaixo. Você receberá uma confirmação por e-mail. Para submeter um trabalho, use a aba ao lado.</span>
+            <span data-lang="en">Fill in your details below. You will receive a confirmation by email. To submit a paper, use the adjacent tab.</span>
           </p>
 
-          <!-- Tabela de categorias e preços -->
-          <div style="background:var(--green-pale);border:1px solid var(--green-light);border-radius:10px;padding:18px 22px;margin-bottom:24px;">
-            <p style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--green-mid);margin-bottom:12px;">
-              <span data-lang="pt">Categorias e valores</span><span data-lang="en">Categories and fees</span>
-            </p>
-            <div style="display:grid;grid-template-columns:1fr auto;gap:6px 24px;font-family:Arial,sans-serif;font-size:13px;">
-              <span style="color:var(--text-mid);" data-lang="pt">Estudante de Graduação</span><span style="color:var(--text-mid);" data-lang="en">Undergraduate Student</span>
-              <span style="font-weight:700;color:var(--green-deep);">R$ 60</span>
-              <span style="color:var(--text-mid);" data-lang="pt">Estudante de Pós-Graduação</span><span style="color:var(--text-mid);" data-lang="en">Graduate Student</span>
-              <span style="font-weight:700;color:var(--green-deep);">R$ 60</span>
-              <span style="color:var(--text-mid);" data-lang="pt">Profissional / Pesquisador</span><span style="color:var(--text-mid);" data-lang="en">Professional / Researcher</span>
-              <span style="font-weight:700;color:var(--green-deep);">R$ 180</span>
-              <span style="color:var(--text-mid);" data-lang="pt">Membro de Comunidade</span><span style="color:var(--text-mid);" data-lang="en">Community Member</span>
-              <span style="font-weight:700;color:var(--green-light);">R$ 0</span>
-              <span style="color:var(--text-mid);" data-lang="pt">Isenção</span><span style="color:var(--text-mid);" data-lang="en">Waiver</span>
-              <span style="font-weight:700;color:var(--green-light);">R$ 0</span>
+          <form class="reg-form" onsubmit="return false;">
+            <div class="form-grid-2">
+              <div class="form-field">
+                <label data-lang="pt">NOME COMPLETO *</label>
+                <label data-lang="en">FULL NAME *</label>
+                <input type="text" placeholder="Ex: Carolina Bueno" required>
+              </div>
+              <div class="form-field">
+                <label data-lang="pt">E-MAIL *</label>
+                <label data-lang="en">E-MAIL *</label>
+                <input type="email" placeholder="email@instituicao.br" required>
+              </div>
             </div>
-          </div>
-
-          <!-- Tally embed inscrições -->
-          <div class="form-wrapper" style="padding:0;background:transparent;box-shadow:none;">
-            <iframe
-              data-tally-src="https://tally.so/embed/A75zbW?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-              loading="lazy" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0"
-              title="Formulário de Inscrição"
-              style="border-radius:8px;"></iframe>
-          </div>
-          <p class="form-note mt-8">
-            <span data-lang="pt">Os dados serão tratados de acordo com a LGPD. <a href="politica-de-privacidade.html" style="color:var(--green-mid);">Política de Privacidade</a></span>
-            <span data-lang="en">Data handled in accordance with Brazilian data protection law (LGPD). <a href="politica-de-privacidade.html" style="color:var(--green-mid);">Privacy Policy</a></span>
-          </p>
+            <div class="form-grid-2">
+              <div class="form-field">
+                <label data-lang="pt">CATEGORIA *</label>
+                <label data-lang="en">CATEGORY *</label>
+                <select required>
+                  <option value="" disabled selected data-lang="pt">Selecione sua categoria...</option>
+                  <option data-lang="pt">Estudante de Graduação — R$ 60</option>
+                  <option data-lang="pt">Estudante de Pós-Graduação — R$ 60</option>
+                  <option data-lang="pt">Profissional / Pesquisador — R$ 180</option>
+                  <option data-lang="pt">Membro de Comunidade — R$ 0</option>
+                  <option data-lang="pt">Isenção — R$ 0</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label data-lang="pt">INSTITUIÇÃO *</label>
+                <label data-lang="en">INSTITUTION *</label>
+                <input type="text" placeholder="Unicamp / UFPA / UCSC...">
+              </div>
+            </div>
+            <div class="form-grid-2">
+              <div class="form-field">
+                <label data-lang="pt">PAÍS *</label>
+                <label data-lang="en">COUNTRY *</label>
+                <input type="text" placeholder="Brasil">
+              </div>
+              <div class="form-field">
+                <label data-lang="pt">ÁREA DE ATUAÇÃO</label>
+                <label data-lang="en">FIELD OF WORK</label>
+                <input type="text" placeholder="Ecologia / Economia / Ciências Sociais...">
+              </div>
+            </div>
+            <div class="form-field">
+              <label data-lang="pt">NECESSIDADES ESPECIAIS OU OBSERVAÇÕES</label>
+              <label data-lang="en">SPECIAL NEEDS OR NOTES</label>
+              <textarea rows="4" placeholder="..."></textarea>
+            </div>
+            <button type="submit" class="form-submit-btn">
+              <span>✓</span>
+              <span data-lang="pt"> Enviar inscrição</span>
+              <span data-lang="en"> Submit registration</span>
+            </button>
+            <p class="form-note" style="margin-top:12px;">
+              <span data-lang="pt">Os dados serão tratados de acordo com a LGPD. <a href="politica-de-privacidade.html" style="color:var(--green-mid);">Política de Privacidade</a></span>
+              <span data-lang="en">Data handled in accordance with Brazilian data protection law (LGPD). <a href="politica-de-privacidade.html" style="color:var(--green-mid);">Privacy Policy</a></span>
+            </p>
+          </form>
         </div>
       </div>
 
       <!-- ─── TAB 2: SUBMISSÃO DE TRABALHOS ─────────────────────────────── -->
       <div class="tab-content" id="tab-submissao">
-        <!-- Descrição dos domínios -->
         <div style="max-width:900px;margin:0 auto 32px;">
           <h3 class="form-title">
             <span data-lang="pt">Submissão de Trabalhos Científicos</span>
@@ -1824,37 +1898,116 @@
             <span data-lang="en">Submit your structured abstract below. Identify the thematic domain that best fits your work.</span>
           </p>
 
-          <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:32px;">
-            <div style="border-left:4px solid #2d7a3a;background:var(--cream);border-radius:0 8px 8px 0;padding:14px 18px;">
-              <p style="font-weight:700;font-size:13px;color:#2d7a3a;margin:0 0 5px;font-family:Arial,sans-serif;">Domínio 1 — Biodiversidade e Natureza</p>
-              <p style="font-size:12.5px;color:var(--text-mid);margin:0;line-height:1.6;">Co-benefícios associados à integridade ecossistêmica e à biodiversidade nas zonas úmidas, como a polinização, biodiversidade, fluxos e estoques de carbono, produção primária, formação do solo, ciclagem de nutrientes e regimes hidrológicos. Proteção contra eventos climáticos extremos, como tempestades e inundações.</p>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:28px;">
+            <div style="border-left:4px solid #2d7a3a;background:var(--cream);border-radius:0 8px 8px 0;padding:12px 16px;">
+              <p style="font-weight:700;font-size:13px;color:#2d7a3a;margin:0 0 4px;font-family:Arial,sans-serif;">Domínio 1 — Biodiversidade e Natureza</p>
+              <p style="font-size:12px;color:var(--text-mid);margin:0;line-height:1.6;">Co-benefícios associados à integridade ecossistêmica e à biodiversidade nas zonas úmidas, como a polinização, biodiversidade, fluxos e estoques de carbono, produção primária, formação do solo, ciclagem de nutrientes e regimes hidrológicos. Proteção contra eventos climáticos extremos, como tempestades e inundações.</p>
             </div>
-            <div style="border-left:4px solid #b07d1e;background:var(--cream);border-radius:0 8px 8px 0;padding:14px 18px;">
-              <p style="font-weight:700;font-size:13px;color:#b07d1e;margin:0 0 5px;font-family:Arial,sans-serif;">Domínio 2 — Economia e Produção</p>
-              <p style="font-size:12.5px;color:var(--text-mid);margin:0;line-height:1.6;">Quantificação econômica dos produtos das zonas úmidas; valoração do carbono e de outros serviços ecossistêmicos; geração de renda, multiplicador do emprego e empregos nas zonas úmidas.</p>
+            <div style="border-left:4px solid #b07d1e;background:var(--cream);border-radius:0 8px 8px 0;padding:12px 16px;">
+              <p style="font-weight:700;font-size:13px;color:#b07d1e;margin:0 0 4px;font-family:Arial,sans-serif;">Domínio 2 — Economia e Produção</p>
+              <p style="font-size:12px;color:var(--text-mid);margin:0;line-height:1.6;">Quantificação econômica dos produtos das zonas úmidas; valoração do carbono e de outros serviços ecossistêmicos; geração de renda, multiplicador do emprego e empregos nas zonas úmidas.</p>
             </div>
-            <div style="border-left:4px solid #2b6cb0;background:var(--cream);border-radius:0 8px 8px 0;padding:14px 18px;">
-              <p style="font-weight:700;font-size:13px;color:#2b6cb0;margin:0 0 5px;font-family:Arial,sans-serif;">Domínio 3 — Clima</p>
-              <p style="font-size:12.5px;color:var(--text-mid);margin:0;line-height:1.6;">Modelos ecossistêmicos de carbono em zonas úmidas e cenários climáticos; projeções de sequestro sob diferentes estratégias de conservação e restauração; carbono profundo acumulado por milênios nos manguezais amazônicos; exportação lateral ao oceano; papel dos manguezais na dinâmica regional e global do carbono; implicações para planos climáticos nacionais e metas internacionais de mitigação.</p>
+            <div style="border-left:4px solid #2b6cb0;background:var(--cream);border-radius:0 8px 8px 0;padding:12px 16px;">
+              <p style="font-weight:700;font-size:13px;color:#2b6cb0;margin:0 0 4px;font-family:Arial,sans-serif;">Domínio 3 — Clima</p>
+              <p style="font-size:12px;color:var(--text-mid);margin:0;line-height:1.6;">Modelos ecossistêmicos de carbono em zonas úmidas e cenários climáticos; projeções de sequestro sob diferentes estratégias de conservação e restauração; carbono profundo acumulado por milênios nos manguezais amazônicos; exportação lateral ao oceano; papel dos manguezais na dinâmica regional e global do carbono; implicações para planos climáticos nacionais e metas internacionais de mitigação.</p>
             </div>
-            <div style="border-left:4px solid #7b5ea7;background:var(--cream);border-radius:0 8px 8px 0;padding:14px 18px;">
-              <p style="font-weight:700;font-size:13px;color:#7b5ea7;margin:0 0 5px;font-family:Arial,sans-serif;">Domínio 4 — Social</p>
-              <p style="font-size:12.5px;color:var(--text-mid);margin:0;line-height:1.6;">Como diferentes atores — pescadores artesanais, marisqueiras, povos indígenas, proprietários privados e gestores públicos — percebem e incorporam os co-benefícios em decisões de gestão. Co-benefícios sociais como indicadores mensuráveis de justiça climática, incluindo saúde e bem-estar.</p>
+            <div style="border-left:4px solid #7b5ea7;background:var(--cream);border-radius:0 8px 8px 0;padding:12px 16px;">
+              <p style="font-weight:700;font-size:13px;color:#7b5ea7;margin:0 0 4px;font-family:Arial,sans-serif;">Domínio 4 — Social</p>
+              <p style="font-size:12px;color:var(--text-mid);margin:0;line-height:1.6;">Como diferentes atores — pescadores artesanais, marisqueiras, povos indígenas, proprietários privados e gestores públicos — percebem e incorporam os co-benefícios em decisões de gestão. Co-benefícios sociais como indicadores mensuráveis de justiça climática, incluindo saúde e bem-estar.</p>
             </div>
           </div>
 
-          <!-- Tally embed submissão -->
-          <div class="form-wrapper" style="padding:0;background:transparent;box-shadow:none;">
-            <iframe
-              data-tally-src="https://tally.so/embed/A75zbW?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-              loading="lazy" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0"
-              title="Formulário de Submissão de Trabalhos"
-              style="border-radius:8px;"></iframe>
+          <div class="form-wrapper" style="padding:28px 32px;">
+            <form class="reg-form" onsubmit="return false;">
+              <div class="form-grid-2">
+                <div class="form-field">
+                  <label data-lang="pt">NOME DO AUTOR *</label>
+                  <label data-lang="en">AUTHOR NAME *</label>
+                  <input type="text" required>
+                </div>
+                <div class="form-field">
+                  <label data-lang="pt">E-MAIL *</label>
+                  <label data-lang="en">E-MAIL *</label>
+                  <input type="email" required>
+                </div>
+              </div>
+              <div class="form-field">
+                <label data-lang="pt">INSTITUIÇÃO *</label>
+                <label data-lang="en">INSTITUTION *</label>
+                <input type="text" required>
+              </div>
+              <div class="form-field">
+                <label data-lang="pt">CO-AUTORES (separados por ponto e vírgula)</label>
+                <label data-lang="en">CO-AUTHORS (separated by semicolons)</label>
+                <input type="text" placeholder="Ex: Ana Silva; João Costa">
+              </div>
+              <div class="form-field">
+                <label data-lang="pt">DOMÍNIO TEMÁTICO *</label>
+                <label data-lang="en">THEMATIC DOMAIN *</label>
+                <select required>
+                  <option value="" disabled selected data-lang="pt">Selecione o domínio mais adequado...</option>
+                  <option>Domínio 1 — Biodiversidade e Natureza</option>
+                  <option>Domínio 2 — Economia e Produção</option>
+                  <option>Domínio 3 — Clima</option>
+                  <option>Domínio 4 — Social</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label data-lang="pt">TÍTULO DO TRABALHO *</label>
+                <label data-lang="en">PAPER TITLE *</label>
+                <input type="text" required>
+              </div>
+              <div class="form-field">
+                <label data-lang="pt">PALAVRAS-CHAVE (máx. 5, separadas por ";")</label>
+                <label data-lang="en">KEYWORDS (max. 5, separated by ";")</label>
+                <input type="text" placeholder="Ex: manguezal; carbono azul; biodiversidade">
+              </div>
+              <div class="form-field">
+                <label data-lang="pt">OBJETIVO <span style="font-weight:400;opacity:.6;">(máx. 300 caracteres)</span></label>
+                <label data-lang="en">OBJECTIVE <span style="font-weight:400;opacity:.6;">(max. 300 chars)</span></label>
+                <textarea rows="3" maxlength="300"></textarea>
+              </div>
+              <div class="form-field">
+                <label data-lang="pt">CONTEXTO / JUSTIFICATIVA <span style="font-weight:400;opacity:.6;">(máx. 250 caracteres)</span></label>
+                <label data-lang="en">CONTEXT / RATIONALE <span style="font-weight:400;opacity:.6;">(max. 250 chars)</span></label>
+                <textarea rows="3" maxlength="250"></textarea>
+              </div>
+              <div class="form-field">
+                <label data-lang="pt">METODOLOGIA <span style="font-weight:400;opacity:.6;">(máx. 550 caracteres)</span></label>
+                <label data-lang="en">METHODOLOGY <span style="font-weight:400;opacity:.6;">(max. 550 chars)</span></label>
+                <textarea rows="4" maxlength="550"></textarea>
+              </div>
+              <div class="form-field">
+                <label data-lang="pt">RESULTADOS <span style="font-weight:400;opacity:.6;">(máx. 550 caracteres)</span></label>
+                <label data-lang="en">RESULTS <span style="font-weight:400;opacity:.6;">(max. 550 chars)</span></label>
+                <textarea rows="4" maxlength="550"></textarea>
+              </div>
+              <div class="form-field">
+                <label data-lang="pt">CONCLUSÃO <span style="font-weight:400;opacity:.6;">(máx. 300 caracteres)</span></label>
+                <label data-lang="en">CONCLUSION <span style="font-weight:400;opacity:.6;">(max. 300 chars)</span></label>
+                <textarea rows="3" maxlength="300"></textarea>
+              </div>
+              <div class="form-field">
+                <label data-lang="pt">REFERÊNCIAS BIBLIOGRÁFICAS</label>
+                <label data-lang="en">BIBLIOGRAPHIC REFERENCES</label>
+                <textarea rows="4"></textarea>
+              </div>
+              <div class="form-field">
+                <label data-lang="pt">FONTE DE FINANCIAMENTO (opcional)</label>
+                <label data-lang="en">FUNDING SOURCE (optional)</label>
+                <input type="text">
+              </div>
+              <button type="submit" class="form-submit-btn">
+                <span>✓</span>
+                <span data-lang="pt"> Enviar trabalho</span>
+                <span data-lang="en"> Submit paper</span>
+              </button>
+              <p class="form-note" style="margin-top:12px;">
+                <span data-lang="pt">Os dados serão tratados de acordo com a LGPD. <a href="politica-de-privacidade.html" style="color:var(--green-mid);">Política de Privacidade</a></span>
+                <span data-lang="en">Data handled per LGPD. <a href="politica-de-privacidade.html" style="color:var(--green-mid);">Privacy Policy</a></span>
+              </p>
+            </form>
           </div>
-          <p class="form-note mt-8">
-            <span data-lang="pt">Os dados serão tratados de acordo com a LGPD. <a href="politica-de-privacidade.html" style="color:var(--green-mid);">Política de Privacidade</a></span>
-            <span data-lang="en">Data handled per LGPD. <a href="politica-de-privacidade.html" style="color:var(--green-mid);">Privacy Policy</a></span>
-          </p>
         </div>
       </div>
 
@@ -1871,8 +2024,8 @@
           </p>
 
           <!-- O que inclui -->
-          <div style="background:var(--green-pale);border:1px solid var(--green-light);border-radius:10px;padding:18px 22px;margin-bottom:24px;">
-            <p style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--green-mid);margin-bottom:12px;">
+          <div style="background:var(--green-pale);border:1px solid var(--green-light);border-radius:10px;padding:18px 22px;margin-bottom:20px;">
+            <p style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--green-mid);margin-bottom:10px;">
               <span data-lang="pt">O que está incluído</span><span data-lang="en">What's included</span>
             </p>
             <ul style="font-family:Arial,sans-serif;font-size:13px;color:var(--text-mid);line-height:1.8;padding-left:18px;margin:0;">
@@ -1885,10 +2038,10 @@
 
           <!-- Categorias e preços -->
           <div style="background:var(--cream);border:1px solid var(--green-light);border-radius:10px;padding:18px 22px;margin-bottom:24px;">
-            <p style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--green-mid);margin-bottom:12px;">
+            <p style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--green-mid);margin-bottom:10px;">
               <span data-lang="pt">Categorias e valores</span><span data-lang="en">Categories and fees</span>
             </p>
-            <div style="display:grid;grid-template-columns:1fr auto;gap:8px 24px;font-family:Arial,sans-serif;font-size:13px;">
+            <div style="display:grid;grid-template-columns:1fr auto;gap:6px 24px;font-family:Arial,sans-serif;font-size:13px;">
               <span style="color:var(--text-mid);" data-lang="pt">Estudante</span><span style="color:var(--text-mid);" data-lang="en">Student</span>
               <span style="font-weight:700;color:var(--green-deep);">R$ 80</span>
               <span style="color:var(--text-mid);" data-lang="pt">Profissional</span><span style="color:var(--text-mid);" data-lang="en">Professional</span>
@@ -1896,18 +2049,43 @@
             </div>
           </div>
 
-          <!-- Tally embed visita técnica -->
-          <div class="form-wrapper" style="padding:0;background:transparent;box-shadow:none;">
-            <iframe
-              data-tally-src="https://tally.so/embed/A75zbW?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-              loading="lazy" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0"
-              title="Formulário de Visita Técnica"
-              style="border-radius:8px;"></iframe>
-          </div>
-          <p class="form-note mt-8">
-            <span data-lang="pt">Vagas limitadas. A confirmação da visita depende do pagamento. Os dados serão tratados de acordo com a LGPD. <a href="politica-de-privacidade.html" style="color:var(--green-mid);">Política de Privacidade</a></span>
-            <span data-lang="en">Limited spots. Visit confirmation subject to payment. Data handled per LGPD. <a href="politica-de-privacidade.html" style="color:var(--green-mid);">Privacy Policy</a></span>
-          </p>
+          <form class="reg-form" onsubmit="return false;">
+            <div class="form-grid-2">
+              <div class="form-field">
+                <label data-lang="pt">NOME COMPLETO *</label>
+                <label data-lang="en">FULL NAME *</label>
+                <input type="text" required>
+              </div>
+              <div class="form-field">
+                <label data-lang="pt">E-MAIL *</label>
+                <label data-lang="en">E-MAIL *</label>
+                <input type="email" required>
+              </div>
+            </div>
+            <div class="form-field">
+              <label data-lang="pt">CATEGORIA *</label>
+              <label data-lang="en">CATEGORY *</label>
+              <select required>
+                <option value="" disabled selected data-lang="pt">Selecione...</option>
+                <option data-lang="pt">Estudante — R$ 80</option>
+                <option data-lang="pt">Profissional — R$ 300</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label data-lang="pt">OBSERVAÇÕES</label>
+              <label data-lang="en">NOTES</label>
+              <textarea rows="3" placeholder="..."></textarea>
+            </div>
+            <button type="submit" class="form-submit-btn">
+              <span>✓</span>
+              <span data-lang="pt"> Confirmar interesse na visita</span>
+              <span data-lang="en"> Confirm interest in the visit</span>
+            </button>
+            <p class="form-note" style="margin-top:12px;">
+              <span data-lang="pt">Vagas limitadas. A confirmação da visita depende do pagamento. Os dados serão tratados de acordo com a LGPD. <a href="politica-de-privacidade.html" style="color:var(--green-mid);">Política de Privacidade</a></span>
+              <span data-lang="en">Limited spots. Visit confirmation subject to payment. Data handled per LGPD. <a href="politica-de-privacidade.html" style="color:var(--green-mid);">Privacy Policy</a></span>
+            </p>
+          </form>
         </div>
       </div>
 
