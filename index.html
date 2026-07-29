@@ -1025,8 +1025,8 @@
         <span data-lang="en">Organizers</span>
       </a>
       <a href="#inscricoes" class="nav-link nav-cta">
-        <span data-lang="pt">Inscrições / Submissão</span>
-        <span data-lang="en">Register / Submit</span>
+        <span data-lang="pt">Inscrições</span>
+        <span data-lang="en">Register</span>
       </a>
     </div>
   </nav>
@@ -1733,7 +1733,7 @@
     </div>
   </section>
 
-  <!-- INSCRIÇÕES / SUBMISSÃO -->
+  <!-- INSCRIÇÕES / SUBMISSÃO / VISITA -->
   <section class="tabs-section" id="inscricoes">
     <div class="section-inner">
       <p class="section-label">
@@ -1741,11 +1741,12 @@
         <span data-lang="en">Participation</span>
       </p>
       <h2 class="section-title">
-        <span data-lang="pt">Inscrições e Submissão de Trabalhos</span>
-        <span data-lang="en">Registration and Work Submission</span>
+        <span data-lang="pt">Inscrições, Submissão e Visita Técnica</span>
+        <span data-lang="en">Registration, Submission and Technical Visit</span>
       </h2>
       <div class="divider"></div>
 
+      <!-- TAB NAVIGATION -->
       <div class="tabs-nav">
         <button class="tab-btn active" data-tab="inscricoes" onclick="switchTab('inscricoes')">
           <span>🎓</span>
@@ -1757,136 +1758,52 @@
           <span data-lang="pt"> Submissão de Trabalhos</span>
           <span data-lang="en"> Work Submission</span>
         </button>
+        <button class="tab-btn" data-tab="visita" onclick="switchTab('visita')">
+          <span>🌿</span>
+          <span data-lang="pt"> Visita Técnica</span>
+          <span data-lang="en"> Technical Visit</span>
+        </button>
       </div>
 
-            <!-- TAB: INSCRIÇÕES -->
+      <!-- ─── TAB 1: INSCRIÇÕES ──────────────────────────────────────────── -->
       <div class="tab-content active" id="tab-inscricoes">
-        <!-- Prices overview -->
-        <div class="reg-grid" style="margin-bottom:32px;">
-          <div class="reg-card">
-            <div class="reg-card-header"><div class="cat" data-lang="pt">Estudante</div><div class="cat" data-lang="en">Student</div><h3><span data-lang="pt">Graduação / Pós</span><span data-lang="en">Undergraduate / Graduate</span></h3></div>
-            <div class="reg-price"><span class="amount">R$ 60</span></div>
-            <div class="reg-card-footer"><a href="#reg-form" class="btn btn-primary"><span data-lang="pt">Inscrever-se</span><span data-lang="en">Register</span></a></div>
-          </div>
-          <div class="reg-card">
-            <div class="reg-card-header grad"><div class="cat" data-lang="pt">Profissional</div><div class="cat" data-lang="en">Professional</div><h3><span data-lang="pt">Pesquisador / Profissional</span><span data-lang="en">Researcher / Professional</span></h3></div>
-            <div class="reg-price"><span class="amount">R$ 180</span></div>
-            <div class="reg-card-footer"><a href="#reg-form" class="btn btn-primary"><span data-lang="pt">Inscrever-se</span><span data-lang="en">Register</span></a></div>
-          </div>
-          <div class="reg-card">
-            <div class="reg-card-header prof"><div class="cat" data-lang="pt">Comunidade / Isenção</div><div class="cat" data-lang="en">Community / Waiver</div><h3><span data-lang="pt">Membro de Comunidade</span><span data-lang="en">Community Member</span></h3></div>
-            <div class="reg-price"><span class="amount" style="color:var(--green-light);">R$ 0</span></div>
-            <div class="reg-card-footer"><a href="#reg-form" class="btn btn-primary"><span data-lang="pt">Inscrever-se</span><span data-lang="en">Register</span></a></div>
-          </div>
-        </div>
+        <div class="form-wrapper" style="max-width:720px;margin:0 auto;">
+          <h3 class="form-title">
+            <span data-lang="pt">Formulário de Inscrição</span>
+            <span data-lang="en">Registration Form</span>
+          </h3>
+          <p class="form-subtitle">
+            <span data-lang="pt">Preencha o formulário abaixo. O pagamento (quando aplicável) é realizado via PayPal após a seleção da categoria.</span>
+            <span data-lang="en">Fill in the form below. Payment (when applicable) is processed via PayPal after category selection.</span>
+          </p>
 
-        <div class="form-wrapper" id="reg-form">
-          <h3 class="form-title"><span data-lang="pt">Formulário de Inscrição</span><span data-lang="en">Registration Form</span></h3>
-          <p class="form-subtitle"><span data-lang="pt">Preencha todos os campos. Você receberá uma confirmação por e-mail.</span><span data-lang="en">Fill in all fields. You will receive a confirmation by email.</span></p>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label><span data-lang="pt">Nome Completo <span class="required">*</span></span><span data-lang="en">Full Name <span class="required">*</span></span></label>
-              <input type="text" placeholder="Ex: Carolina Bueno" required />
-            </div>
-            <div class="form-group">
-              <label><span data-lang="pt">E-mail <span class="required">*</span></span><span data-lang="en">Email <span class="required">*</span></span></label>
-              <input type="email" placeholder="email@instituicao.br" required />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label><span data-lang="pt">País <span class="required">*</span></span><span data-lang="en">Country <span class="required">*</span></span></label>
-              <select id="reg-country" onchange="handleCountry(this)">
-                <option value=""><span data-lang="pt">Selecione...</span><span data-lang="en">Select...</span></option>
-                <option value="BR">Brasil / Brazil</option>
-                <option value="US">Estados Unidos / United States</option>
-                <option value="PT">Portugal</option>
-                <option value="AR">Argentina</option>
-                <option value="CO">Colombia</option>
-                <option value="PE">Peru</option>
-                <option value="MX">México / Mexico</option>
-                <option value="GB">Reino Unido / United Kingdom</option>
-                <option value="FR">França / France</option>
-                <option value="DE">Alemanha / Germany</option>
-                <option value="IT">Itália / Italy</option>
-                <option value="ES">Espanha / Spain</option>
-                <option value="JP">Japão / Japan</option>
-                <option value="CA">Canadá / Canada</option>
-                <option value="AU">Austrália / Australia</option>
-                <option value="NO">Noruega / Norway</option>
-                <option value="TW">Taiwan</option>
-                <option value="TR">Turquia / Turkey</option>
-                <option value="other"><span data-lang="pt">Outro</span><span data-lang="en">Other</span></option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label><span data-lang="pt">Estado / Província <span class="required">*</span></span><span data-lang="en">State / Province <span class="required">*</span></span></label>
-              <input type="text" placeholder="Ex: Pará" required />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label><span data-lang="pt">Cidade <span class="required">*</span></span><span data-lang="en">City <span class="required">*</span></span></label>
-              <input type="text" placeholder="Ex: Bragança" required />
-            </div>
-            <div class="form-group">
-              <label><span data-lang="pt">Telefone (com código do país) <span class="required">*</span></span><span data-lang="en">Phone (with country code) <span class="required">*</span></span></label>
-              <input type="tel" placeholder="+55 91 99999-9999" required />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label><span data-lang="pt">Nacionalidade <span class="required">*</span></span><span data-lang="en">Nationality <span class="required">*</span></span></label>
-              <select id="reg-nationality" onchange="handleNationality(this)">
-                <option value=""><span data-lang="pt">Selecione...</span><span data-lang="en">Select...</span></option>
-                <option value="BR"><span data-lang="pt">Brasileira</span><span data-lang="en">Brazilian</span></option>
-                <option value="other"><span data-lang="pt">Outra</span><span data-lang="en">Other</span></option>
-              </select>
-            </div>
-            <div class="form-group" id="cpf-group" style="display:none;">
-              <label><span data-lang="pt">CPF <span class="required">*</span></span><span data-lang="en">CPF (Brazilian tax ID) <span class="required">*</span></span></label>
-              <input type="text" id="cpf-input" placeholder="000.000.000-00" />
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label><span data-lang="pt">Instituição <span class="required">*</span></span><span data-lang="en">Institution <span class="required">*</span></span></label>
-            <input type="text" placeholder="Unicamp / UFPA / UCSC..." required />
-          </div>
-
-          <div class="form-group">
-            <label><span data-lang="pt">Categoria de Inscrição <span class="required">*</span></span><span data-lang="en">Registration Category <span class="required">*</span></span></label>
-            <select id="reg-category" onchange="handleCategory(this)">
-              <option value=""><span data-lang="pt">Selecione...</span><span data-lang="en">Select...</span></option>
-              <option value="grad" data-price="60">Estudante de Graduação — R$ 60</option>
-              <option value="pos" data-price="60">Estudante de Pós-Graduação — R$ 60</option>
-              <option value="prof" data-price="180">Profissional / Pesquisador — R$ 180</option>
-              <option value="community" data-price="0">Membro de Comunidade — R$ 0</option>
-              <option value="isencao" data-price="0">Isenção — R$ 0</option>
-            </select>
-          </div>
-
-          <!-- PayPal section – shown only for paid categories -->
-          <div id="paypal-section" style="display:none;background:var(--green-pale);border:1px solid var(--green-light);border-radius:8px;padding:18px;margin-bottom:16px;">
-            <p style="font-family:Arial,sans-serif;font-size:13px;color:var(--green-deep);margin:0 0 10px;font-weight:700;">
-              💳 <span data-lang="pt">Pagamento via PayPal</span><span data-lang="en">Payment via PayPal</span>
+          <!-- Tabela de categorias e preços -->
+          <div style="background:var(--green-pale);border:1px solid var(--green-light);border-radius:10px;padding:18px 22px;margin-bottom:24px;">
+            <p style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--green-mid);margin-bottom:12px;">
+              <span data-lang="pt">Categorias e valores</span><span data-lang="en">Categories and fees</span>
             </p>
-            <p style="font-family:Arial,sans-serif;font-size:12px;color:var(--text-mid);margin:0 0 12px;">
-              <span data-lang="pt">Ao confirmar sua inscrição, você será direcionado ao PayPal para concluir o pagamento.</span>
-              <span data-lang="en">Upon confirming your registration, you will be redirected to PayPal to complete payment.</span>
-            </p>
-            <p id="paypal-amount" style="font-family:Arial,sans-serif;font-size:18px;font-weight:700;color:var(--green-mid);margin:0;"></p>
+            <div style="display:grid;grid-template-columns:1fr auto;gap:6px 24px;font-family:Arial,sans-serif;font-size:13px;">
+              <span style="color:var(--text-mid);" data-lang="pt">Estudante de Graduação</span><span style="color:var(--text-mid);" data-lang="en">Undergraduate Student</span>
+              <span style="font-weight:700;color:var(--green-deep);">R$ 60</span>
+              <span style="color:var(--text-mid);" data-lang="pt">Estudante de Pós-Graduação</span><span style="color:var(--text-mid);" data-lang="en">Graduate Student</span>
+              <span style="font-weight:700;color:var(--green-deep);">R$ 60</span>
+              <span style="color:var(--text-mid);" data-lang="pt">Profissional / Pesquisador</span><span style="color:var(--text-mid);" data-lang="en">Professional / Researcher</span>
+              <span style="font-weight:700;color:var(--green-deep);">R$ 180</span>
+              <span style="color:var(--text-mid);" data-lang="pt">Membro de Comunidade</span><span style="color:var(--text-mid);" data-lang="en">Community Member</span>
+              <span style="font-weight:700;color:var(--green-light);">R$ 0</span>
+              <span style="color:var(--text-mid);" data-lang="pt">Isenção</span><span style="color:var(--text-mid);" data-lang="en">Waiver</span>
+              <span style="font-weight:700;color:var(--green-light);">R$ 0</span>
+            </div>
           </div>
 
-          <button class="btn btn-primary mt-8" style="font-size:15px;padding:14px 32px;" onclick="submitReg(event)">
-            <span>✓</span>
-            <span data-lang="pt">Confirmar inscrição</span>
-            <span data-lang="en">Confirm registration</span>
-          </button>
+          <!-- Tally embed inscrições -->
+          <div class="form-wrapper" style="padding:0;background:transparent;box-shadow:none;">
+            <iframe
+              data-tally-src="https://tally.so/embed/A75zbW?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+              loading="lazy" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0"
+              title="Formulário de Inscrição"
+              style="border-radius:8px;"></iframe>
+          </div>
           <p class="form-note mt-8">
             <span data-lang="pt">Os dados serão tratados de acordo com a LGPD. <a href="politica-de-privacidade.html" style="color:var(--green-mid);">Política de Privacidade</a></span>
             <span data-lang="en">Data handled in accordance with Brazilian data protection law (LGPD). <a href="politica-de-privacidade.html" style="color:var(--green-mid);">Privacy Policy</a></span>
@@ -1894,98 +1811,108 @@
         </div>
       </div>
 
-      <!-- TAB: SUBMISSÃO -->
+      <!-- ─── TAB 2: SUBMISSÃO DE TRABALHOS ─────────────────────────────── -->
       <div class="tab-content" id="tab-submissao">
-        <div class="sub-info">
-          <div class="sub-info-card">
-            <h4>
-              <span>📋</span>
-              <span data-lang="pt">Formatos aceitos</span>
-              <span data-lang="en">Accepted formats</span>
-            </h4>
-            <ul>
-              <li><span data-lang="pt">Pôster científico (formato A0)</span><span data-lang="en">Scientific poster (A0 format)</span></li>
-              <li><span data-lang="pt">Apresentação oral (15 min + 5 min Q&amp;A)</span><span data-lang="en">Oral presentation (15 min + 5 min Q&amp;A)</span></li>
-            </ul>
-          </div>
-          <div class="sub-info-card">
-            <h4>
-              <span>🗂️</span>
-              <span data-lang="pt">Eixos temáticos para submissão</span>
-              <span data-lang="en">Thematic axes for submission</span>
-            </h4>
-            <ul>
-              <li><span data-lang="pt">Dinâmica do carbono em zonas úmidas</span><span data-lang="en">Carbon dynamics in wetlands</span></li>
-              <li><span data-lang="pt">Serviços ecossistêmicos e gestão</span><span data-lang="en">Ecosystem services and management</span></li>
-              <li><span data-lang="pt">Governança, comunidades e percepções</span><span data-lang="en">Governance, communities, and perceptions</span></li>
-              <li><span data-lang="pt">Mudanças climáticas e balanço de carbono</span><span data-lang="en">Climate change and carbon balance</span></li>
-            </ul>
-          </div>
-          <div class="sub-info-card">
-            <h4>
-              <span>🌐</span>
-              <span data-lang="pt">Idiomas aceitos</span>
-              <span data-lang="en">Accepted languages</span>
-            </h4>
-            <ul>
-              <li><span data-lang="pt">Português</span><span data-lang="en">Portuguese</span></li>
-              <li><span data-lang="pt">Inglês</span><span data-lang="en">English</span></li>
-            </ul>
-            <p style="font-size:12px;color:var(--text-light);margin-top:8px;font-style:italic;">
-              <span data-lang="pt">O arquivo do trabalho pode ser enviado em inglês ou português.</span>
-              <span data-lang="en">Work files may be submitted in English or Portuguese.</span>
-            </p>
-          </div>
-          <div class="sub-info-card">
-            <h4>
-              <span>📅</span>
-              <span data-lang="pt">Prazos</span>
-              <span data-lang="en">Deadlines</span>
-            </h4>
-            <ul>
-              <li><span data-lang="pt">Submissão de trabalhos: <strong>8 de setembro de 2026</strong></span><span data-lang="en">Work submission: <strong>September 8, 2026</strong></span></li>
-              <li><span data-lang="pt">Notificação de aceite: <strong>20 de setembro de 2026</strong></span><span data-lang="en">Acceptance notification: <strong>September 20, 2026</strong></span></li>
-              <li><span data-lang="pt">Versão final: <strong>a definir</strong></span><span data-lang="en">Final version: <strong>TBD</strong></span></li>
-            </ul>
-          </div>
-        </div>
+        <!-- Descrição dos domínios -->
+        <div style="max-width:900px;margin:0 auto 32px;">
+          <h3 class="form-title">
+            <span data-lang="pt">Submissão de Trabalhos Científicos</span>
+            <span data-lang="en">Scientific Work Submission</span>
+          </h3>
+          <p class="form-subtitle">
+            <span data-lang="pt">Submeta seu resumo estruturado abaixo. Identifique o domínio temático mais adequado ao seu trabalho.</span>
+            <span data-lang="en">Submit your structured abstract below. Identify the thematic domain that best fits your work.</span>
+          </p>
 
-                <!-- Domain descriptions for submission -->
-        <div style="background:white;border-radius:12px;padding:24px 28px;margin-bottom:28px;box-shadow:0 2px 12px var(--shadow);">
-          <h4 style="font-size:14px;color:var(--green-deep);margin-bottom:16px;">
-            <span data-lang="pt">🗂️ Domínios Temáticos — escolha o mais adequado ao seu trabalho</span>
-            <span data-lang="en">🗂️ Thematic Domains — choose the most appropriate for your work</span>
-          </h4>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-            <div style="border-left:3px solid #2d7a3a;padding:10px 14px;background:var(--cream);border-radius:0 6px 6px 0;">
-              <p style="font-weight:700;font-size:12.5px;color:#2d7a3a;margin:0 0 4px;font-family:Arial,sans-serif;"><span data-lang="pt">Domínio 1 — Biodiversidade e Natureza</span><span data-lang="en">Domain 1 — Biodiversity and Nature</span></p>
-              <p style="font-size:11.5px;color:var(--text-mid);margin:0;line-height:1.5;"><span data-lang="pt">Polinização, biodiversidade, fluxos de carbono, produção primária, formação do solo, ciclagem de nutrientes, regimes hidrológicos e proteção contra eventos extremos.</span><span data-lang="en">Pollination, biodiversity, carbon fluxes, primary production, soil formation, nutrient cycling, hydrological regimes, and protection from extreme events.</span></p>
+          <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:32px;">
+            <div style="border-left:4px solid #2d7a3a;background:var(--cream);border-radius:0 8px 8px 0;padding:14px 18px;">
+              <p style="font-weight:700;font-size:13px;color:#2d7a3a;margin:0 0 5px;font-family:Arial,sans-serif;">Domínio 1 — Biodiversidade e Natureza</p>
+              <p style="font-size:12.5px;color:var(--text-mid);margin:0;line-height:1.6;">Co-benefícios associados à integridade ecossistêmica e à biodiversidade nas zonas úmidas, como a polinização, biodiversidade, fluxos e estoques de carbono, produção primária, formação do solo, ciclagem de nutrientes e regimes hidrológicos. Proteção contra eventos climáticos extremos, como tempestades e inundações.</p>
             </div>
-            <div style="border-left:3px solid var(--gold);padding:10px 14px;background:var(--cream);border-radius:0 6px 6px 0;">
-              <p style="font-weight:700;font-size:12.5px;color:var(--earth);margin:0 0 4px;font-family:Arial,sans-serif;"><span data-lang="pt">Domínio 2 — Economia e Produção</span><span data-lang="en">Domain 2 — Economy and Production</span></p>
-              <p style="font-size:11.5px;color:var(--text-mid);margin:0;line-height:1.5;"><span data-lang="pt">Quantificação econômica de produtos das zonas úmidas; valoração do carbono e serviços ecossistêmicos; geração de renda e empregos.</span><span data-lang="en">Economic quantification of wetland products; carbon and ecosystem services valuation; income and job generation.</span></p>
+            <div style="border-left:4px solid #b07d1e;background:var(--cream);border-radius:0 8px 8px 0;padding:14px 18px;">
+              <p style="font-weight:700;font-size:13px;color:#b07d1e;margin:0 0 5px;font-family:Arial,sans-serif;">Domínio 2 — Economia e Produção</p>
+              <p style="font-size:12.5px;color:var(--text-mid);margin:0;line-height:1.6;">Quantificação econômica dos produtos das zonas úmidas; valoração do carbono e de outros serviços ecossistêmicos; geração de renda, multiplicador do emprego e empregos nas zonas úmidas.</p>
             </div>
-            <div style="border-left:3px solid var(--ocean);padding:10px 14px;background:var(--cream);border-radius:0 6px 6px 0;">
-              <p style="font-weight:700;font-size:12.5px;color:var(--ocean);margin:0 0 4px;font-family:Arial,sans-serif;"><span data-lang="pt">Domínio 3 — Clima</span><span data-lang="en">Domain 3 — Climate</span></p>
-              <p style="font-size:11.5px;color:var(--text-mid);margin:0;line-height:1.5;"><span data-lang="pt">Modelos de carbono e cenários climáticos; carbono profundo dos manguezais amazônicos; exportação lateral ao oceano; implicações para NDCs e metas internacionais de mitigação.</span><span data-lang="en">Carbon models and climate scenarios; deep carbon in Amazon mangroves; lateral ocean export; implications for NDCs and international mitigation targets.</span></p>
+            <div style="border-left:4px solid #2b6cb0;background:var(--cream);border-radius:0 8px 8px 0;padding:14px 18px;">
+              <p style="font-weight:700;font-size:13px;color:#2b6cb0;margin:0 0 5px;font-family:Arial,sans-serif;">Domínio 3 — Clima</p>
+              <p style="font-size:12.5px;color:var(--text-mid);margin:0;line-height:1.6;">Modelos ecossistêmicos de carbono em zonas úmidas e cenários climáticos; projeções de sequestro sob diferentes estratégias de conservação e restauração; carbono profundo acumulado por milênios nos manguezais amazônicos; exportação lateral ao oceano; papel dos manguezais na dinâmica regional e global do carbono; implicações para planos climáticos nacionais e metas internacionais de mitigação.</p>
             </div>
-            <div style="border-left:3px solid #7b5ea7;padding:10px 14px;background:var(--cream);border-radius:0 6px 6px 0;">
-              <p style="font-weight:700;font-size:12.5px;color:#7b5ea7;margin:0 0 4px;font-family:Arial,sans-serif;"><span data-lang="pt">Domínio 4 — Social</span><span data-lang="en">Domain 4 — Social</span></p>
-              <p style="font-size:11.5px;color:var(--text-mid);margin:0;line-height:1.5;"><span data-lang="pt">Percepções e decisões de gestão por pescadores, marisqueiras, povos indígenas e gestores públicos; co-benefícios sociais como indicadores de justiça climática.</span><span data-lang="en">Perceptions and management decisions by fishers, shellfish gatherers, indigenous peoples and public managers; social co-benefits as climate justice indicators.</span></p>
+            <div style="border-left:4px solid #7b5ea7;background:var(--cream);border-radius:0 8px 8px 0;padding:14px 18px;">
+              <p style="font-weight:700;font-size:13px;color:#7b5ea7;margin:0 0 5px;font-family:Arial,sans-serif;">Domínio 4 — Social</p>
+              <p style="font-size:12.5px;color:var(--text-mid);margin:0;line-height:1.6;">Como diferentes atores — pescadores artesanais, marisqueiras, povos indígenas, proprietários privados e gestores públicos — percebem e incorporam os co-benefícios em decisões de gestão. Co-benefícios sociais como indicadores mensuráveis de justiça climática, incluindo saúde e bem-estar.</p>
             </div>
           </div>
-        </div>
-        <div class="form-wrapper" style="padding:0;background:transparent;box-shadow:none;">
-          <iframe data-tally-src="https://tally.so/embed/A75zbW?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-            loading="lazy" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0"
-            title="Submissão de Trabalhos — 1ª Conferência de Co-benefícios do Carbono Azul e Zonas Úmidas"
-            style="border-radius:12px;"></iframe>
-          <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+
+          <!-- Tally embed submissão -->
+          <div class="form-wrapper" style="padding:0;background:transparent;box-shadow:none;">
+            <iframe
+              data-tally-src="https://tally.so/embed/A75zbW?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+              loading="lazy" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0"
+              title="Formulário de Submissão de Trabalhos"
+              style="border-radius:8px;"></iframe>
+          </div>
+          <p class="form-note mt-8">
+            <span data-lang="pt">Os dados serão tratados de acordo com a LGPD. <a href="politica-de-privacidade.html" style="color:var(--green-mid);">Política de Privacidade</a></span>
+            <span data-lang="en">Data handled per LGPD. <a href="politica-de-privacidade.html" style="color:var(--green-mid);">Privacy Policy</a></span>
+          </p>
         </div>
       </div>
+
+      <!-- ─── TAB 3: VISITA TÉCNICA ──────────────────────────────────────── -->
+      <div class="tab-content" id="tab-visita">
+        <div class="form-wrapper" style="max-width:720px;margin:0 auto;">
+          <h3 class="form-title">
+            <span data-lang="pt">Visita Técnica — Resex Caeté-Taperaçu</span>
+            <span data-lang="en">Technical Visit — Caeté-Taperaçu Marine Reserve</span>
+          </h3>
+          <p class="form-subtitle">
+            <span data-lang="pt">A visita técnica acontece no Dia 2 (31 de outubro de 2026) nas comunidades da Reserva Extrativista Marinha de Caeté-Taperaçu, em Bragança. Vagas limitadas.</span>
+            <span data-lang="en">The technical visit takes place on Day 2 (October 31, 2026) in communities of the Caeté-Taperaçu Marine Extractivist Reserve in Bragança. Limited spots.</span>
+          </p>
+
+          <!-- O que inclui -->
+          <div style="background:var(--green-pale);border:1px solid var(--green-light);border-radius:10px;padding:18px 22px;margin-bottom:24px;">
+            <p style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--green-mid);margin-bottom:12px;">
+              <span data-lang="pt">O que está incluído</span><span data-lang="en">What's included</span>
+            </p>
+            <ul style="font-family:Arial,sans-serif;font-size:13px;color:var(--text-mid);line-height:1.8;padding-left:18px;margin:0;">
+              <li data-lang="pt">Transporte de ida e volta (Bragança → Resex)</li><li data-lang="en">Round-trip transport (Bragança → Reserve)</li>
+              <li data-lang="pt">Guia local e pesquisadores do Projeto Mangues da Amazônia</li><li data-lang="en">Local guide and Amazon Mangroves Project researchers</li>
+              <li data-lang="pt">Almoço compartilhado com as comunidades</li><li data-lang="en">Shared lunch with the communities</li>
+              <li data-lang="pt">Materiais educativos sobre co-benefícios das zonas úmidas</li><li data-lang="en">Educational materials on wetland co-benefits</li>
+            </ul>
+          </div>
+
+          <!-- Categorias e preços -->
+          <div style="background:var(--cream);border:1px solid var(--green-light);border-radius:10px;padding:18px 22px;margin-bottom:24px;">
+            <p style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--green-mid);margin-bottom:12px;">
+              <span data-lang="pt">Categorias e valores</span><span data-lang="en">Categories and fees</span>
+            </p>
+            <div style="display:grid;grid-template-columns:1fr auto;gap:8px 24px;font-family:Arial,sans-serif;font-size:13px;">
+              <span style="color:var(--text-mid);" data-lang="pt">Estudante</span><span style="color:var(--text-mid);" data-lang="en">Student</span>
+              <span style="font-weight:700;color:var(--green-deep);">R$ 80</span>
+              <span style="color:var(--text-mid);" data-lang="pt">Profissional</span><span style="color:var(--text-mid);" data-lang="en">Professional</span>
+              <span style="font-weight:700;color:var(--green-deep);">R$ 300</span>
+            </div>
+          </div>
+
+          <!-- Tally embed visita técnica -->
+          <div class="form-wrapper" style="padding:0;background:transparent;box-shadow:none;">
+            <iframe
+              data-tally-src="https://tally.so/embed/A75zbW?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+              loading="lazy" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0"
+              title="Formulário de Visita Técnica"
+              style="border-radius:8px;"></iframe>
+          </div>
+          <p class="form-note mt-8">
+            <span data-lang="pt">Vagas limitadas. A confirmação da visita depende do pagamento. Os dados serão tratados de acordo com a LGPD. <a href="politica-de-privacidade.html" style="color:var(--green-mid);">Política de Privacidade</a></span>
+            <span data-lang="en">Limited spots. Visit confirmation subject to payment. Data handled per LGPD. <a href="politica-de-privacidade.html" style="color:var(--green-mid);">Privacy Policy</a></span>
+          </p>
+        </div>
+      </div>
+
     </div>
   </section>
-
   <!-- COMITÊ ORGANIZADOR -->
   <section class="organizers" id="participar">
     <div class="section-inner">
