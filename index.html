@@ -743,6 +743,36 @@
     }
     .form-submit-btn:hover { background: var(--green-mid); }
     @media (max-width: 600px) { .form-grid-2 { grid-template-columns: 1fr; } }
+    .coauthor-add-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: transparent; border: 1.5px dashed var(--green-light);
+      color: var(--green-mid); border-radius: 6px; padding: 8px 16px;
+      font-family: 'Arial', sans-serif; font-size: 13px; font-weight: 700;
+      cursor: pointer; transition: background 0.2s, color 0.2s;
+    }
+    .coauthor-add-btn:hover { background: var(--green-pale); }
+    .coauthor-block {
+      background: var(--cream); border: 1px solid #ddd; border-radius: 8px; padding: 16px;
+      display: flex; flex-direction: column; gap: 10px; position: relative;
+    }
+    .coauthor-block .coauthor-remove {
+      position: absolute; top: 10px; right: 12px;
+      background: none; border: none; color: var(--text-light); font-size: 18px;
+      cursor: pointer; line-height: 1; padding: 2px 6px; border-radius: 4px;
+    }
+    .coauthor-block .coauthor-remove:hover { color: #e74c3c; background: #ffeaea; }
+    .coauthor-block .coauthor-label {
+      font-family: 'Arial', sans-serif; font-size: 11px; font-weight: 700;
+      color: var(--green-mid); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;
+    }
+    .coauthor-block input {
+      border: 1.5px solid #ddd; border-radius: 6px; padding: 9px 12px;
+      font-family: 'Arial', sans-serif; font-size: 14px; color: var(--text-dark);
+      background: white; transition: border 0.2s; width: 100%; box-sizing: border-box;
+    }
+    .coauthor-block input:focus { outline: none; border-color: var(--green-light); }
+    .coauthor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    @media (max-width: 600px) { .coauthor-grid { grid-template-columns: 1fr; } }
 
     /* ── SUBMISSION ── */
     .sub-info {
@@ -1936,10 +1966,16 @@
                 <label data-lang="en">INSTITUTION *</label>
                 <input type="text" required>
               </div>
+              <!-- Co-autores dinâmicos -->
               <div class="form-field">
-                <label data-lang="pt">CO-AUTORES (separados por ponto e vírgula)</label>
-                <label data-lang="en">CO-AUTHORS (separated by semicolons)</label>
-                <input type="text" placeholder="Ex: Ana Silva; João Costa">
+                <label data-lang="pt">CO-AUTORES <span style="font-weight:400;opacity:.6;">(opcional)</span></label>
+                <label data-lang="en">CO-AUTHORS <span style="font-weight:400;opacity:.6;">(optional)</span></label>
+                <div id="coauthors-list" style="display:flex;flex-direction:column;gap:12px;"></div>
+                <button type="button" onclick="addCoauthor()" class="coauthor-add-btn" style="margin-top:8px;">
+                  <span>+</span>
+                  <span data-lang="pt"> Adicionar co-autor</span>
+                  <span data-lang="en"> Add co-author</span>
+                </button>
               </div>
               <div class="form-field">
                 <label data-lang="pt">DOMÍNIO TEMÁTICO *</label>
@@ -2355,6 +2391,32 @@
       document.querySelectorAll('option[data-pt]').forEach(opt => {
         opt.textContent = opt.dataset[lang] || opt.dataset.pt;
       });
+    }
+
+    let coauthorCount = 0;
+    function addCoauthor() {
+      coauthorCount++;
+      const n = coauthorCount;
+      const list = document.getElementById('coauthors-list');
+      const block = document.createElement('div');
+      block.className = 'coauthor-block';
+      block.id = 'coauthor-' + n;
+      block.innerHTML = `
+        <div class="coauthor-label">Co-autor ${n}</div>
+        <button type="button" class="coauthor-remove" onclick="removeCoauthor(${n})" title="Remover">✕</button>
+        <div class="coauthor-grid">
+          <div><label style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;color:var(--text-mid);text-transform:uppercase;letter-spacing:.5px;display:block;margin-bottom:4px;">Nome</label>
+          <input type="text" placeholder="Nome completo"></div>
+          <div><label style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;color:var(--text-mid);text-transform:uppercase;letter-spacing:.5px;display:block;margin-bottom:4px;">E-mail</label>
+          <input type="email" placeholder="email@instituicao.br"></div>
+        </div>
+        <div><label style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;color:var(--text-mid);text-transform:uppercase;letter-spacing:.5px;display:block;margin-bottom:4px;">Instituição</label>
+        <input type="text" placeholder="Universidade / Instituição"></div>`;
+      list.appendChild(block);
+    }
+    function removeCoauthor(n) {
+      const el = document.getElementById('coauthor-' + n);
+      if (el) el.remove();
     }
 
     function switchTab(tabId) {
