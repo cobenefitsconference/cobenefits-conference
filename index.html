@@ -1846,24 +1846,25 @@
             <span data-lang="en">Fill in your details below. You will receive a confirmation by email. To submit a paper, use the adjacent tab.</span>
           </p>
 
-          <form class="reg-form" onsubmit="return false;">
+          <form class="reg-form" action="https://formspree.io/f/meeydnpb" method="POST">
+              <input type="hidden" name="_subject" value="Nova inscrição — 1ª Conferência Carbono Azul">
             <div class="form-grid-2">
               <div class="form-field">
                 <label data-lang="pt">NOME COMPLETO *</label>
                 <label data-lang="en">FULL NAME *</label>
-                <input type="text" placeholder="Ex: Carolina Bueno" required>
+                <input type="text" name="Nome completo" placeholder="Ex: Carolina Bueno" required>
               </div>
               <div class="form-field">
                 <label data-lang="pt">E-MAIL *</label>
                 <label data-lang="en">E-MAIL *</label>
-                <input type="email" placeholder="email@instituicao.br" required>
+                <input type="email" name="E-mail" placeholder="email@instituicao.br" required>
               </div>
             </div>
             <div class="form-grid-2">
               <div class="form-field">
                 <label data-lang="pt">CATEGORIA *</label>
                 <label data-lang="en">CATEGORY *</label>
-                <select required>
+                <select name="Categoria" required>
                   <option value="" disabled selected data-lang="pt">Selecione sua categoria...</option>
                   <option data-lang="pt">Estudante de Graduação — R$ 60</option>
                   <option data-lang="pt">Estudante de Pós-Graduação — R$ 60</option>
@@ -1875,19 +1876,19 @@
               <div class="form-field">
                 <label data-lang="pt">INSTITUIÇÃO *</label>
                 <label data-lang="en">INSTITUTION *</label>
-                <input type="text" placeholder="Unicamp / UFPA / UCSC...">
+                <input type="text" name="Instituição" placeholder="Unicamp / UFPA / UCSC...">
               </div>
             </div>
             <div class="form-grid-2">
               <div class="form-field">
                 <label data-lang="pt">PAÍS *</label>
                 <label data-lang="en">COUNTRY *</label>
-                <input type="text" placeholder="Brasil">
+                <input type="text" name="País" placeholder="Brasil">
               </div>
               <div class="form-field">
                 <label data-lang="pt">ÁREA DE ATUAÇÃO</label>
                 <label data-lang="en">FIELD OF WORK</label>
-                <input type="text" placeholder="Ecologia / Economia / Ciências Sociais...">
+                <input type="text" name="Área de atuação" placeholder="Ecologia / Economia / Ciências Sociais...">
               </div>
             </div>
             <div class="form-field">
@@ -1951,23 +1952,24 @@
           </div>
 
           <div class="form-wrapper" style="padding:28px 32px;">
-            <form class="reg-form" onsubmit="return false;">
+            <form class="reg-form" action="https://formspree.io/f/mgogqdrw" method="POST">
+              <input type="hidden" name="_subject" value="Nova submissão de trabalho — 1ª Conferência Carbono Azul">
               <div class="form-grid-2">
                 <div class="form-field">
                   <label data-lang="pt">NOME DO AUTOR *</label>
                   <label data-lang="en">AUTHOR NAME *</label>
-                  <input type="text" required>
+                  <input type="text" name="Nome do autor" required>
                 </div>
                 <div class="form-field">
                   <label data-lang="pt">E-MAIL *</label>
                   <label data-lang="en">E-MAIL *</label>
-                  <input type="email" required>
+                  <input type="email" name="E-mail" required>
                 </div>
               </div>
               <div class="form-field">
                 <label data-lang="pt">INSTITUIÇÃO *</label>
                 <label data-lang="en">INSTITUTION *</label>
-                <input type="text" required>
+                <input type="text" name="Instituição" required>
               </div>
               <!-- Co-autores dinâmicos -->
               <div class="form-field">
@@ -1983,7 +1985,7 @@
               <div class="form-field">
                 <label data-lang="pt">DOMÍNIO TEMÁTICO *</label>
                 <label data-lang="en">THEMATIC DOMAIN *</label>
-                <select required>
+                <select name="Domínio temático" required>
                   <option value="" disabled selected data-lang="pt">Selecione o domínio mais adequado...</option>
                   <option>Domínio 1 — Biodiversidade e Natureza</option>
                   <option>Domínio 2 — Economia e Produção</option>
@@ -1994,47 +1996,47 @@
               <div class="form-field">
                 <label data-lang="pt">TÍTULO DO TRABALHO *</label>
                 <label data-lang="en">PAPER TITLE *</label>
-                <input type="text" required>
+                <input type="text" name="Título" required>
               </div>
               <div class="form-field">
                 <label data-lang="pt">PALAVRAS-CHAVE (máx. 5, separadas por ";")</label>
                 <label data-lang="en">KEYWORDS (max. 5, separated by ";")</label>
-                <input type="text" placeholder="Ex: manguezal; carbono azul; biodiversidade">
+                <input type="text" name="Palavras-chave" placeholder="Ex: manguezal; carbono azul; biodiversidade">
               </div>
               <div class="form-field">
                 <label data-lang="pt">OBJETIVO <span style="font-weight:400;opacity:.6;">(máx. 300 caracteres)</span></label>
                 <label data-lang="en">OBJECTIVE <span style="font-weight:400;opacity:.6;">(max. 300 chars)</span></label>
-                <textarea rows="3" maxlength="300"></textarea>
+                <textarea rows="3" name="Objetivo" maxlength="300"></textarea>
               </div>
               <div class="form-field">
                 <label data-lang="pt">CONTEXTO / JUSTIFICATIVA <span style="font-weight:400;opacity:.6;">(máx. 250 caracteres)</span></label>
                 <label data-lang="en">CONTEXT / RATIONALE <span style="font-weight:400;opacity:.6;">(max. 250 chars)</span></label>
-                <textarea rows="3" maxlength="250"></textarea>
+                <textarea rows="3" name="Contexto/Justificativa" maxlength="250"></textarea>
               </div>
               <div class="form-field">
                 <label data-lang="pt">METODOLOGIA <span style="font-weight:400;opacity:.6;">(máx. 550 caracteres)</span></label>
                 <label data-lang="en">METHODOLOGY <span style="font-weight:400;opacity:.6;">(max. 550 chars)</span></label>
-                <textarea rows="4" maxlength="550"></textarea>
+                <textarea rows="4" name="Metodologia" maxlength="550"></textarea>
               </div>
               <div class="form-field">
                 <label data-lang="pt">RESULTADOS <span style="font-weight:400;opacity:.6;">(máx. 550 caracteres)</span></label>
                 <label data-lang="en">RESULTS <span style="font-weight:400;opacity:.6;">(max. 550 chars)</span></label>
-                <textarea rows="4" maxlength="550"></textarea>
+                <textarea rows="4" name="Resultados" maxlength="550"></textarea>
               </div>
               <div class="form-field">
                 <label data-lang="pt">CONCLUSÃO <span style="font-weight:400;opacity:.6;">(máx. 300 caracteres)</span></label>
                 <label data-lang="en">CONCLUSION <span style="font-weight:400;opacity:.6;">(max. 300 chars)</span></label>
-                <textarea rows="3" maxlength="300"></textarea>
+                <textarea rows="3" name="Conclusão" maxlength="300"></textarea>
               </div>
               <div class="form-field">
                 <label data-lang="pt">REFERÊNCIAS BIBLIOGRÁFICAS</label>
                 <label data-lang="en">BIBLIOGRAPHIC REFERENCES</label>
-                <textarea rows="4"></textarea>
+                <textarea rows="4" name="Referências bibliográficas"></textarea>
               </div>
               <div class="form-field">
                 <label data-lang="pt">FONTE DE FINANCIAMENTO (opcional)</label>
                 <label data-lang="en">FUNDING SOURCE (optional)</label>
-                <input type="text">
+                <input type="text" name="Fonte de financiamento">
               </div>
               <button type="submit" class="form-submit-btn">
                 <span>✓</span>
@@ -2088,23 +2090,24 @@
             </div>
           </div>
 
-          <form class="reg-form" onsubmit="return false;">
+          <form class="reg-form" action="https://formspree.io/f/mkodeykg" method="POST">
+              <input type="hidden" name="_subject" value="Interesse em visita técnica — 1ª Conferência Carbono Azul">
             <div class="form-grid-2">
               <div class="form-field">
                 <label data-lang="pt">NOME COMPLETO *</label>
                 <label data-lang="en">FULL NAME *</label>
-                <input type="text" required>
+                <input type="text" name="Nome completo" required>
               </div>
               <div class="form-field">
                 <label data-lang="pt">E-MAIL *</label>
                 <label data-lang="en">E-MAIL *</label>
-                <input type="email" required>
+                <input type="email" name="E-mail" required>
               </div>
             </div>
             <div class="form-field">
               <label data-lang="pt">CATEGORIA *</label>
               <label data-lang="en">CATEGORY *</label>
-              <select required>
+              <select name="Categoria" required>
                 <option value="" disabled selected data-lang="pt">Selecione...</option>
                 <option data-lang="pt">Estudante — R$ 80</option>
                 <option data-lang="pt">Profissional — R$ 300</option>
