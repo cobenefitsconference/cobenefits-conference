@@ -29,6 +29,8 @@
       background: var(--cream);
       color: var(--text-dark);
       scroll-behavior: smooth;
+      hyphens: none;
+      -webkit-hyphens: none;
     }
 
     /* ── TOP BAR ── */
@@ -993,6 +995,9 @@
       align-items: center;
       font-family: 'Arial', sans-serif;
       font-size: 12px;
+    }
+    @media (max-width: 600px) {
+      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 6px; }
     }
     .cop-badge {
       background: rgba(255,255,255,0.1);
