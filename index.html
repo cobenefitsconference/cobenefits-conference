@@ -1047,6 +1047,27 @@
       .form-row { grid-template-columns: 1fr; }
       .topbar { padding: 8px 20px; font-size: 11px; }
     }
+
+    /* ── MOBILE RESPONSIVE ADDITIONS ── */
+    .venue-photos-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 960px;
+      margin: 0 auto 48px;
+    }
+    .venue-food-grid {
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 600px) {
+      .venue-photos-grid { grid-template-columns: 1fr; }
+      .venue-food-grid { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr !important; }
+    }
   </style>
 </head>
 <body>
@@ -1532,7 +1553,7 @@
       <div class="divider" style="background:var(--gold-light);"></div>
 
       <!-- Fotos -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:960px;margin:0 auto 48px;">
+      <div class="venue-photos-grid">
         <div style="border-radius:12px;overflow:hidden;position:relative;">
           <img src="https://images.unsplash.com/photo-1588837687759-11cb985d88af?w=900&q=85&auto=format&fit=crop"
             alt="Bragança, Pará"
@@ -1598,7 +1619,7 @@
       </div>
 
       <!-- Boxes: Restaurantes + Hotéis -->
-      <div style="max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+      <div class="venue-food-grid">
 
         <!-- Restaurantes -->
         <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:24px 28px;">
@@ -2220,7 +2241,7 @@
       <div class="org-grid" style="margin-bottom:32px;">
         <div class="org-card">
           <h4>Gabriella Luz</h4>
-          <div class="inst">Gestora do Projeto Co-benefits Conference · Diretora de Comunicação da 1ª Conferência Co-benefits</div>
+          <div class="inst"><span data-lang="pt">Gestora do Projeto Co-benefits Conference · Diretora de Comunicação da 1ª Conferência Co-benefits</span><span data-lang="en">Co-benefits Conference Project Manager · Communications Director of the 1st Co-benefits Conference</span></div>
         </div>
       </div>
 
