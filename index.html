@@ -1864,14 +1864,16 @@
               <div class="form-field">
                 <label data-lang="pt">CATEGORIA *</label>
                 <label data-lang="en">CATEGORY *</label>
-                <select name="Categoria" required>
-                  <option value="" disabled selected data-lang="pt">Selecione sua categoria...</option>
-                  <option data-lang="pt">Estudante de Graduação — R$ 60</option>
-                  <option data-lang="pt">Estudante de Pós-Graduação — R$ 80</option>
-                  <option data-lang="pt">Profissional / Pesquisador — R$ 380</option>
-                  <option data-lang="pt">Membro de Comunidade — R$ 0</option>
-                  <option data-lang="pt">Isenção — R$ 0</option>
+                <select name="Categoria" id="inscricao-categoria" required onchange="showCategoryPrice(this)">
+                  <option value="" disabled selected>Selecione sua categoria...</option>
+                  <option value="Estudante de Graduação" data-price="R$ 60">Estudante de Graduação</option>
+                  <option value="Estudante de Pós-Graduação" data-price="R$ 80">Estudante de Pós-Graduação</option>
+                  <option value="Profissional / Pesquisador Nacional" data-price="R$ 320">Profissional / Pesquisador Nacional</option>
+                  <option value="Profissional / Pesquisador Internacional" data-price="US$ 120">Profissional / Pesquisador Internacional</option>
+                  <option value="Membro de Comunidade" data-price="Gratuito">Membro de Comunidade</option>
+                  <option value="Isenção (estudante de graduação ou pós-graduação de baixa renda)" data-price="Gratuito — sujeito a análise">Isenção (graduação/pós-graduação, baixa renda)</option>
                 </select>
+                <div id="inscricao-price-hint" style="display:none;margin-top:8px;padding:8px 12px;background:#f0f7f0;border-left:3px solid var(--green-mid,#4a7c59);border-radius:4px;font-size:13px;color:var(--green-dark,#2d5a3d);font-family:Arial,sans-serif;"></div>
               </div>
               <div class="form-field">
                 <label data-lang="pt">INSTITUIÇÃO *</label>
@@ -2548,6 +2550,18 @@
         alert('Você será redirecionado ao PayPal para concluir o pagamento. / You will be redirected to PayPal to complete payment.');
       } else {
         alert('Inscrição confirmada! Você receberá um e-mail de confirmação. / Registration confirmed! You will receive a confirmation email.');
+      }
+    }
+    function showCategoryPrice(sel) {
+      var hint = document.getElementById('inscricao-price-hint');
+      if (!hint) return;
+      var opt = sel.options[sel.selectedIndex];
+      var price = opt ? opt.getAttribute('data-price') : '';
+      if (price) {
+        hint.textContent = 'Valor para esta categoria: ' + price;
+        hint.style.display = 'block';
+      } else {
+        hint.style.display = 'none';
       }
     }
     </script>
