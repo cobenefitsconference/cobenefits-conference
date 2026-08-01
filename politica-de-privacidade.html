@@ -11,22 +11,23 @@
       --green-light: #2eb8a6;
       --green-pale: #e0f5f3;
       --gold: #d4a017;
-      --gold-light: #f0cc60;
-      --ocean: #1e5f8e;
-      --ocean-light: #5ba3d1;
-      --earth: #5d4037;
       --cream: #f0f4f8;
       --white: #ffffff;
       --text-dark: #1a1a1a;
       --text-mid: #444;
       --text-light: #777;
-      --shadow: rgba(0,0,0,0.15);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Arial', sans-serif; background: #f8f9fa; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    .topbar {
+    body {
+      font-family: 'Georgia', serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.75;
+    }
+
+        .topbar {
       background: var(--green-deep);
       padding: 8px 40px;
       display: flex;
@@ -42,24 +43,21 @@
     }
     .topbar-logos span {
       color: rgba(255,255,255,0.75);
-      font-family: 'Arial', sans-serif;
+      font-family: Arial, sans-serif;
       font-size: 12px;
       font-weight: 500;
     }
-    .topbar-logos span:first-child {
-      color: white;
-      font-weight: 600;
-    }
+    .topbar-logos span:first-child { color: #fff; font-weight: 600; }
     .topbar-back a {
       color: rgba(255,255,255,0.65);
-      font-family: 'Arial', sans-serif;
+      font-family: Arial, sans-serif;
       font-size: 12px;
       text-decoration: none;
+      white-space: nowrap;
     }
-    .topbar-back a:hover { color: white; text-decoration: underline; }
-
+    .topbar-back a:hover { color: #fff; text-decoration: underline; }
     .privacy-nav {
-      background: white;
+      background: #fff;
       display: flex;
       align-items: center;
       padding: 0 40px;
@@ -79,62 +77,129 @@
       overflow: hidden;
       flex-shrink: 0;
     }
-    .nav-brand-icon img { width: 48px; height: 48px; object-fit: contain; }
+    .nav-brand-icon img { width: 48px; height: 48px; object-fit: contain; display: block; }
     .nav-brand-text { line-height: 1.2; }
     .nav-brand-text strong {
       display: block;
       font-size: 14px;
       color: var(--green-deep);
-      font-family: 'Arial', sans-serif;
+      font-family: Arial, sans-serif;
     }
-    .nav-brand-text span {
+    .nav-brand-text em {
       font-size: 11px;
       color: #888;
-      font-family: 'Arial', sans-serif;
+      font-family: Arial, sans-serif;
+      font-style: normal;
     }
-
-    .article {
-      max-width: 800px;
-      margin: 48px auto;
-      padding: 0 24px 80px;
-    }
-    .article h1 {
-      font-size: 28px;
-      color: var(--green-deep);
-      margin-bottom: 8px;
-    }
-    .article .subtitle {
-      color: #888;
-      font-size: 13px;
-      margin-bottom: 40px;
-    }
-    .article h2 {
-      font-size: 18px;
-      color: var(--green-deep);
-      margin: 32px 0 12px;
-    }
-    .article p, .article li {
-      color: #444;
-      font-size: 15px;
-      line-height: 1.75;
-      margin-bottom: 12px;
-    }
-    .article ul {
-      padding-left: 20px;
-      margin-bottom: 12px;
-    }
-    .article a { color: var(--green-mid); }
     @media (max-width: 600px) {
       .topbar { padding: 8px 16px; }
       .privacy-nav { padding: 0 16px; }
-      .article { padding: 0 16px 60px; margin-top: 32px; }
     }
-</style>
+
+    .page-header {
+      background: var(--green-mid);
+      color: #fff;
+      padding: 56px 40px 48px;
+      border-bottom: 3px solid var(--gold);
+    }
+    .page-header .eyebrow {
+      font-family: system-ui, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .page-header h1 {
+      font-size: clamp(22px, 3.5vw, 34px);
+      font-weight: normal;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+    .page-header .updated {
+      font-family: system-ui, sans-serif;
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 56px 40px 80px;
+    }
+
+    h2 {
+      font-size: 19px;
+      font-weight: normal;
+      color: var(--green-mid);
+      margin: 40px 0 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #d0d8e0;
+    }
+    h2:first-child { margin-top: 0; }
+
+    p { margin-bottom: 14px; font-size: 15.5px; color: var(--text-dark); }
+    ul { padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 15.5px; color: var(--text-dark); }
+
+    .highlight-box {
+      background: var(--green-pale);
+      border-left: 3px solid var(--green-light);
+      border-radius: 4px;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 14.5px;
+    }
+    .highlight-box strong { color: var(--green-mid); }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin: 16px 0 24px;
+      font-family: system-ui, sans-serif;
+    }
+    th {
+      background: var(--green-mid);
+      color: #fff;
+      text-align: left;
+      padding: 10px 14px;
+      font-weight: 600;
+      font-size: 13px;
+    }
+    td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #d0d8e0;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td { background: var(--green-pale); }
+
+    .contact-card {
+      background: var(--white);
+      border: 1px solid #d0d8e0;
+      border-radius: 6px;
+      padding: 20px 24px;
+      margin-top: 20px;
+      font-family: system-ui, sans-serif;
+      font-size: 14px;
+    }
+    .contact-card strong { display: block; font-size: 15px; color: var(--green-mid); margin-bottom: 4px; }
+    .contact-card a { color: var(--green-light); }
+
+    footer {
+      background: var(--green-deep);
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+      padding: 24px;
+      font-family: system-ui, sans-serif;
+      font-size: 13px;
+    }
+    footer a { color: var(--green-light); text-decoration: none; }
+  </style>
 </head>
 <body>
 
-
-  <div class="topbar">
+<div class="topbar">
     <div class="topbar-logos">
       <span>Blue Carbon &amp; Wetlands Co-benefits Conference</span>
       <span>·</span>
@@ -156,7 +221,123 @@
       </div>
       <div class="nav-brand-text">
         <strong>1ª Conferência de Co-benefícios do Carbono Azul e Zonas Úmidas</strong>
-        <span>Evento Científico Internacional Pré-COP31</span>
+        <em>Evento Científico Internacional Pré-COP31</em>
       </div>
     </a>
   </nav>
+
+
+<div class="page-header">
+  <div class="eyebrow">Documentos Legais</div>
+  <h1>Política de Privacidade e Proteção de Dados</h1>
+  <div class="updated">Última atualização: julho de 2026 · Em conformidade com a LGPD (Lei nº 13.709/2018)</div>
+</div>
+
+<div class="content">
+
+  <h2>1. Quem somos</h2>
+  <p>Esta política se aplica ao site e às atividades da <strong>1ª Conferência de Co-benefícios do Carbono Azul e Zonas Úmidas</strong>, organizada no âmbito do <em>Wetlands Co-benefits Project</em> (FAPESP / Unicamp / UC Santa Cruz), a ser realizada em Bragança, Pará, Brasil, de 30 de outubro a 1 de novembro de 2026.</p>
+  <p><strong>Responsável pelo tratamento dos dados (Controlador):</strong><br>
+  Wetlands Co-benefits Project<br>
+  Contato: <a href="mailto:cobenefitsconference@gmail.com">cobenefitsconference@gmail.com</a></p>
+
+  <h2>2. Quais dados coletamos</h2>
+  <table>
+    <tr><th>Dado</th><th>Onde é coletado</th><th>Finalidade</th></tr>
+    <tr><td>Nome completo</td><td>Formulário de inscrição / submissão / visita técnica</td><td>Identificação, certificado, credenciamento</td></tr>
+    <tr><td>Endereço de e-mail</td><td>Formulário de inscrição / submissão / visita técnica</td><td>Comunicação sobre o evento</td></tr>
+    <tr><td>País, Estado, Cidade</td><td>Formulário de inscrição</td><td>Estatística e logística</td></tr>
+    <tr><td>Instituição / Afiliação</td><td>Formulário de inscrição / submissão</td><td>Credenciamento e composição do programa científico</td></tr>
+    <tr><td>Categoria de participação</td><td>Formulário de inscrição / visita técnica</td><td>Determinação do valor da inscrição e emissão de certificado</td></tr>
+    <tr><td>Dados de trabalho científico (título, resumo, autores, referências)</td><td>Formulário de submissão</td><td>Avaliação científica pelo comitê</td></tr>
+    <tr><td>Dados de pagamento</td><td>PayPal</td><td>Processamento da inscrição paga — <strong>não acessados nem armazenados</strong> pela organização</td></tr>
+    <tr><td>Necessidades especiais / observações</td><td>Formulário de inscrição (opcional)</td><td>Acessibilidade e logística do evento</td></tr>
+  </table>
+  <p>Não coletamos dados sensíveis (saúde, religião, etnia, orientação política) salvo necessidades de acessibilidade declaradas voluntariamente pelo participante para fins logísticos.</p>
+
+  <h2>3. Base legal para o tratamento (LGPD, art. 7º)</h2>
+  <ul>
+    <li><strong>Execução de contrato</strong> — dados necessários para processar inscrições pagas e emitir certificados (art. 7º, V).</li>
+    <li><strong>Legítimo interesse</strong> — submissão e avaliação de trabalhos científicos; comunicações diretas sobre o evento (art. 7º, IX).</li>
+    <li><strong>Consentimento</strong> — envio de comunicações de marketing (newsletter) mediante opt-in explícito (art. 7º, I).</li>
+  </ul>
+
+  <h2>4. Como usamos os dados</h2>
+  <ul>
+    <li>Avaliação de trabalhos submetidos pelo comitê científico.</li>
+    <li>Gestão das inscrições e credenciamento no evento.</li>
+    <li>Emissão de certificados de participação e apresentação.</li>
+    <li>Comunicação sobre programação, logística e informações do evento.</li>
+    <li>Elaboração de relatórios estatísticos anônimos (sem identificação individual).</li>
+  </ul>
+  <h2>5. Com quem compartilhamos</h2>
+  <table>
+    <tr><th>Parceiro / Plataforma</th><th>Dado compartilhado</th><th>Finalidade</th></tr>
+    <tr><td>PayPal</td><td>Dados de pagamento (processados diretamente pelo PayPal)</td><td>Processamento de inscrições pagas e visita técnica — a organização <strong>não acessa nem armazena</strong> dados financeiros</td></tr>
+    <tr><td>Google Drive / Sheets</td><td>Nome, e-mail, instituição, dados de submissão</td><td>Gestão interna do comitê científico e organizador</td></tr>
+    <tr><td>Cloudflare Pages</td><td>IP de acesso (logs automáticos)</td><td>Hospedagem e segurança do site</td></tr>
+  </table>
+  <p>Todos os parceiros listados possuem políticas de privacidade próprias e estão em conformidade com regulamentações aplicáveis (GDPR / LGPD). Os dados <strong>não são vendidos, cedidos ou compartilhados</strong> com terceiros para fins comerciais.</p>
+
+  <h2>6. Por quanto tempo guardamos os dados</h2>
+  <ul>
+    <li><strong>Dados de participação e trabalhos aceitos:</strong> 5 anos após o evento, para fins de comprovação acadêmica e certificação.</li>
+    <li><strong>Dados de pagamento:</strong> gerenciados exclusivamente pelo PayPal — a organização não retém dados financeiros. Consulte a <a href="https://www.paypal.com/br/legalhub/privacy-full" target="_blank" rel="noopener">Política de Privacidade do PayPal</a>.</li>
+    <li><strong>Dados de e-mail para comunicações do evento:</strong> até o encerramento das atividades do projeto ou solicitação de exclusão pelo titular.</li>
+    <li><strong>Trabalhos não aceitos:</strong> excluídos em até 6 meses após a comunicação do resultado.</li>
+  </ul>
+
+  <h2>7. Seus direitos (LGPD, art. 18)</h2>
+  <p>Como titular de dados, você tem direito a:</p>
+  <ul>
+    <li><strong>Acesso</strong> — saber quais dados seus estão armazenados.</li>
+    <li><strong>Correção</strong> — corrigir dados incompletos, inexatos ou desatualizados.</li>
+    <li><strong>Exclusão</strong> — solicitar a exclusão dos seus dados, quando aplicável.</li>
+    <li><strong>Portabilidade</strong> — receber seus dados em formato estruturado.</li>
+    <li><strong>Revogação do consentimento</strong> — cancelar inscrição em newsletter a qualquer momento.</li>
+    <li><strong>Informação sobre compartilhamento</strong> — saber com quem seus dados foram compartilhados.</li>
+  </ul>
+
+  <div class="highlight-box">
+    Para exercer qualquer um desses direitos, envie um email para <strong>cobenefitsconference@gmail.com</strong> com o assunto <strong>"Direitos LGPD"</strong>. Responderemos em até <strong>15 dias corridos</strong>.
+  </div>
+
+  <h2>8. Encarregada de Dados (DPO)</h2>
+  <p>A responsável pela proteção de dados do evento é:</p>
+  <div class="contact-card">
+    <strong>Gabriella Luz — Encarregada de Dados (DPO)</strong>
+    Email: <a href="mailto:cobenefitsconference@gmail.com">cobenefitsconference@gmail.com</a><br>
+    Assunto: "Direitos LGPD" ou "Proteção de Dados"
+  </div>
+
+  <h2>9. Segurança dos dados</h2>
+  <ul>
+    <li>Acesso ao site via HTTPS com certificado SSL (Cloudflare).</li>
+    <li>Acesso às planilhas e formulários restrito à equipe organizadora com autenticação em dois fatores (2FA).</li>
+    <li>Dados de pagamento processados exclusivamente pelo PayPal — a organização não armazena dados financeiros.</li>
+    <li>Em caso de incidente de segurança, a ANPD e os titulados afetados serão notificados em até 72 horas.</li>
+  </ul>
+
+  <h2>10. Cookies</h2>
+  <p>Este site não utiliza cookies próprios para rastreamento. A plataforma de hospedagem (Cloudflare Pages) pode registrar logs de acesso (IP, navegador) para fins de segurança e desempenho. O processamento de pagamentos é realizado via PayPal em ambiente externo, sujeito à política de cookies própria do PayPal.</p>
+
+  <h2>11. Atualizações desta política</h2>
+  <p>Esta política pode ser atualizada periodicamente. A data da última revisão consta no topo deste documento. Alterações relevantes serão comunicadas por email aos participantes inscritos.</p>
+
+  <h2>12. Contato e reclamações</h2>
+  <p>Para dúvidas sobre esta política ou o tratamento dos seus dados:</p>
+  <div class="contact-card">
+    <strong>Wetlands Co-benefits Project — Organização da Conferência</strong>
+    Email: <a href="mailto:cobenefitsconference@gmail.com">cobenefitsconference@gmail.com</a><br><br>
+    Você também pode apresentar reclamação à <strong>ANPD (Autoridade Nacional de Proteção de Dados)</strong>: <a href="https://www.gov.br/anpd" target="_blank">www.gov.br/anpd</a>
+  </div>
+
+</div>
+
+<footer>
+  &copy; 2026 Wetlands Co-benefits Project · Wetlands Co-benefits Conference ·
+  <a href="index.html">Voltar ao site</a>
+</footer>
+
+</body>
+</html>
