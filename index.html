@@ -833,9 +833,15 @@
     /* ── SUPPORT ── */
     .support { background: white; }
     .support-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      display: flex;
+      flex-direction: column;
       gap: 48px;
+    }
+    .support-bottom-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      align-items: flex-start;
     }
     .support-group h4 {
       font-family: 'Arial', sans-serif;
@@ -1078,7 +1084,7 @@
       .about-grid, .doc-inner, .sub-info { grid-template-columns: 1fr; }
       .reg-grid, .projects-grid, .org-grid { grid-template-columns: 1fr; }
       .speakers-grid, .program-days { grid-template-columns: 1fr; }
-      .support-grid { grid-template-columns: 1fr; }
+      .support-bottom-row { flex-direction: column; }
       .footer-top { grid-template-columns: 1fr; }
       .axes-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
@@ -2368,8 +2374,8 @@
           </div><!-- end marquee-outer -->
         </div>
 
-        <!-- Coluna direita: Apoio Financeiro + Realização + Produção Cultural -->
-        <div style="display:flex;flex-direction:column;gap:36px;">
+        <!-- Linha inferior: Apoio Financeiro + Realização + Produção Cultural -->
+        <div class="support-bottom-row">
 
           <!-- Apoio Financeiro -->
           <div class="support-group">
