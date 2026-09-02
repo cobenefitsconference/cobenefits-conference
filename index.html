@@ -1943,13 +1943,31 @@
 
         <!-- Contador de submissão -->
         <div style="background:#f8fffe;border:1.5px solid var(--green-mid);border-radius:12px;padding:20px 28px;text-align:center;min-width:180px;">
-          <div id="countdown-days" style="font-family:Arial,sans-serif;font-size:52px;font-weight:900;color:var(--green-mid);line-height:1;">—</div>
-          <div style="font-family:Arial,sans-serif;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-light);margin-top:4px;">
-            <span data-lang="pt">dias para submissão</span><span data-lang="en">days to submission</span>
+            <div style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;">
+            <span data-lang="pt">Prazo de submissão</span><span data-lang="en">Submission deadline</span>
           </div>
-          <div style="font-family:Arial,sans-serif;font-size:11px;color:var(--text-light);margin-top:6px;">
-            <span data-lang="pt">Prazo: 21 de setembro de 2026</span><span data-lang="en">Deadline: September 21, 2026</span>
+          <div style="display:flex;gap:8px;justify-content:center;align-items:flex-end;">
+            <div style="text-align:center;">
+              <div id="cd-days" style="font-family:Arial,sans-serif;font-size:38px;font-weight:900;color:var(--green-mid);line-height:1;">—</div>
+              <div style="font-family:Arial,sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--text-light);margin-top:3px;"><span data-lang="pt">dias</span><span data-lang="en">days</span></div>
+            </div>
+            <div style="font-family:Arial,sans-serif;font-size:28px;font-weight:900;color:var(--green-mid);padding-bottom:14px;">:</div>
+            <div style="text-align:center;">
+              <div id="cd-hours" style="font-family:Arial,sans-serif;font-size:38px;font-weight:900;color:var(--green-mid);line-height:1;">—</div>
+              <div style="font-family:Arial,sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--text-light);margin-top:3px;"><span data-lang="pt">horas</span><span data-lang="en">hours</span></div>
+            </div>
+            <div style="font-family:Arial,sans-serif;font-size:28px;font-weight:900;color:var(--green-mid);padding-bottom:14px;">:</div>
+            <div style="text-align:center;">
+              <div id="cd-mins" style="font-family:Arial,sans-serif;font-size:38px;font-weight:900;color:var(--green-mid);line-height:1;">—</div>
+              <div style="font-family:Arial,sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--text-light);margin-top:3px;"><span data-lang="pt">min</span><span data-lang="en">min</span></div>
+            </div>
+            <div style="font-family:Arial,sans-serif;font-size:28px;font-weight:900;color:var(--green-mid);padding-bottom:14px;">:</div>
+            <div style="text-align:center;">
+              <div id="cd-secs" style="font-family:Arial,sans-serif;font-size:38px;font-weight:900;color:var(--green-mid);line-height:1;">—</div>
+              <div style="font-family:Arial,sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--text-light);margin-top:3px;"><span data-lang="pt">seg</span><span data-lang="en">sec</span></div>
+            </div>
           </div>
+          <div style="font-family:Arial,sans-serif;font-size:11px;color:var(--text-light);margin-top:10px;">21 de setembro de 2026 / September 21, 2026</div>
         </div>
 
         <!-- Linha do tempo -->
@@ -1984,16 +2002,25 @@
       <script>
         (function() {
           var deadline = new Date('2026-09-21T23:59:59');
+          function pad(n) { return String(n).padStart(2, '0'); }
           function update() {
-            var now = new Date();
-            var diff = deadline - now;
-            var el = document.getElementById('countdown-days');
-            if (!el) return;
-            if (diff <= 0) { el.textContent = '0'; return; }
-            el.textContent = Math.ceil(diff / (1000 * 60 * 60 * 24));
+            var diff = deadline - new Date();
+            if (diff <= 0) {
+              ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(function(id){ var e=document.getElementById(id); if(e) e.textContent='00'; });
+              return;
+            }
+            var d = Math.floor(diff / 86400000);
+            var h = Math.floor((diff % 86400000) / 3600000);
+            var m = Math.floor((diff % 3600000) / 60000);
+            var s = Math.floor((diff % 60000) / 1000);
+            var el;
+            el = document.getElementById('cd-days');   if(el) el.textContent = d;
+            el = document.getElementById('cd-hours');  if(el) el.textContent = pad(h);
+            el = document.getElementById('cd-mins');   if(el) el.textContent = pad(m);
+            el = document.getElementById('cd-secs');   if(el) el.textContent = pad(s);
           }
           update();
-          setInterval(update, 60000);
+          setInterval(update, 1000);
         })();
       </script>
 
