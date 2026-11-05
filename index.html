@@ -1394,198 +1394,21 @@
         <span data-lang="en">Three days of science, community, education, and policy</span>
       </h2>
       <div class="divider"></div>
-      <p style="font-family:Arial,sans-serif;font-size:13px;color:var(--text-mid);margin-bottom:28px;">
-        <span data-lang="pt">Clique em cada dia para ver a programação detalhada. ↓</span>
-        <span data-lang="en">Click each day to see the detailed schedule. ↓</span>
-      </p>
-      <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:32px;">
-
-        <!-- DIA 1 -->
+      <div class="lang-block" data-lang="pt" style="margin-bottom:32px;">
         <div style="background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 16px var(--shadow);">
-          <button onclick="toggleDay('day1')" style="width:100%;background:var(--green-mid);border:none;cursor:pointer;padding:22px 28px;display:flex;justify-content:space-between;align-items:center;text-align:left;">
-            <div>
-              <div style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:0.8;color:rgba(255,255,255,0.8);margin-bottom:4px;"><span data-lang="pt">Dia 1</span><span data-lang="en">Day 1</span></div>
-              <div style="font-size:22px;font-weight:700;font-family:Arial,sans-serif;color:white;">12 Nov 2026</div>
-              <div style="font-size:13px;color:rgba(255,255,255,0.85);font-family:Arial,sans-serif;margin-top:2px;"><span data-lang="pt">Abertura · Ciências da Terra · Co-benefícios</span><span data-lang="en">Opening · Earth Sciences · Co-benefits</span></div>
-            </div>
-            <span id="day1-arrow" style="color:white;font-size:22px;transition:transform 0.3s;">▾</span>
-          </button>
-          <div id="day1" style="display:none;padding:28px;">
-            <div style="display:flex;flex-direction:column;gap:14px;">
-              <div style="display:grid;grid-template-columns:100px 1fr;gap:12px;padding-bottom:12px;border-bottom:1px solid #f0f0f0;">
-                <span style="font-family:Arial,sans-serif;font-size:12px;font-weight:700;color:var(--text-light);">8h–8h30</span>
-                <div><strong style="color:var(--green-deep);" data-lang="pt">Boas-vindas e credenciamento</strong><strong style="color:var(--green-deep);" data-lang="en">Welcome and accreditation</strong></div>
-              </div>
-              <div style="display:grid;grid-template-columns:100px 1fr;gap:12px;padding-bottom:12px;border-bottom:1px solid #f0f0f0;">
-                <span style="font-family:Arial,sans-serif;font-size:12px;font-weight:700;color:var(--text-light);">8h30–10h30</span>
-                <div>
-                  <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--ocean);" data-lang="pt">Mesa de Abertura</span>
-                  <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--ocean);" data-lang="en">Opening Panel</span>
-                  <p style="margin:4px 0 0;font-size:13px;color:var(--text-mid);" data-lang="pt">Co-benefícios em zonas úmidas no encontro entre carbono, economia e sociedade — integrando ciências naturais e sociais para a governança climática</p>
-                  <p style="margin:4px 0 0;font-size:13px;color:var(--text-mid);" data-lang="en">Wetland co-benefits at the intersection of carbon, economy and society — integrating natural and social sciences for climate governance</p>
-                </div>
-              </div>
-              <div style="display:grid;grid-template-columns:100px 1fr;gap:12px;padding-bottom:12px;border-bottom:1px solid #f0f0f0;">
-                <span style="font-family:Arial,sans-serif;font-size:12px;font-weight:700;color:var(--text-light);">10h30–11h</span>
-                <div style="color:var(--text-mid);font-size:13px;"><span data-lang="pt">☕ Coffee break com exposição de pôsteres</span><span data-lang="en">☕ Coffee break with poster exhibition</span></div>
-              </div>
-              <div style="display:grid;grid-template-columns:100px 1fr;gap:12px;padding-bottom:12px;border-bottom:1px solid #f0f0f0;">
-                <span style="font-family:Arial,sans-serif;font-size:12px;font-weight:700;color:var(--text-light);">11h–12h</span>
-                <div>
-                  <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#2d7a3a;" data-lang="pt">Eixo 1 — Biodiversidade e Integridade Ecológica</span>
-                  <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#2d7a3a;" data-lang="en">Axis 1 — Biodiversity and Ecological Integrity</span>
-                  <p style="margin:4px 0 0;font-size:13px;color:var(--text-mid);" data-lang="pt">Apresentação de trabalhos e mesa de debate</p>
-                  <p style="margin:4px 0 0;font-size:13px;color:var(--text-mid);" data-lang="en">Paper presentations and panel discussion</p>
-                </div>
-              </div>
-              <div style="display:grid;grid-template-columns:100px 1fr;gap:12px;padding-bottom:12px;border-bottom:1px solid #f0f0f0;">
-                <span style="font-family:Arial,sans-serif;font-size:12px;font-weight:700;color:var(--text-light);">12h–13h</span>
-                <div style="color:var(--text-mid);font-size:13px;"><span data-lang="pt">🍽️ Pausa para almoço</span><span data-lang="en">🍽️ Lunch break</span></div>
-              </div>
-              <div style="display:grid;grid-template-columns:100px 1fr;gap:12px;padding-bottom:12px;border-bottom:1px solid #f0f0f0;">
-                <span style="font-family:Arial,sans-serif;font-size:12px;font-weight:700;color:var(--text-light);">13h–14h</span>
-                <div>
-                  <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--earth);" data-lang="pt">Eixo 2 — Economia e Meios de Vida</span>
-                  <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--earth);" data-lang="en">Axis 2 — Economy and Livelihoods</span>
-                  <p style="margin:4px 0 0;font-size:13px;color:var(--text-mid);" data-lang="pt">Apresentação de trabalhos e mesa de debate</p>
-                  <p style="margin:4px 0 0;font-size:13px;color:var(--text-mid);" data-lang="en">Paper presentations and panel discussion</p>
-                </div>
-              </div>
-              <div style="display:grid;grid-template-columns:100px 1fr;gap:12px;padding-bottom:12px;border-bottom:1px solid #f0f0f0;">
-                <span style="font-family:Arial,sans-serif;font-size:12px;font-weight:700;color:var(--text-light);">14h–15h</span>
-                <div>
-                  <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--ocean);" data-lang="pt">Eixo 3 — Carbono e Clima</span>
-                  <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--ocean);" data-lang="en">Axis 3 — Carbon and Climate</span>
-                  <p style="margin:4px 0 0;font-size:13px;color:var(--text-mid);" data-lang="pt">Apresentação de trabalhos e mesa de debate</p>
-                  <p style="margin:4px 0 0;font-size:13px;color:var(--text-mid);" data-lang="en">Paper presentations and panel discussion</p>
-                </div>
-              </div>
-              <div style="display:grid;grid-template-columns:100px 1fr;gap:12px;padding-bottom:12px;border-bottom:1px solid #f0f0f0;">
-                <span style="font-family:Arial,sans-serif;font-size:12px;font-weight:700;color:var(--text-light);">15h–15h30</span>
-                <div style="color:var(--text-mid);font-size:13px;"><span data-lang="pt">☕ Coffee break com exposição de pôsteres</span><span data-lang="en">☕ Coffee break with poster exhibition</span></div>
-              </div>
-              <div style="display:grid;grid-template-columns:100px 1fr;gap:12px;padding-bottom:12px;border-bottom:1px solid #f0f0f0;">
-                <span style="font-family:Arial,sans-serif;font-size:12px;font-weight:700;color:var(--text-light);">15h30–16h30</span>
-                <div>
-                  <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#7b5ea7;" data-lang="pt">Eixo 4 — Sociedade e Justiça Climática</span>
-                  <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#7b5ea7;" data-lang="en">Axis 4 — Society and Climate Justice</span>
-                  <p style="margin:4px 0 0;font-size:13px;color:var(--text-mid);" data-lang="pt">Apresentação de trabalhos e mesa de debate</p>
-                  <p style="margin:4px 0 0;font-size:13px;color:var(--text-mid);" data-lang="en">Paper presentations and panel discussion</p>
-                </div>
-              </div>
-              <div style="display:grid;grid-template-columns:100px 1fr;gap:12px;">
-                <span style="font-family:Arial,sans-serif;font-size:12px;font-weight:700;color:var(--text-light);">16h30–17h30</span>
-                <div>
-                  <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--green-mid);" data-lang="pt">Sessão especial: traduzindo cobenefícios das zonas úmidas para a política climática</span>
-                  <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--green-mid);" data-lang="en">Special session: translating wetland co-benefits into climate policy</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          <iframe src="https://drive.google.com/file/d/16mRERXDtm3zIldEEst_WYw5DlsrsF3ND/preview" title="Programação da conferência (PDF)" style="display:block;width:100%;height:380px;border:none;" loading="lazy" allow="autoplay"></iframe>
         </div>
-
-        <!-- DIA 2 -->
+        <p style="font-family:Arial,sans-serif;font-size:13px;color:var(--text-mid);margin-top:12px;text-align:center;">
+          <a href="https://drive.google.com/file/d/16mRERXDtm3zIldEEst_WYw5DlsrsF3ND/view?usp=sharing" target="_blank" rel="noopener" style="color:var(--green-mid);font-weight:700;text-decoration:underline;">Abrir a programação em PDF em nova aba ↗</a>
+        </p>
+      </div>
+      <div class="lang-block" data-lang="en" style="margin-bottom:32px;">
         <div style="background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 16px var(--shadow);">
-          <button onclick="toggleDay('day2')" style="width:100%;background:var(--ocean);border:none;cursor:pointer;padding:22px 28px;display:flex;justify-content:space-between;align-items:center;text-align:left;">
-            <div>
-              <div style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:0.8;color:rgba(255,255,255,0.8);margin-bottom:4px;"><span data-lang="pt">Dia 2</span><span data-lang="en">Day 2</span></div>
-              <div style="font-size:22px;font-weight:700;font-family:Arial,sans-serif;color:white;">13 Nov 2026</div>
-              <div style="font-size:13px;color:rgba(255,255,255,0.85);font-family:Arial,sans-serif;margin-top:2px;"><span data-lang="pt">Atividades com a comunidade · Entrega de materiais educativos</span><span data-lang="en">Community activities · Educational materials delivery</span></div>
-            </div>
-            <span id="day2-arrow" style="color:white;font-size:22px;transition:transform 0.3s;">▾</span>
-          </button>
-          <div id="day2" style="display:none;padding:28px;">
-            <div style="display:flex;flex-direction:column;gap:14px;">
-              <div style="display:grid;grid-template-columns:100px 1fr;gap:12px;padding-bottom:12px;border-bottom:1px solid #f0f0f0;">
-                <span style="font-family:Arial,sans-serif;font-size:12px;font-weight:700;color:var(--text-light);">7h–13h</span>
-                <div>
-                  <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);" data-lang="pt">Dia de Campo</span>
-                  <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);" data-lang="en">Field Day</span>
-                  <p style="margin:4px 0 0;font-size:13px;color:var(--text-mid);" data-lang="pt">Dia de campo nas comunidades de pescadores artesanais, marisqueiras e catadores de caranguejo da RESEX Marinha de Tracuateua, com apoio do Projeto Mangues da Amazônia.</p>
-                  <p style="margin:4px 0 0;font-size:13px;color:var(--text-mid);" data-lang="en">Field day in communities of artisanal fishers, shellfish gatherers and crab catchers of the Marine Extractive Reserve of Tracuateua, supported by the Amazon Mangroves Project.</p>
-                </div>
-              </div>
-              <div style="display:grid;grid-template-columns:100px 1fr;gap:12px;padding-bottom:12px;border-bottom:1px solid #f0f0f0;">
-                <span style="font-family:Arial,sans-serif;font-size:12px;font-weight:700;color:var(--text-light);">13h–14h</span>
-                <div style="color:var(--text-mid);font-size:13px;"><span data-lang="pt">🌿 Visita Técnica à Comunidade e distribuição de materiais educativos</span><span data-lang="en">🌿 Technical visit to the community and distribution of educational materials</span></div>
-              </div>
-              <div style="display:grid;grid-template-columns:100px 1fr;gap:12px;">
-                <span style="font-family:Arial,sans-serif;font-size:12px;font-weight:700;color:var(--text-light);">14h–18h</span>
-                <div>
-                  <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--ocean);" data-lang="pt">Sessão com as Comunidades</span>
-                  <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--ocean);" data-lang="en">Community Session</span>
-                  <p style="margin:4px 0 0;font-size:13px;color:var(--text-mid);" data-lang="pt">Debate e escuta ativa com as comunidades: como as comunidades reconhecem, vivem e nomeiam benefícios da natureza a partir de sua experiência territorial.</p>
-                  <p style="margin:4px 0 0;font-size:13px;color:var(--text-mid);" data-lang="en">Discussion and active listening with communities: how communities recognize, experience and name the benefits of nature from their territorial experience.</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <iframe src="https://drive.google.com/file/d/1LyVocYLrRNRswi7j-JDevZwNsEsZGLkT/preview" title="Conference program (PDF)" style="display:block;width:100%;height:380px;border:none;" loading="lazy" allow="autoplay"></iframe>
         </div>
-
-        <!-- DIA 3 -->
-        <div style="background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 16px var(--shadow);">
-          <button onclick="toggleDay('day3')" style="width:100%;background:var(--green-deep);border:none;cursor:pointer;padding:22px 28px;display:flex;justify-content:space-between;align-items:center;text-align:left;">
-            <div>
-              <div style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:0.8;color:rgba(255,255,255,0.8);margin-bottom:4px;"><span data-lang="pt">Dia 3</span><span data-lang="en">Day 3</span></div>
-              <div style="font-size:22px;font-weight:700;font-family:Arial,sans-serif;color:white;">14 Nov 2026</div>
-              <div style="font-size:13px;color:rgba(255,255,255,0.85);font-family:Arial,sans-serif;margin-top:2px;"><span data-lang="pt">Política Climática · Encerramento · Workshop</span><span data-lang="en">Climate Policy · Closing · Workshop</span></div>
-            </div>
-            <span id="day3-arrow" style="color:white;font-size:22px;transition:transform 0.3s;">▾</span>
-          </button>
-          <div id="day3" style="display:none;padding:28px;">
-            <div style="display:flex;flex-direction:column;gap:14px;">
-              <div style="display:grid;grid-template-columns:100px 1fr;gap:12px;padding-bottom:12px;border-bottom:1px solid #f0f0f0;">
-                <span style="font-family:Arial,sans-serif;font-size:12px;font-weight:700;color:var(--text-light);">8h30–10h30</span>
-                <div>
-                  <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--ocean);" data-lang="pt">Mesa Interdisciplinar</span>
-                  <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--ocean);" data-lang="en">Interdisciplinary Panel</span>
-                  <p style="margin:4px 0 0;font-size:13px;color:var(--text-mid);" data-lang="pt">Vozes das comunidades — ciência, território e ação pública em zonas úmidas. Diálogo entre ciência, comunidades locais, terceiro setor e Estado.</p>
-                  <p style="margin:4px 0 0;font-size:13px;color:var(--text-mid);" data-lang="en">Community voices — science, territory, and public action in wetlands. Dialogue between science, local communities, civil society, and the State.</p>
-                </div>
-              </div>
-              <div style="display:grid;grid-template-columns:100px 1fr;gap:12px;padding-bottom:12px;border-bottom:1px solid #f0f0f0;">
-                <span style="font-family:Arial,sans-serif;font-size:12px;font-weight:700;color:var(--text-light);">10h30–11h</span>
-                <div style="color:var(--text-mid);font-size:13px;"><span data-lang="pt">☕ Coffee break com exposição de pôsteres</span><span data-lang="en">☕ Coffee break with poster exhibition</span></div>
-              </div>
-              <div style="display:grid;grid-template-columns:100px 1fr;gap:12px;padding-bottom:12px;border-bottom:1px solid #f0f0f0;">
-                <span style="font-family:Arial,sans-serif;font-size:12px;font-weight:700;color:var(--text-light);">11h–13h</span>
-                <div>
-                  <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);" data-lang="pt">Financiamento Climático e NDCs</span>
-                  <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);" data-lang="en">Climate Finance and NDCs</span>
-                  <p style="margin:4px 0 0;font-size:13px;color:var(--text-mid);" data-lang="pt">Instrumentos de financiamento climático para zonas úmidas; mercados de carbono e mecanismos de restauração; integração dos co-benefícios às Contribuições Nacionalmente Determinadas.</p>
-                  <p style="margin:4px 0 0;font-size:13px;color:var(--text-mid);" data-lang="en">Climate finance instruments for wetlands; carbon markets and restoration mechanisms; integrating co-benefits into Nationally Determined Contributions.</p>
-                </div>
-              </div>
-              <div style="display:grid;grid-template-columns:100px 1fr;gap:12px;padding-bottom:12px;border-bottom:1px solid #f0f0f0;">
-                <span style="font-family:Arial,sans-serif;font-size:12px;font-weight:700;color:var(--text-light);">13h–14h</span>
-                <div style="color:var(--text-mid);font-size:13px;"><span data-lang="pt">🍽️ Pausa para almoço</span><span data-lang="en">🍽️ Lunch break</span></div>
-              </div>
-              <div style="display:grid;grid-template-columns:100px 1fr;gap:12px;padding-bottom:12px;border-bottom:1px solid #f0f0f0;">
-                <span style="font-family:Arial,sans-serif;font-size:12px;font-weight:700;color:var(--text-light);">14h–15h30</span>
-                <div>
-                  <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--green-mid);" data-lang="pt">Mesa de Encerramento</span>
-                  <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--green-mid);" data-lang="en">Closing Panel</span>
-                  <p style="margin:4px 0 0;font-size:13px;color:var(--text-mid);" data-lang="pt">Como a integração entre ciências da natureza e ciências sociais está remodelando a pesquisa em soluções baseadas na natureza?</p>
-                  <p style="margin:4px 0 0;font-size:13px;color:var(--text-mid);" data-lang="en">How is the integration of natural and social sciences reshaping research on nature-based solutions?</p>
-                </div>
-              </div>
-              <div style="display:grid;grid-template-columns:100px 1fr;gap:12px;padding-bottom:12px;border-bottom:1px solid #f0f0f0;">
-                <span style="font-family:Arial,sans-serif;font-size:12px;font-weight:700;color:var(--text-light);">15h30–19h</span>
-                <div>
-                  <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#7b5ea7;" data-lang="pt">Workshop — Policy Brief para a COP31</span>
-                  <span style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#7b5ea7;" data-lang="en">Workshop — Policy Brief for COP31</span>
-                  <p style="margin:4px 0 0;font-size:13px;color:var(--text-mid);" data-lang="pt">Debate sobre co-benefícios e construção coletiva de indicadores de monitoramento e policy brief a ser apresentado na COP31.</p>
-                  <p style="margin:4px 0 0;font-size:13px;color:var(--text-mid);" data-lang="en">Discussion on co-benefits and collective construction of monitoring indicators and a policy brief to be presented at COP31.</p>
-                </div>
-              </div>
-              <div style="display:grid;grid-template-columns:100px 1fr;gap:12px;">
-                <span style="font-family:Arial,sans-serif;font-size:12px;font-weight:700;color:var(--text-light);">20h</span>
-                <div style="color:var(--text-mid);font-size:13px;"><span data-lang="pt">🥂 Coquetel — Encerramento da conferência</span><span data-lang="en">🥂 Cocktail — Conference closing</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
+        <p style="font-family:Arial,sans-serif;font-size:13px;color:var(--text-mid);margin-top:12px;text-align:center;">
+          <a href="https://drive.google.com/file/d/1LyVocYLrRNRswi7j-JDevZwNsEsZGLkT/view?usp=sharing" target="_blank" rel="noopener" style="color:var(--green-mid);font-weight:700;text-decoration:underline;">Open the program PDF in a new tab ↗</a>
+        </p>
       </div>
 
       
